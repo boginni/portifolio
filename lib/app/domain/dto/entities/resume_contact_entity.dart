@@ -14,6 +14,8 @@ class ResumeContactEntity {
   });
 
   factory ResumeContactEntity.fromJson(Map<String, dynamic> json) {
+    print(json);
+
     return ResumeContactEntity(
       name: json['name'] ?? '',
       profession: json['profession'] ?? '',

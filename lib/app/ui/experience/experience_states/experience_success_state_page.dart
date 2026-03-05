@@ -29,7 +29,7 @@ class ExperienceSuccessStatePage extends StatelessWidget {
                   width: double.infinity,
                   fit: BoxFit.cover,
                   DsAssetsPhotos.professionalSuitDistractedPng,
-                  alignment: const Alignment(0, -1),
+                  alignment: Alignment.topCenter,
                 ),
                 Container(
                   decoration: BoxDecoration(
