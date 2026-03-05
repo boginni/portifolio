@@ -52,13 +52,13 @@ class ContactSuccessStatePage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'BRUNNO',
+                        entity.name,
                         style: theme.textTheme.displaySmall?.copyWith(
                           color: colorScheme.surfaceContainerHighest,
                         ),
                       ),
                       Text(
-                        'Senior Software Engineer',
+                        entity.profession,
                         style: theme.textTheme.bodyLarge?.copyWith(
                           color: colorScheme.surfaceContainerHighest,
                         ),
