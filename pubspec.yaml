@@ -6,8 +6,6 @@ publish_to: 'none'
 version: 1.0.0+1
 
 workspace:
-  - packages/ds_components
-  - packages/ds_tokens
   - packages/ds_assets
 
 environment:
@@ -20,8 +18,12 @@ dependencies:
 
   custom_go_router:
     path: packages/custom_go_router
+
   ds_assets:
     path: packages/ds_assets
+
+  error_handler_with_result:
+    path: packages/error_handler_with_result
 
 
   flutter_localization: ^0.3.3

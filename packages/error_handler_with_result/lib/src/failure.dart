@@ -4,11 +4,31 @@ abstract class Failure implements Exception {
   final StackTrace stackTrace;
 
   bool get isFatal;
+
+  Never throwError() {
+    final string = toString();
+
+    const maxLength = 1024 * 4;
+
+    if (string.length > maxLength) {
+      final clipped = string.substring(0, maxLength);
+
+      Error.throwWithStackTrace(
+        Exception('Failure message too long, clipped: $clipped'),
+        stackTrace,
+      );
+    }
+
+    Error.throwWithStackTrace(
+      this,
+      stackTrace,
+    );
+  }
 }
 
 class SerializationFailure extends Failure {
   const SerializationFailure(this.error, StackTrace stackTrace)
-    : super(stackTrace);
+      : super(stackTrace);
 
   final dynamic error;
 
@@ -43,19 +63,9 @@ class UnknownFailure extends Failure {
   }
 }
 
-class RestaurantNotFoundFailure extends Failure {
-  const RestaurantNotFoundFailure(
-    super.stackTrace, {
-    required this.id,
-  });
-
-  final String id;
+class TestFailure extends Failure {
+  const TestFailure([super.stackTrace = StackTrace.empty]);
 
   @override
   bool get isFatal => false;
-
-  @override
-  String toString() {
-    return 'RestaurantNotFoundFailure: $id';
-  }
 }

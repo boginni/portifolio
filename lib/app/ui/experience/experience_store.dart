@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 
-import '../../domain/dto/entities/experience_company_entity.dart';
+import '../../domain/dto/entities/resume_experience_entity.dart';
 
 class ExperienceStore extends ChangeNotifier
     implements ValueListenable<ExperienceStoreState> {
@@ -27,7 +27,7 @@ sealed class ExperienceStoreState {
   factory ExperienceStoreState.failure() = ExperienceStoreFailureState;
 
   factory ExperienceStoreState.success({
-    required List<ExperienceCompanyEntity> experienceCompanyList,
+    required List<ResumeExperienceEntity> experienceCompanyList,
   }) = ExperienceStoreSuccessState;
 }
 
@@ -46,5 +46,5 @@ class ExperienceStoreFailureState extends ExperienceStoreState {
 class ExperienceStoreSuccessState extends ExperienceStoreState {
   const ExperienceStoreSuccessState({required this.experienceCompanyList});
 
-  final List<ExperienceCompanyEntity> experienceCompanyList;
+  final List<ResumeExperienceEntity> experienceCompanyList;
 }

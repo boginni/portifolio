@@ -1,0 +1,112 @@
+{
+  "experiences": [
+    {
+      "title": "Senior Software Engineer",
+      "subtitle": "Cognizant",
+      "description": "• Collaborated with MGM Rewards focusing on complex UI and app architecture.\n• Implemented Clean Architecture and SOLID principles.\n• Developed and maintained a robust design system with accessibility standards.\n• Utilized CI/CD and conducted unit, golden, and integration tests.",
+      "icon": "",
+      "startDate": "May 2025",
+      "endDate": "Present",
+      "location": "Remote"
+    },
+    {
+      "title": "Flutter Developer",
+      "subtitle": "B M FRANCA TECNOLOGIA",
+      "description": "• Developed high-quality Flutter applications as an independent contractor.\n• Collaborated with clients to deliver tailored solutions.\n• Ensured optimal performance through rigorous testing and debugging.",
+      "icon": "",
+      "startDate": "Sep 2022",
+      "endDate": "Present",
+      "location": "Vila Velha, Espirito Santo, Brasil"
+    },
+    {
+      "title": "Flutter Developer - Pleno",
+      "subtitle": "Farmácias APP | Delivery | By GrupoSC",
+      "description": "• Developed the mobile version of the Farmácias App with robust error handling.\n• Collaborated with industry leaders like Toshi Ossada.\n• Contributed to 2M+ users and a 97% error-free rate.",
+      "icon": "",
+      "startDate": "Mar 2024",
+      "endDate": "Present",
+      "location": "Vila Olímpia, São Paulo - Brazil"
+    },
+    {
+      "title": "Cofundador da Comunidade",
+      "subtitle": "Flutter Brasil",
+      "description": "• Creation of one of the largest Flutter communities in Brazil.\n• Organization of meetups and events to promote Flutter.\n• Production of educational content and moderation of discussion groups.",
+      "icon": "",
+      "startDate": "Jan 2024",
+      "endDate": "Present",
+      "location": "Brazil"
+    },
+    {
+      "title": "Senior Software Engineer",
+      "subtitle": "MGM Resorts International",
+      "description": "Senior Software Engineer role focusing on hospitality and gaming enterprise solutions.",
+      "icon": "",
+      "startDate": "Jun 2025",
+      "endDate": "Dec 2025",
+      "location": ""
+    },
+    {
+      "title": "Flutter Developer",
+      "subtitle": "Althero",
+      "description": "Flutter development for international projects based in France.",
+      "icon": "",
+      "startDate": "Jun 2024",
+      "endDate": "Oct 2025",
+      "location": "Rouen, Normandie"
+    },
+    {
+      "title": "Full-stack Developer",
+      "subtitle": "RécUp",
+      "description": "Full-stack development responsibilities within the Normandie tech ecosystem.",
+      "icon": "",
+      "startDate": "Sep 2023",
+      "endDate": "Oct 2025",
+      "location": "Rouen, Normandie"
+    },
+    {
+      "title": "Flutter Developer",
+      "subtitle": "PupzDoBrasil®",
+      "description": "• Led migration from Flutter 1 to Flutter 3 (40k+ lines refactored).\n• Implemented Null Safety and Flutter Modular for Micro-Frontends.\n• Employed MobX and Triple for state management.",
+      "icon": "",
+      "startDate": "Nov 2023",
+      "endDate": "Mar 2024",
+      "location": ""
+    },
+    {
+      "title": "Flutter Developer",
+      "subtitle": "Dentista Organizado",
+      "description": "• Refactored source code removing GetX and implementing Flutter Modular.\n• Leveraged ValueNotifier and ChangeNotifier.\n• Conducted UI/UX refactoring to Material Design 3.",
+      "icon": "",
+      "startDate": "Aug 2023",
+      "endDate": "Nov 2023",
+      "location": ""
+    },
+    {
+      "title": "Flutter Developer",
+      "subtitle": "COM TECNOLOGIA LTDA",
+      "description": "• Led development of a Sales Force application.\n• Designed intuitive UI/UX and implemented SetState.\n• Executed Offline-First approach with SQLite (50+ tables).",
+      "icon": "",
+      "startDate": "Sep 2021",
+      "endDate": "Dec 2022",
+      "location": "Castanhal, Pará, Brazil"
+    },
+    {
+      "title": "IT Assistant",
+      "subtitle": "Sea Telecom",
+      "description": "• Maintained database and managed customer data.\n• Developed Java scripts for automation.\n• Utilized JavaScript for ERP data entry.",
+      "icon": "",
+      "startDate": "Feb 2021",
+      "endDate": "Jul 2021",
+      "location": "Castanhal, Pará, Brazil"
+    },
+    {
+      "title": "PHP Web Developer",
+      "subtitle": "Exímio Solutions Jr",
+      "description": "• Developed websites using PHP, MySQL, and Apache.\n• Led a team of interns and provided mentorship.",
+      "icon": "",
+      "startDate": "Oct 2019",
+      "endDate": "May 2020",
+      "location": "Castanhal, Pará, Brazil"
+    }
+  ]
+}

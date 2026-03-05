@@ -1,10 +1,10 @@
 import 'package:ds_assets/ds_assets.dart';
 
-import '../../domain/dto/entities/experience_company_entity.dart';
+import '../../domain/dto/entities/resume_experience_entity.dart';
 import 'experience_store.dart';
 
-final List<ExperienceCompanyEntity> experienceList = [
-  const ExperienceCompanyEntity(
+final List<ResumeExperienceEntity> experienceList = [
+  const ResumeExperienceEntity(
     title: 'Senior Software Engineer',
     subtitle: 'Cognizant',
     description: '''
@@ -17,7 +17,7 @@ final List<ExperienceCompanyEntity> experienceList = [
     startDate: 'May 2025',
     endDate: 'Present',
   ),
-  const ExperienceCompanyEntity(
+  const ResumeExperienceEntity(
     title: 'Flutter Developer',
     subtitle: 'B M FRANCA TECNOLOGIA',
     description: '''
@@ -29,7 +29,7 @@ final List<ExperienceCompanyEntity> experienceList = [
     startDate: 'Sep 2022',
     endDate: 'Present',
   ),
-  const ExperienceCompanyEntity(
+  const ResumeExperienceEntity(
     title: 'Flutter Developer - Sr',
     subtitle: 'Farmácias APP | Delivery | By GrupoSC',
     description: '''
@@ -41,7 +41,7 @@ final List<ExperienceCompanyEntity> experienceList = [
     startDate: 'Mar 2024',
     endDate: 'May 2025',
   ),
-  const ExperienceCompanyEntity(
+  const ResumeExperienceEntity(
     title: 'Flutter Developer',
     subtitle: 'PupzDoBrasil®',
     description: '''
@@ -54,7 +54,7 @@ final List<ExperienceCompanyEntity> experienceList = [
     startDate: 'Nov 2023',
     endDate: 'Mar 2024',
   ),
-  const ExperienceCompanyEntity(
+  const ResumeExperienceEntity(
     title: 'Flutter Developer',
     subtitle: 'Dentista Organizado',
     description: '''
@@ -67,7 +67,7 @@ final List<ExperienceCompanyEntity> experienceList = [
     startDate: 'Aug 2023',
     endDate: 'Nov 2023',
   ),
-  const ExperienceCompanyEntity(
+  const ResumeExperienceEntity(
     title: 'Flutter Developer',
     subtitle: 'COM TECNOLOGIA LTDA',
     description: '''
@@ -79,7 +79,7 @@ final List<ExperienceCompanyEntity> experienceList = [
     startDate: 'Sep 2021',
     endDate: 'Dec 2022',
   ),
-  const ExperienceCompanyEntity(
+  const ResumeExperienceEntity(
     title: 'IT Assostent',
     subtitle: 'Sea Telecom',
     description: '''
@@ -92,7 +92,7 @@ final List<ExperienceCompanyEntity> experienceList = [
     startDate: 'Feb 2021',
     endDate: 'Jul 2021',
   ),
-  const ExperienceCompanyEntity(
+  const ResumeExperienceEntity(
     title: 'PHP Web Developer',
     subtitle: 'Exímio Solutions Jr',
     description: '''

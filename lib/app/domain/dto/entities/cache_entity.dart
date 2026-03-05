@@ -1,11 +1,9 @@
-import 'entity.dart';
-
-class CacheEntity extends Entity {
+class CacheEntity {
   final String id;
   final dynamic value;
   final DateTime date;
 
-  CacheEntity({
+  const CacheEntity({
     required this.id,
     required this.value,
     required this.date,
@@ -19,7 +17,6 @@ class CacheEntity extends Entity {
     );
   }
 
-  @override
   Map<String, dynamic> toJson() {
     return {
       'id': id,

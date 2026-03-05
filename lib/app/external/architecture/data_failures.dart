@@ -1,6 +1,5 @@
 import 'package:dio/dio.dart';
-
-import '../../domain/architecture/failure.dart';
+import 'package:error_handler_with_result/error_handler_with_result.dart';
 
 class DioAuthorizationFailure extends DioException
     implements UnauthorizedFailure {
@@ -16,6 +15,11 @@ class DioAuthorizationFailure extends DioException
   String toString() {
     return 'AuthorizationFailure: ${requestOptions.uri} | ${response?.statusCode} | ${response?.data}';
   }
+
+  @override
+  Never throwError() {
+    throw this;
+  }
 }
 
 class DioServerFailure extends DioException implements UnknownFailure {
@@ -30,5 +34,10 @@ class DioServerFailure extends DioException implements UnknownFailure {
   @override
   String toString() {
     return 'ServerFailure: ${requestOptions.uri} | ${response?.statusCode} | ${response?.data}';
+  }
+
+  @override
+  Never throwError() {
+    throw this;
   }
 }

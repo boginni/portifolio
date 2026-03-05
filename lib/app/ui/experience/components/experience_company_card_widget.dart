@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../domain/dto/entities/experience_company_entity.dart';
+import '../../../domain/dto/entities/resume_experience_entity.dart';
 
 class ExperienceCompanyCardWidget extends StatelessWidget {
   const ExperienceCompanyCardWidget({
@@ -9,7 +9,7 @@ class ExperienceCompanyCardWidget extends StatelessWidget {
     this.onTap,
   });
 
-  final ExperienceCompanyEntity experience;
+  final ResumeExperienceEntity experience;
   final VoidCallback? onTap;
 
   @override

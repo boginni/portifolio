@@ -1,4 +1,4 @@
-import '../architecture/failure.dart';
+import 'package:error_handler_with_result/error_handler_with_result.dart';
 
 enum GeolocationFailureType {
   permissionDenied,
