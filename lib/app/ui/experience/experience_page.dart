@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import '../app/generic_state_pages/generic_failure_state_page.dart';
 import '../app/generic_state_pages/generic_loading_state_page.dart';
 import 'experience_controller.dart';
-import 'Experience_states/Experience_failure_state_page.dart';
-import 'Experience_states/Experience_loading_state_page.dart';
-import 'Experience_states/Experience_success_state_page.dart';
+import 'experience_states/experience_success_state_page.dart';
 import 'experience_store.dart';
 
 class ExperiencePage extends StatefulWidget {
@@ -46,7 +44,7 @@ class _ExperiencePAgeState extends State<ExperiencePage> {
               value,
               onRefresh: init,
             ),
-            ExperienceStoreLoadingState() => const ExperienceLoadingStatePage(),
+            ExperienceStoreLoadingState() => const GenericLoadingStatePage(),
             ExperienceStoreFailureState() => GenericFailureStatePage(
               onTryAgain: init,
             ),
