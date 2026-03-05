@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../app/generic_state_pages/generic_failure_state_page.dart';
+import '../app/generic_state_pages/generic_loading_state_page.dart';
 import 'experience_controller.dart';
 import 'Experience_states/Experience_failure_state_page.dart';
 import 'Experience_states/Experience_loading_state_page.dart';
@@ -39,13 +41,15 @@ class _ExperiencePAgeState extends State<ExperiencePage> {
       valueListenable: controller.store,
       builder:
           (context, ExperienceStoreState value, child) => switch (value) {
-            ExperienceStoreInitialState() => const ExperienceLoadingStatePage(),
+            ExperienceStoreInitialState() => const GenericLoadingStatePage(),
             ExperienceStoreSuccessState() => ExperienceSuccessStatePage(
               value,
               onRefresh: init,
             ),
             ExperienceStoreLoadingState() => const ExperienceLoadingStatePage(),
-            ExperienceStoreFailureState() => const ExperienceFailureStatePage(),
+            ExperienceStoreFailureState() => GenericFailureStatePage(
+              onTryAgain: init,
+            ),
           },
     );
   }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import '../app/generic_state_pages/generic_failure_state_page.dart';
+import '../app/generic_state_pages/generic_loading_state_page.dart';
 import 'home_controller.dart';
-import 'home_states/home_failure_state_page.dart';
-import 'home_states/home_loading_state_page.dart';
 import 'home_states/home_success_state_page.dart';
 import 'home_store.dart';
 
@@ -39,14 +39,14 @@ class _HomePAgeState extends State<HomePage> {
       valueListenable: controller.store,
       builder:
           (context, HomeStoreState value, child) => switch (value) {
-            HomeStoreInitialState() => const HomeLoadingStatePage(),
+            HomeStoreInitialState() => const GenericLoadingStatePage(),
             HomeStoreSuccessState(overview: final overview) =>
               HomeSuccessStatePage(
                 overview,
                 onRefresh: init,
               ),
-            HomeStoreLoadingState() => const HomeLoadingStatePage(),
-            HomeStoreFailureState() => HomeFailureStatePage(
+            HomeStoreLoadingState() => const GenericLoadingStatePage(),
+            HomeStoreFailureState() => GenericFailureStatePage(
               onTryAgain: init,
             ),
           },

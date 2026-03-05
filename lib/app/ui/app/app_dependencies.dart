@@ -1,7 +1,9 @@
 import 'package:get_it/get_it.dart';
 
+import '../../domain/repositories/resume_contact_repository.dart';
 import '../../domain/repositories/resume_experiences_repository.dart';
 import '../../domain/repositories/resume_overview_repository.dart';
+import '../../external/repositories/resume_contact_repository_impl.dart';
 import '../../external/repositories/resume_experiences_repository_impl.dart';
 import '../../external/repositories/resume_overview_repository_impl.dart';
 import 'controllers/app_store.dart';
@@ -16,6 +18,9 @@ class AppDependencies {
     );
     _app.registerFactory<ResumeExperiencesRepository>(
       ResumeExperiencesRepositoryImpl.new,
+    );
+    _app.registerFactory<ResumeContactRepository>(
+      ResumeContactRepositoryImpl.new,
     );
   }
 

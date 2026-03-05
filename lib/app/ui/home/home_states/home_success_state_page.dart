@@ -42,7 +42,8 @@ class HomeSuccessStatePage extends StatelessWidget {
             width: double.infinity,
             child: Image.asset(
               fit: BoxFit.cover,
-              DsAssetsPhotos.professionalPortraitSweaterApproachablePng,
+              'packages/ds_assets/assets/photos/professional_portrait_sweater_approachable.png',
+              // 'packages/ds_assets/assets/photos/professional_portrait_sweater_approachable.png',
               alignment: Alignment.topCenter,
             ),
           ),

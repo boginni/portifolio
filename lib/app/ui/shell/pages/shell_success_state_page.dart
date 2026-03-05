@@ -39,7 +39,7 @@ class _ShellSuccessStatePageState extends State<ShellSuccessStatePage> {
             controller: controller.homeController,
           ),
           ExperiencePage(controller: controller.experienceController),
-          const ContactPage(),
+          ContactPage(controller: controller.contactController),
           // const SettingsPage(),
         ],
       ),

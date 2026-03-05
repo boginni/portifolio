@@ -1,8 +1,11 @@
 import 'package:custom_go_router/custom_go_router.dart';
 import 'package:flutter/material.dart';
 
+import '../../domain/dto/entities/resume_contact_entity.dart';
 import '../app/app_dependencies.dart';
 import '../app/controllers/app_store.dart';
+import '../app/store/generic_store.dart';
+import '../contact/contact_controller.dart';
 import '../experience/experience_controller.dart';
 import '../experience/experience_store.dart';
 import '../home/home_controller.dart';
@@ -32,6 +35,10 @@ class ShellRoute extends AppRoute {
   ShellRoute();
 
   late final store = ShellStore();
+  late final homeStore = HomeStore();
+  late final experienceStore = ExperienceStore();
+  late final contactStore = GenericStore<ResumeContactEntity>();
+
   late final appStore = AppDependencies.get<AppStore>();
 
   late final shellController = ShellController(
@@ -39,11 +46,15 @@ class ShellRoute extends AppRoute {
     store: store,
     homeController: HomeController(
       AppDependencies.get(),
-      store: HomeStore(),
+      store: homeStore,
     ),
     experienceController: ExperienceController(
       AppDependencies.get(),
-      store: ExperienceStore(),
+      store: experienceStore,
+    ),
+    contactController: ContactController(
+      AppDependencies.get(),
+      store: contactStore,
     ),
   );
 

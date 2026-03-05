@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class HomeLoadingStatePage extends StatelessWidget {
-  const HomeLoadingStatePage({super.key});
+class GenericLoadingStatePage extends StatelessWidget {
+  const GenericLoadingStatePage({super.key});
 
   @override
   Widget build(BuildContext context) {

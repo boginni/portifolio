@@ -25,7 +25,7 @@ class ExperienceSuccessStatePage extends StatelessWidget {
             child: Stack(
               children: [
                 Image.asset(
-                  height: 16 * 18,
+                  height: 16 * 22,
                   width: double.infinity,
                   fit: BoxFit.cover,
                   DsAssetsPhotos.professionalSuitDistractedPng,
