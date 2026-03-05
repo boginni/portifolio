@@ -37,8 +37,14 @@ class ShellRoute extends AppRoute {
   late final shellController = ShellController(
     appStore: appStore,
     store: store,
-    homeController: HomeController(store: HomeStore()),
-    experienceController: ExperienceController(store: ExperienceStore()),
+    homeController: HomeController(
+      AppDependencies.get(),
+      store: HomeStore(),
+    ),
+    experienceController: ExperienceController(
+      AppDependencies.get(),
+      store: ExperienceStore(),
+    ),
   );
 
   @override

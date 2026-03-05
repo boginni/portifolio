@@ -1,6 +1,7 @@
 import 'package:ds_assets/ds_assets.dart';
 import 'package:flutter/material.dart';
 
+import '../../../domain/dto/entities/resume_overview_entity.dart';
 import '../../app/extensions/context_extensions.dart';
 import '../components/social_card_widget.dart';
 import '../components/social_carousel_widget.dart';
@@ -13,7 +14,7 @@ class HomeSuccessStatePage extends StatelessWidget {
     required this.onRefresh,
   });
 
-  final HomeStoreSuccessState state;
+  final ResumeOverviewEntity state;
   final Future<void> Function() onRefresh;
 
   @override
@@ -41,8 +42,8 @@ class HomeSuccessStatePage extends StatelessWidget {
             width: double.infinity,
             child: Image.asset(
               fit: BoxFit.cover,
-              state.photo,
-              alignment: Alignment.topCenter
+              DsAssetsPhotos.professionalPortraitSweaterApproachablePng,
+              alignment: Alignment.topCenter,
             ),
           ),
           const SizedBox(height: 16),
@@ -55,7 +56,7 @@ class HomeSuccessStatePage extends StatelessWidget {
                   state.title,
                   style: context.textTheme.titleLarge,
                 ),
-                Text(state.subtitle),
+                Text(state.status),
               ],
             ),
           ),
@@ -98,7 +99,10 @@ class HomeSuccessStatePage extends StatelessWidget {
                   ),
                   Column(
                     children:
-                        state.description.split('\n\n').map(Text.new).toList(),
+                        state.professionalSummary
+                            .split('\n\n')
+                            .map(Text.new)
+                            .toList(),
                   ),
                 ],
               ),

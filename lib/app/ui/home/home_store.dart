@@ -1,5 +1,7 @@
 import 'package:flutter/foundation.dart';
 
+import '../../domain/dto/entities/resume_overview_entity.dart';
+
 class HomeStore extends ChangeNotifier
     implements ValueListenable<HomeStoreState> {
   HomeStoreState _state = HomeStoreState.initial();
@@ -25,13 +27,7 @@ sealed class HomeStoreState {
   factory HomeStoreState.failure() = HomeStoreFailureState;
 
   factory HomeStoreState.success({
-    required String title,
-    required String subtitle,
-    required String description,
-    required String linkedinUrl,
-    required String githubUrl,
-    required String cvUrl,
-    required String photo,
+    required ResumeOverviewEntity overview,
   }) = HomeStoreSuccessState;
 }
 
@@ -49,20 +45,8 @@ class HomeStoreFailureState extends HomeStoreState {
 
 class HomeStoreSuccessState extends HomeStoreState {
   const HomeStoreSuccessState({
-    required this.title,
-    required this.subtitle,
-    required this.description,
-    required this.linkedinUrl,
-    required this.githubUrl,
-    required this.cvUrl,
-    required this.photo,
+    required this.overview,
   });
 
-  final String title;
-  final String subtitle;
-  final String description;
-  final String linkedinUrl;
-  final String githubUrl;
-  final String cvUrl;
-  final String photo;
+  final ResumeOverviewEntity overview;
 }

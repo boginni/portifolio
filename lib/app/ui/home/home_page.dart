@@ -40,12 +40,15 @@ class _HomePAgeState extends State<HomePage> {
       builder:
           (context, HomeStoreState value, child) => switch (value) {
             HomeStoreInitialState() => const HomeLoadingStatePage(),
-            HomeStoreSuccessState() => HomeSuccessStatePage(
-              value,
-              onRefresh: init,
-            ),
+            HomeStoreSuccessState(overview: final overview) =>
+              HomeSuccessStatePage(
+                overview,
+                onRefresh: init,
+              ),
             HomeStoreLoadingState() => const HomeLoadingStatePage(),
-            HomeStoreFailureState() => const HomeFailureStatePage(),
+            HomeStoreFailureState() => HomeFailureStatePage(
+              onTryAgain: init,
+            ),
           },
     );
   }

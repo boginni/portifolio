@@ -7,7 +7,9 @@ class ExperienceFailureStatePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Center(
-        child: CircularProgressIndicator(),
+        child: Text(
+          'An error occurred while loading your resume. Please try again later.',
+        ),
       ),
     );
   }

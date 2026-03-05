@@ -30,7 +30,7 @@ class _ExperiencePAgeState extends State<ExperiencePage> {
   }
 
   Future<void> init() async {
-    await controller.loadResume();
+    await controller.load();
   }
 
   @override

@@ -1,6 +1,4 @@
-import 'package:custom_go_router/custom_go_router.dart';
 import 'package:flutter/material.dart';
-import '../splash/splash_route.dart';
 import 'controller/shell_controller.dart';
 import 'controller/shell_store.dart';
 import 'pages/shell_error_state_page.dart';

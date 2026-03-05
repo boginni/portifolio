@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../app/extensions/context_extensions.dart';
 import '../../contact/contact_page.dart';
 import '../../experience/experience_page.dart';
 import '../../home/home_page.dart';
-import '../../settings/settings_page.dart';
 import '../controller/shell_controller.dart';
 import '../controller/shell_store.dart';
 
@@ -27,7 +25,6 @@ class _ShellSuccessStatePageState extends State<ShellSuccessStatePage> {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = context.l10n;
 
     return Scaffold(
       extendBody: true,
