@@ -24,7 +24,7 @@ class _ListenableWidgetState extends State<ListenableWidget> {
     widget.listenable.removeListener(update);
   }
 
-  update() {
+  void update() {
     setState(() {});
   }
 

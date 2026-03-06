@@ -16,17 +16,22 @@ linter:
     library_private_types_in_public_api: false
     sort_unnamed_constructors_first: true
     avoid_empty_else: true
-    prefer_int_literals: true
+    #    prefer_int_literals: true
     prefer_single_quotes: true
     sort_child_properties_last: true
     sized_box_for_whitespace: true
     require_trailing_commas: true
     depend_on_referenced_packages: false
     prefer_relative_imports: true
+    #
+    #
     prefer_const_constructors: true
+    #
+    #
     missing_whitespace_between_adjacent_strings: true
     always_declare_return_types: true
-    always_put_required_named_parameters_first: true
+    # boring, too much verbosity
+    #    always_put_required_named_parameters_first: true
     annotate_overrides: true
     avoid_bool_literals_in_conditional_expressions: true
     avoid_double_and_int_checks: true
@@ -39,7 +44,8 @@ linter:
     avoid_null_checks_in_equality_operators: true
     avoid_print: true
     avoid_private_typedef_functions: true
-    avoid_redundant_argument_values: true
+    # not really useful
+    avoid_redundant_argument_values: false
     avoid_relative_lib_imports: true
     avoid_renaming_method_parameters: true
     avoid_return_types_on_setters: true
@@ -61,16 +67,18 @@ linter:
     eol_at_end_of_file: true
     exhaustive_cases: true
     file_names: true
-    flutter_style_todos: true
+    #  not useful
+    #    flutter_style_todos: true
     implementation_imports: true
     implicit_reopen: true
     invalid_case_patterns: true
-    lines_longer_than_80_chars: true
+    # disabled for now, but should be enabled later
+    #    lines_longer_than_80_chars: true
     literal_only_boolean_expressions: true
     no_adjacent_strings_in_list: true
     no_duplicate_case_values: true
     no_leading_underscores_for_library_prefixes: true
-    no_leading_underscores_for_local_identifiers: true
+    #    no_leading_underscores_for_local_identifiers: true
     no_logic_in_create_state: true
     null_check_on_nullable_type_parameter: true
     only_throw_errors: true
@@ -83,7 +91,8 @@ linter:
     unnecessary_library_directive: true
     unnecessary_new: true
     null_closures: true
-    omit_local_variable_types: true
+    # false positives
+    omit_local_variable_types: false
     prefer_contains: true
     prefer_final_fields: true
     prefer_final_in_for_each: true
@@ -92,20 +101,27 @@ linter:
     prefer_is_empty: true
     unnecessary_breaks: true
     unnecessary_const: true
+    unawaited_futures: true
+    unnecessary_await_in_return: true
+    #    avoid_positional_boolean_parameters: true
     camel_case_extensions: true
     camel_case_types: true
-    cancel_subscriptions: true
+    # Too many false positives
+    #    cancel_subscriptions: true
+    #    cascade_invocations: true
+    cast_nullable_to_non_nullable: true
     collection_methods_unrelated_type: true
     combinators_ordering: true
     comment_references: true
     conditional_uri_does_not_exist: true
-    constant_identifier_names: true
+    constant_identifier_names: false
     curly_braces_in_flow_control_structures: true
     dangling_library_doc_comments: true
     deprecated_consistency: true
-    directives_ordering: true
+    #    directives_ordering: true
     hash_and_equals: true
     implicit_call_tearoffs: true
+    join_return_with_assignment: true
     leading_newlines_in_multiline_strings: true
     library_annotations: true
     library_names: true
@@ -113,6 +129,7 @@ linter:
     no_runtimeType_toString: true
     non_constant_identifier_names: true
     noop_primitive_operations: true
+    #    one_member_abstracts: true
     package_names: true
     package_prefixed_library_names: true
     parameter_assignments: true
@@ -127,7 +144,7 @@ linter:
     prefer_for_elements_to_map_fromIterable: true
     prefer_function_declarations_over_variables: true
     prefer_generic_function_type_aliases: true
-    prefer_if_elements_to_conditional_expressions: true
+    prefer_if_elements_to_conditional_expressions: false
     prefer_initializing_formals: true
     prefer_inlined_adds: true
     prefer_is_not_operator: true
@@ -150,6 +167,7 @@ linter:
     unnecessary_brace_in_string_interps: true
     unnecessary_constructor_name: true
     unnecessary_getters_setters: true
+    unnecessary_lambdas: true
     unnecessary_null_aware_assignments: true
     unnecessary_null_checks: true
     unnecessary_null_in_if_null_operators: true
@@ -181,6 +199,3 @@ linter:
     use_test_throws_matchers: true
     use_to_and_as_if_applicable: true
     valid_regexps: true
-    unnecessary_await_in_return: true
-    cast_nullable_to_non_nullable: true
-    join_return_with_assignment: true

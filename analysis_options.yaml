@@ -98,7 +98,7 @@ linter:
     unnecessary_new: true
     null_closures: true
     # false positives
-    #    omit_local_variable_types: true
+    omit_local_variable_types: false
     prefer_contains: true
     prefer_final_fields: true
     prefer_final_in_for_each: true

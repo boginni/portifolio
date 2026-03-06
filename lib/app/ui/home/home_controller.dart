@@ -1,5 +1,3 @@
-import 'package:ds_assets/ds_assets.dart';
-
 import '../../domain/repositories/resume_overview_repository.dart';
 import 'home_store.dart';
 

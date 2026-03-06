@@ -1,21 +1,22 @@
 import 'package:ds_assets/ds_assets.dart';
 import 'package:flutter/material.dart';
 
-import '../../../domain/dto/entities/resume_overview_entity.dart';
-import '../../app/extensions/context_extensions.dart';
-import '../components/social_card_widget.dart';
-import '../components/social_carousel_widget.dart';
-import '../home_store.dart';
+import '../../../../../domain/dto/entities/resume_overview_entity.dart';
+import '../../../../app/extensions/context_extensions.dart';
+import '../../../components/high_resolution_image.dart';
+import '../../../components/professional_summary_widget.dart';
+import '../../../components/social_card_widget.dart';
+import '../../../components/social_carousel_widget.dart';
 
-class HomeSuccessStatePage extends StatelessWidget {
-  const HomeSuccessStatePage(
-    this.state, {
+class HomeSuccessStatePagePhone extends StatelessWidget {
+  const HomeSuccessStatePagePhone(
+    this.data, {
     super.key,
     required this.onRefresh,
   });
 
-  final ResumeOverviewEntity state;
-  final Future<void> Function() onRefresh;
+  final ResumeOverviewEntity data;
+  final RefreshCallback onRefresh;
 
   @override
   Widget build(BuildContext context) {
@@ -38,13 +39,13 @@ class HomeSuccessStatePage extends StatelessWidget {
           ),
           const SizedBox(height: 32),
           SizedBox(
-            height: 140 * 3,
-            width: double.infinity,
-            child: Image.asset(
-              fit: BoxFit.cover,
-              'packages/ds_assets/assets/photos/professional_portrait_sweater_approachable.png',
-              // 'packages/ds_assets/assets/photos/professional_portrait_sweater_approachable.png',
+            height: MediaQuery.sizeOf(context).height * 0.6,
+            child: const HighResolutionImage(
+              assetPath:
+                  DsAssetsPhotos.professionalPortraitSweaterApproachablePng,
+              ratio: 3330 / 5000,
               alignment: Alignment.topCenter,
+              fit: BoxFit.cover,
             ),
           ),
           const SizedBox(height: 16),
@@ -54,10 +55,10 @@ class HomeSuccessStatePage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  state.title,
+                  data.title,
                   style: context.textTheme.titleLarge,
                 ),
-                Text(state.status),
+                Text(data.status),
               ],
             ),
           ),
@@ -98,12 +99,8 @@ class HomeSuccessStatePage extends StatelessWidget {
                       style: context.textTheme.titleLarge,
                     ),
                   ),
-                  Column(
-                    children:
-                        state.professionalSummary
-                            .split('\n\n')
-                            .map(Text.new)
-                            .toList(),
+                  ProfessionalSummaryWidget(
+                    data.professionalSummary,
                   ),
                 ],
               ),

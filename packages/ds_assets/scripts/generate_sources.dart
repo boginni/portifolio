@@ -53,8 +53,8 @@ void main() {
       // --- PHYSICAL RENAME LOGIC ---
       final snakeName = _toSnakeCase(originalName);
       final newFileName = '$snakeName.$extension';
-      final currentPath = file.path.replaceAll('\\', '/');
-      final newPath = '${file.parent.path}/$newFileName'.replaceAll('\\', '/');
+      final currentPath = file.path.replaceAll(r'\', '/');
+      final newPath = '${file.parent.path}/$newFileName'.replaceAll(r'\', '/');
 
       File finalFile = file;
       if (currentPath != newPath) {
@@ -69,9 +69,10 @@ void main() {
       seenNames.add(variableName);
 
       final assetPath =
-          finalFile.path.replaceAll('\\', '/').split('assets/').last;
+          finalFile.path.replaceAll(r'\', '/').split('assets/').last;
       buffer.writeln(
-          "  static const String $variableName = '\$_prefix/assets/$assetPath';");
+        "  static const String $variableName = '\$_prefix/assets/$assetPath';",
+      );
     }
 
     buffer.writeln('}');
@@ -95,17 +96,19 @@ void main() {
 /// Formats string to a safe snake_case for physical files
 String _toSnakeCase(String input) {
   return input
-      .replaceAll(RegExp(r'[^a-zA-Z0-9]'), '_')
+      .replaceAll(RegExp('[^a-zA-Z0-9]'), '_')
       .replaceAllMapped(
-          RegExp(r'([a-z0-9])([A-Z])'), (Match m) => '${m[1]}_${m[2]}')
+        RegExp('([a-z0-9])([A-Z])'),
+        (Match m) => '${m[1]}_${m[2]}',
+      )
       .toLowerCase()
-      .replaceAll(RegExp(r'_+'), '_')
+      .replaceAll(RegExp('_+'), '_')
       .replaceAll(RegExp(r'^_+|_+$'), '');
 }
 
 /// Formats string to valid camelCase and ensures it's a safe Dart identifier
 String _toCamelCase(String input, Set<String> existingNames) {
-  final sanitized = input.replaceAll(RegExp(r'[^a-zA-Z0-9_]'), '');
+  final sanitized = input.replaceAll(RegExp('[^a-zA-Z0-9_]'), '');
   final parts = sanitized.split('_').where((e) => e.isNotEmpty).toList();
 
   if (parts.isEmpty) return 'unnamedAsset';
@@ -120,7 +123,7 @@ String _toCamelCase(String input, Set<String> existingNames) {
   var name = camel;
   var counter = 1;
   while (existingNames.contains(name)) {
-    name = '${camel}$counter';
+    name = '$camel$counter';
     counter++;
   }
   return name;

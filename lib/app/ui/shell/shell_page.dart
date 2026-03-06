@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import '../app/components/responsive_builder.dart';
 import 'controller/shell_controller.dart';
 import 'controller/shell_store.dart';
-import 'pages/shell_error_state_page.dart';
-import 'pages/shell_success_state_page.dart';
+import 'pages/sizes/desktop/shell_desktop_page.dart';
+import 'pages/sizes/mobile/shell_mobile_page.dart';
 
 class ShellPage extends StatefulWidget {
   const ShellPage({
@@ -17,6 +18,8 @@ class ShellPage extends StatefulWidget {
 }
 
 class _ShellPageState extends State<ShellPage> {
+  ShellController get controller => widget.controller;
+
   @override
   void initState() {
     super.initState();
@@ -34,24 +37,9 @@ class _ShellPageState extends State<ShellPage> {
 
   @override
   Widget build(BuildContext context) {
-    return ValueListenableBuilder(
-      valueListenable: widget.controller.store,
-      builder: (context, value, child) {
-        return switch (value) {
-          ShellLoadingState() => const Scaffold(
-            body: Center(
-              child: CircularProgressIndicator(),
-            ),
-          ),
-          ShellSuccessState() => ShellSuccessStatePage(
-            controller: widget.controller,
-          ),
-          ShellErrorState() => ShellErrorStatePage(
-            onRetry: init,
-            onLogout: () {},
-          ),
-        };
-      },
+    return ResponsiveBuilder(
+      phone: (context) => ShellMobilePage(controller: controller),
+      desktop: (context) => ShellDesktopPage(controller: controller),
     );
   }
 }

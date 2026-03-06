@@ -1,3 +1,5 @@
+import 'package:flutter/cupertino.dart';
+
 import '../../domain/providers/migration_connection.dart';
 import '../../domain/services/migration.dart';
 import '../../domain/services/migration_service.dart';
@@ -34,17 +36,17 @@ class SqliteDatabaseMigrationService implements MigrationService {
 
   @override
   Future<void> up() async {
-    print('Running migrations...');
+    debugPrint('Running migrations...');
 
     for (final migration in getMigrations()) {
       if (await migration.hasMigrationBeenRun()) {
         continue;
       }
 
-      print('Running ${migration.runtimeType}');
+      debugPrint('Running ${migration.runtimeType}');
       await migration.up();
       await migration.markMigrationAsRun();
-      print('Finished ${migration.runtimeType}');
+      debugPrint('Finished ${migration.runtimeType}');
     }
   }
 }

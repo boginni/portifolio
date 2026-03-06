@@ -24,7 +24,7 @@ class GenericFailureStatePage extends StatelessWidget {
             const SizedBox(height: 16),
             FilledButton(
               onPressed: onTryAgain,
-              child: Text('Try Again'),
+              child: const Text('Try Again'),
             ),
           ],
         ),

@@ -46,7 +46,7 @@ class ExperienceCompanyCardWidget extends StatelessWidget {
                       child: Image.asset(
                         experience.icon,
                         errorBuilder:
-                            (context, _, __) => Icon(
+                            (context, _, _) => Icon(
                               Icons.work_outline,
                               color: colorScheme.primary,
                             ),

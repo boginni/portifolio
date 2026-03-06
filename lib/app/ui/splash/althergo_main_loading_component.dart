@@ -14,9 +14,9 @@ class AlthergoMainLoadingComponent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Center(
+        const Center(
           child: Padding(
-            padding: const EdgeInsets.all(16 * 2),
+            padding: EdgeInsets.all(16 * 2),
           ),
         ),
         Positioned(

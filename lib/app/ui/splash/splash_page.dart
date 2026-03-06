@@ -53,7 +53,7 @@ class _SplashPageState extends State<SplashPage> {
           backgroundColor: context.colorScheme.surface,
           body: SafeArea(
             child: switch (store.state) {
-              SplashStoreLoadingState() => Stack(
+              SplashStoreLoadingState() => const Stack(
                 children: [],
               ),
               SplashStorePermissionFailureState() => Stack(
@@ -69,7 +69,7 @@ class _SplashPageState extends State<SplashPage> {
                           const SizedBox(height: 8),
                           FilledButton(
                             onPressed: initialize,
-                            child: Text('x'),
+                            child: const Text('x'),
                           ),
                         ],
                       ),
@@ -90,7 +90,7 @@ class _SplashPageState extends State<SplashPage> {
                           const SizedBox(height: 8),
                           FilledButton(
                             onPressed: initialize,
-                            child: Text('x'),
+                            child: const Text('x'),
                           ),
                         ],
                       ),
@@ -119,7 +119,7 @@ class _SplashPageState extends State<SplashPage> {
                           const SizedBox(height: 16),
                           FilledButton(
                             onPressed: initialize,
-                            child: Text('x'),
+                            child: const Text('x'),
                           ),
                         ],
                       ),

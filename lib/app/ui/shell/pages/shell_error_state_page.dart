@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
 
-
 class ShellErrorStatePage extends StatelessWidget {
   const ShellErrorStatePage({
     super.key,
-    required this.onRetry,
-    required this.onLogout,
+    this.onRetry,
+    this.onLogout,
   });
 
-  final VoidCallback onRetry;
-  final VoidCallback onLogout;
+  final VoidCallback? onRetry;
+  final VoidCallback? onLogout;
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
