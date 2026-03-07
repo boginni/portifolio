@@ -34,4 +34,3 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build/web
           cname: flutter.boginni.net
-          force_orphan: true
