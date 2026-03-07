@@ -33,8 +33,10 @@ class HighResolutionImage extends StatelessWidget {
             assetPath,
             fit: fit,
             alignment: alignment,
-            cacheHeight: useCacheHeight ?
-                calculatedCacheHeight > 0 ? calculatedCacheHeight : null : null,
+            cacheHeight:
+                useCacheHeight
+                    ? calculatedCacheHeight.clamp(1280, double.infinity).toInt()
+                    : null,
             frameBuilder: (context, child, frame, wasSynchronouslyLoaded) {
               if (wasSynchronouslyLoaded) return child;
 

@@ -40,7 +40,7 @@ class HomeSuccessStatePageTablet extends StatelessWidget {
                         child: HighResolutionImage(
                           assetPath:
                               DsAssetsPhotos
-                                  .professionalPortraitSweaterApproachablePng,
+                                  .purpleTCrossedArmsPng,
                           ratio: 3330 / 5000,
                           alignment: Alignment.topCenter,
                           fit: BoxFit.cover,

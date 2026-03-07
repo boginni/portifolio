@@ -42,7 +42,7 @@ class HomeSuccessStatePagePhone extends StatelessWidget {
             height: MediaQuery.sizeOf(context).height * 0.6,
             child: const HighResolutionImage(
               assetPath:
-                  DsAssetsPhotos.professionalPortraitSweaterApproachablePng,
+                  DsAssetsPhotos.purpleTCrossedArmsPng,
               ratio: 3330 / 5000,
               alignment: Alignment.topCenter,
               fit: BoxFit.cover,
