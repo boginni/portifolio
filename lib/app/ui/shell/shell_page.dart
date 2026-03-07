@@ -33,6 +33,13 @@ class _ShellPageState extends State<ShellPage> {
   Future<void> init() async {
     await Future.delayed(const Duration(seconds: 1));
     widget.controller.store.state = const ShellSuccessState();
+
+    if (mounted) {
+      await showDialog(
+        context: context,
+        builder: (context) => const DevelopmentWarningDialog(),
+      );
+    }
   }
 
   @override
@@ -40,6 +47,54 @@ class _ShellPageState extends State<ShellPage> {
     return ResponsiveBuilder(
       phone: (context) => ShellMobilePage(controller: controller),
       desktop: (context) => ShellDesktopPage(controller: controller),
+    );
+  }
+}
+
+class DevelopmentWarningDialog extends StatelessWidget {
+  const DevelopmentWarningDialog({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      title: const Text(
+        'Under Development',
+        textAlign: TextAlign.center,
+      ),
+      content: const Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Text(
+            'This portfolio is currently under development',
+          ),
+          Text(
+            'Please check back later!',
+          ),
+        ],
+      ),
+      actions: [
+        TextButton(
+          onPressed: () {
+            Navigator.of(context).pop();
+            WidgetsBinding.instance.addPostFrameCallback(
+              (timeStamp) {
+                if (context.mounted) {
+                  showDialog(
+                    context: context,
+                    builder: (context) => const DevelopmentWarningDialog(),
+                  );
+                }
+              },
+            );
+          },
+          child: const Text('Not ok'),
+        ),
+        TextButton(
+          onPressed: () => Navigator.of(context).pop(),
+          child: const Text('OK'),
+        ),
+      ],
     );
   }
 }
