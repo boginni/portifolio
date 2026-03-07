@@ -3,7 +3,9 @@ import '../app/components/responsive_builder.dart';
 import 'controller/shell_controller.dart';
 import 'controller/shell_store.dart';
 import 'pages/sizes/desktop/shell_desktop_page.dart';
-import 'pages/sizes/mobile/shell_mobile_page.dart';
+import 'pages/sizes/phone/shell_page_phone.dart';
+import 'pages/sizes/ultra_wide/shell_page_ultra_wide.dart';
+import 'pages/sizes/wide/shell_page_wide.dart';
 
 class ShellPage extends StatefulWidget {
   const ShellPage({
@@ -45,8 +47,10 @@ class _ShellPageState extends State<ShellPage> {
   @override
   Widget build(BuildContext context) {
     return ResponsiveBuilder(
-      phone: (context) => ShellMobilePage(controller: controller),
-      desktop: (context) => ShellDesktopPage(controller: controller),
+      phone: (context) => ShellPageMobile(controller: controller),
+      desktop: (context) => ShellPageDesktop(controller: controller),
+      wide: (context) => ShellPageWide(controller: controller),
+      ultraWide: (context) => ShellPageUltraWide(controller: controller),
     );
   }
 }

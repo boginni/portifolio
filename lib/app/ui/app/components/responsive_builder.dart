@@ -1,11 +1,21 @@
 import 'package:flutter/material.dart';
 
+enum ResponsiveDisplaySizeEnum {
+  phone,
+  tablet,
+  desktop,
+  wide,
+  ultraWide,
+}
+
 class ResponsiveBuilder extends StatelessWidget {
   final WidgetBuilder phone;
   final WidgetBuilder? tablet;
   final WidgetBuilder? desktop;
   final WidgetBuilder? wide;
   final WidgetBuilder? ultraWide;
+
+  final ResponsiveDisplaySizeEnum? forceDisplaySize;
 
   const ResponsiveBuilder({
     super.key,
@@ -14,6 +24,7 @@ class ResponsiveBuilder extends StatelessWidget {
     this.desktop,
     this.wide,
     this.ultraWide,
+    this.forceDisplaySize,
   });
 
   @override
@@ -22,23 +33,31 @@ class ResponsiveBuilder extends StatelessWidget {
       builder: (context, constraints) {
         final width = MediaQuery.of(context).size.width;
 
-        final builder =
-            switch (width) {
-              >= 1920 => ultraWide ?? wide ?? desktop ?? tablet,
-              >= 1440 => wide ?? desktop ?? tablet,
-              >= 1024 => desktop ?? tablet,
-              >= 600 => tablet,
-              _ => null,
-            } ??
-            phone;
+        final builder = () {
+          if (forceDisplaySize != null) {
+            return switch (forceDisplaySize!) {
+                  ResponsiveDisplaySizeEnum.ultraWide =>
+                    ultraWide ?? wide ?? desktop ?? tablet,
 
-        return ConstrainedBox(
-          constraints: BoxConstraints(
-            minHeight: constraints.maxHeight,
-            minWidth: constraints.maxWidth,
-          ),
-          child: builder(context),
-        );
+                  ResponsiveDisplaySizeEnum.wide => wide ?? desktop ?? tablet,
+                  ResponsiveDisplaySizeEnum.desktop => desktop ?? tablet,
+                  ResponsiveDisplaySizeEnum.tablet => tablet,
+                  ResponsiveDisplaySizeEnum.phone => phone,
+                } ??
+                phone;
+          }
+
+          return switch (width) {
+                >= 2560 => ultraWide ?? wide ?? desktop ?? tablet,
+                >= 1440 => wide ?? desktop ?? tablet,
+                >= 1024 => desktop ?? tablet,
+                >= 600 => tablet,
+                _ => null,
+              } ??
+              phone;
+        }();
+
+        return builder(context);
       },
     );
   }

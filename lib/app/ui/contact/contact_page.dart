@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
-import '../app/generic_state_pages/generic_failure_state_page.dart';
-import '../app/generic_state_pages/generic_loading_state_page.dart';
+import '../app/components/responsive_builder.dart';
 import '../app/store/generic_store.dart';
 import 'contact_controller.dart';
-import 'contact_states/contact_success_state_page.dart';
+import 'contact_states/sizes/phone/contact_page_phone.dart';
+import 'contact_states/sizes/wide/contact_page_wide.dart';
 
 class ContactPage extends StatefulWidget {
-  const ContactPage({super.key, required this.controller});
+  const ContactPage({
+    super.key,
+    required this.controller,
+    this.forceDisplaySize,
+  });
 
   final ContactController controller;
+  final ResponsiveDisplaySizeEnum? forceDisplaySize;
 
   @override
   State<ContactPage> createState() => _ContactPAgeState();
@@ -35,20 +40,10 @@ class _ContactPAgeState extends State<ContactPage> {
 
   @override
   Widget build(BuildContext context) {
-    return ValueListenableBuilder(
-      valueListenable: controller.store,
-      builder:
-          (context, value, child) => switch (value) {
-            GenericStoreInitialState() => const GenericLoadingStatePage(),
-            GenericStoreSuccessState(dataObject: final contact) =>
-              ContactSuccessStatePage(
-                entity: contact,
-              ),
-            GenericStoreLoadingState() => const GenericLoadingStatePage(),
-            GenericStoreFailureState() => GenericFailureStatePage(
-              onTryAgain: init,
-            ),
-          },
+    return ResponsiveBuilder(
+      forceDisplaySize: widget.forceDisplaySize,
+      phone: (context) => ContactPagePhone(controller: controller, init: init),
+      wide: (context) => ContactPageWide(controller: controller, init: init),
     );
   }
 }

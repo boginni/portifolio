@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ShellErrorStatePage extends StatelessWidget {
-  const ShellErrorStatePage({
+class ShellPageErrorState extends StatelessWidget {
+  const ShellPageErrorState({
     super.key,
     this.onRetry,
     this.onLogout,

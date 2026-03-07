@@ -18,6 +18,8 @@ extension ContextExtension on BuildContext {
 
   Locale get locale => Localizations.localeOf(this);
 
+  bool get isDarkMode => theme.brightness == Brightness.dark;
+
   MediaQueryData get mediaQuery => MediaQuery.of(this);
 
   NavigatorState get navigator => Navigator.of(this);

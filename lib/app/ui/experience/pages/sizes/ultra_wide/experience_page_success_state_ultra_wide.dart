@@ -1,0 +1,101 @@
+import 'package:ds_assets/ds_assets.dart';
+import 'package:flutter/material.dart';
+
+import '../../../../app/extensions/context_extensions.dart';
+import '../../../../home/components/high_resolution_image.dart';
+import '../../../components/experience_company_card_widget.dart';
+import '../../../experience_store.dart';
+
+class ExperiencePageSuccessStateUltraWide extends StatelessWidget {
+  const ExperiencePageSuccessStateUltraWide(
+    this.state, {
+    super.key,
+    required this.onRefresh,
+  });
+
+  final ExperienceStoreSuccessState state;
+  final RefreshCallback onRefresh;
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      color: context.colorScheme.surface,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        spacing: 32,
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0 * 2),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const SizedBox(
+                  height: 16 * 6,
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'My Experience',
+                      style: context.textTheme.displaySmall?.copyWith(
+                        color: context.colorScheme.surfaceContainerHighest,
+                      ),
+                    ),
+                    Text(
+                      'Senior Software Engineer',
+                      style: context.textTheme.bodyLarge?.copyWith(
+                        color: context.colorScheme.surfaceContainerHighest,
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 32,
+                ),
+                Text(
+                  'Overview',
+                  style: context.textTheme.titleLarge,
+                ),
+                const Text(
+                  'Currently a Senior Software Engineer at Cognizant, contributing to MGM Rewards with a focus on complex UI and app architecture. ',
+                ),
+              ],
+            ),
+          ),
+          ListView.builder(
+            shrinkWrap: true,
+            padding: const EdgeInsets.symmetric(horizontal: 16.0 * 2),
+            physics: const NeverScrollableScrollPhysics(),
+            itemCount: state.experienceCompanyList.length * 2 - 1,
+            itemBuilder: (context, index) {
+              if (index.isEven) {
+                return ExperienceCompanyCardWidget(
+                  experience: state.experienceCompanyList[index ~/ 2],
+                );
+              }
+
+              return const SizedBox(height: 16);
+            },
+          ),
+          Column(
+            children: [
+              SizedBox(
+                height: 16 * 10 * 10,
+                width: double.infinity,
+                child: HighResolutionImage(
+                  assetPath:
+                      context.isDarkMode
+                          ? DsAssetsPhotos.professionalFullSuitSeriousPng
+                          : DsAssetsPhotos.workingMacPng,
+                  fit: BoxFit.fitWidth,
+                  alignment: Alignment.topCenter,
+                  ratio: 3330 / 5000,
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}

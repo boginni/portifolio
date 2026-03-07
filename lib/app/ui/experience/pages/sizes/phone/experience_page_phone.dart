@@ -1,0 +1,36 @@
+import 'package:flutter/material.dart';
+import '../../../../app/generic_state_pages/generic_failure_state_page.dart';
+import '../../../../app/generic_state_pages/generic_loading_state_page.dart';
+import '../../../experience_controller.dart';
+import '../../../experience_store.dart';
+import 'experience_page_success_state_phone.dart';
+
+class ExperiencePagePhone extends StatelessWidget {
+  const ExperiencePagePhone({
+    super.key,
+    required this.controller,
+    required this.init,
+  });
+
+  final ExperienceController controller;
+  final RefreshCallback init;
+
+  @override
+  Widget build(BuildContext context) {
+    return ValueListenableBuilder(
+      valueListenable: controller.store,
+      builder:
+          (context, ExperienceStoreState value, child) => switch (value) {
+            ExperienceStoreInitialState() => const GenericLoadingStatePage(),
+            ExperienceStoreSuccessState() => ExperiencePageSuccessStatePhone(
+              value,
+              onRefresh: init,
+            ),
+            ExperienceStoreLoadingState() => const GenericLoadingStatePage(),
+            ExperienceStoreFailureState() => GenericFailureStatePage(
+              onTryAgain: init,
+            ),
+          },
+    );
+  }
+}

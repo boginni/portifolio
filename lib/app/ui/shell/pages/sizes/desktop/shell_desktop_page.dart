@@ -4,8 +4,8 @@ import '../../../../app/extensions/context_extensions.dart';
 import '../../../../home/pages/home_page.dart';
 import '../../../controller/shell_controller.dart';
 
-class ShellDesktopPage extends StatelessWidget {
-  const ShellDesktopPage({super.key, required this.controller});
+class ShellPageDesktop extends StatelessWidget {
+  const ShellPageDesktop({super.key, required this.controller});
 
   final ShellController controller;
 

@@ -26,115 +26,112 @@ class HomeSuccessStatePageWide extends StatelessWidget {
 
     return Material(
       color: context.colorScheme.surface,
-      child: SingleChildScrollView(
-        physics: const ClampingScrollPhysics(),
-        child: Column(
-          children: [
-            SizedBox(
-              height: MediaQuery.of(context).size.height,
-              child: Stack(
-                children: [
-                  const Positioned.fill(child: BackgroundSplit()),
-                  Center(
-                    child: Container(
-                      constraints: const BoxConstraints(maxWidth: 1440),
-                      padding: const EdgeInsets.symmetric(horizontal: 64),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Expanded(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text('Hi, I am', style: textTheme.displaySmall),
-                                // Upscaled for Wide
-                                const SizedBox(height: 16),
-                                Text(
-                                  data.name,
-                                  style: textTheme.displayLarge?.copyWith(
-                                    fontSize: 84,
-                                    fontWeight: FontWeight.bold,
-                                    color: colorScheme.onSurface,
-                                  ),
-                                ),
-                                Text(
-                                  data.title,
-                                  style: textTheme.headlineSmall?.copyWith(
-                                    color: colorScheme.onSurfaceVariant
-                                        .withOpacity(0.7),
-                                  ),
-                                ),
-                                const SizedBox(height: 48),
-                                const Row(
-                                  children: [
-                                    SocialIconWidget(Icons.alternate_email),
-                                    SizedBox(width: 16),
-                                    SocialIconWidget(Icons.code),
-                                    SizedBox(width: 16),
-                                    SocialIconWidget(Icons.link),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
-                          const HighResolutionImage(
-                            assetPath:
-                                DsAssetsPhotos.professionalSuitDistractedPng,
-                            ratio: 3330 / 5000,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-
-            // OVERVIEW SECTION
-            Container(
-              width: double.infinity,
-              color: colorScheme.inverseSurface,
-              child: Center(
-                child: Container(
-                  constraints: const BoxConstraints(maxWidth: 1000),
-                  // Narrower for readability
-                  padding: const EdgeInsets.symmetric(
-                    vertical: 80,
-                    horizontal: 32,
-                  ),
-                  child: Semantics(
-                    explicitChildNodes: true,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+      child: Column(
+        children: [
+          SizedBox(
+            height: MediaQuery.of(context).size.height,
+            child: Stack(
+              children: [
+                const Positioned.fill(child: BackgroundSplit()),
+                Center(
+                  child: Container(
+                    constraints: const BoxConstraints(maxWidth: 1440),
+                    padding: const EdgeInsets.symmetric(horizontal: 64),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(
-                          'Overview',
-                          style: textTheme.displaySmall?.copyWith(
-                            // Larger header
-                            color: colorScheme.onInverseSurface,
+                        Expanded(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text('Hi, I am', style: textTheme.displaySmall),
+                              // Upscaled for Wide
+                              const SizedBox(height: 16),
+                              Text(
+                                data.name,
+                                style: textTheme.displayLarge?.copyWith(
+                                  fontSize: 84,
+                                  fontWeight: FontWeight.bold,
+                                  color: colorScheme.onSurface,
+                                ),
+                              ),
+                              Text(
+                                data.title,
+                                style: textTheme.headlineSmall?.copyWith(
+                                  color: colorScheme.onSurfaceVariant
+                                      .withOpacity(0.7),
+                                ),
+                              ),
+                              const SizedBox(height: 48),
+                              const Row(
+                                children: [
+                                  SocialIconWidget(Icons.alternate_email),
+                                  SizedBox(width: 16),
+                                  SocialIconWidget(Icons.code),
+                                  SizedBox(width: 16),
+                                  SocialIconWidget(Icons.link),
+                                ],
+                              ),
+                            ],
                           ),
                         ),
-                        const SizedBox(height: 24),
-                        const Divider(thickness: 2),
-                        const SizedBox(height: 24),
-                        ProfessionalSummaryWidget(
-                          data.professionalSummary,
-                          textStyle: textTheme.titleLarge?.copyWith(
-                            // Larger body text for wide screens
-                            color: colorScheme.onInverseSurface,
-                            height: 1.6,
-                            fontWeight: FontWeight.w300,
-                          ),
+                        const HighResolutionImage(
+                          assetPath:
+                              DsAssetsPhotos.professionalSuitDistractedPng,
+                          ratio: 3330 / 5000,
                         ),
                       ],
                     ),
                   ),
                 ),
+              ],
+            ),
+          ),
+
+          // OVERVIEW SECTION
+          Container(
+            width: double.infinity,
+            color: colorScheme.inverseSurface,
+            child: Center(
+              child: Container(
+                constraints: const BoxConstraints(maxWidth: 1000),
+                // Narrower for readability
+                padding: const EdgeInsets.symmetric(
+                  vertical: 80,
+                  horizontal: 32,
+                ),
+                child: Semantics(
+                  explicitChildNodes: true,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Overview',
+                        style: textTheme.displaySmall?.copyWith(
+                          // Larger header
+                          color: colorScheme.onInverseSurface,
+                        ),
+                      ),
+                      const SizedBox(height: 24),
+                      const Divider(thickness: 2),
+                      const SizedBox(height: 24),
+                      ProfessionalSummaryWidget(
+                        data.professionalSummary,
+                        textStyle: textTheme.titleLarge?.copyWith(
+                          // Larger body text for wide screens
+                          color: colorScheme.onInverseSurface,
+                          height: 1.6,
+                          fontWeight: FontWeight.w300,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

@@ -8,6 +8,7 @@ class HighResolutionImage extends StatelessWidget {
     required this.ratio,
     this.fadeDuration = const Duration(milliseconds: 800),
     this.alignment = Alignment.center,
+    this.useCacheHeight = true,
   });
 
   final String assetPath;
@@ -15,6 +16,7 @@ class HighResolutionImage extends StatelessWidget {
   final double ratio;
   final Duration fadeDuration;
   final AlignmentGeometry alignment;
+  final bool useCacheHeight;
 
   @override
   Widget build(BuildContext context) {
@@ -31,8 +33,8 @@ class HighResolutionImage extends StatelessWidget {
             assetPath,
             fit: fit,
             alignment: alignment,
-            cacheHeight:
-                calculatedCacheHeight > 0 ? calculatedCacheHeight : null,
+            cacheHeight: useCacheHeight ?
+                calculatedCacheHeight > 0 ? calculatedCacheHeight : null : null,
             frameBuilder: (context, child, frame, wasSynchronouslyLoaded) {
               if (wasSynchronouslyLoaded) return child;
 

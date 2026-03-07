@@ -5,10 +5,14 @@ import 'sizes/desktop/home_page_desktop.dart';
 import 'sizes/phone/home_page_phone.dart';
 import '../home_store.dart';
 import 'sizes/tablet/home_page_tablet.dart';
+import 'sizes/ultra_wide/home_page_ultra_wide.dart';
 import 'sizes/wide/home_page_wide.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key, required this.controller});
+  const HomePage({
+    super.key,
+    required this.controller,
+  });
 
   final HomeController controller;
 
@@ -55,6 +59,11 @@ class _HomePAgeState extends State<HomePage> {
           ),
       wide:
           (context) => HomePageWide(
+            onRefresh: init,
+            controller: controller,
+          ),
+      ultraWide:
+          (context) => HomePageUltraWide(
             onRefresh: init,
             controller: controller,
           ),
