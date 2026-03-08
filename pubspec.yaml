@@ -25,7 +25,7 @@ dependencies:
   error_handler_with_result:
     path: packages/error_handler_with_result
 
-
+  timelines_plus: ^2.0.0
   flutter_localization: ^0.3.3
   cupertino_icons: ^1.0.8
   flutter_svg: ^2.2.3

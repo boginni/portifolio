@@ -1,8 +1,10 @@
 import 'package:ds_assets/ds_assets.dart';
 import 'package:flutter/material.dart';
+import 'package:timelines_plus/timelines_plus.dart';
 
 import '../../../../app/extensions/context_extensions.dart';
 import '../../../../home/components/high_resolution_image.dart';
+import '../../../components/career_overview_component.dart';
 import '../../../components/experience_company_card_widget.dart';
 import '../../../experience_store.dart';
 
@@ -24,59 +26,12 @@ class ExperiencePageSuccessStateUltraWide extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         spacing: 32,
         children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0 * 2),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const SizedBox(
-                  height: 16 * 6,
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'My Experience',
-                      style: context.textTheme.displaySmall?.copyWith(
-                        color: context.colorScheme.surfaceContainerHighest,
-                      ),
-                    ),
-                    Text(
-                      'Senior Software Engineer',
-                      style: context.textTheme.bodyLarge?.copyWith(
-                        color: context.colorScheme.surfaceContainerHighest,
-                      ),
-                    ),
-                  ],
-                ),
-                const SizedBox(
-                  height: 32,
-                ),
-                Text(
-                  'Overview',
-                  style: context.textTheme.titleLarge,
-                ),
-                const Text(
-                  'Currently a Senior Software Engineer at Cognizant, contributing to MGM Rewards with a focus on complex UI and app architecture. ',
-                ),
-              ],
-            ),
+          const SizedBox(
+            height: 16 * 4,
           ),
-          ListView.builder(
-            shrinkWrap: true,
-            padding: const EdgeInsets.symmetric(horizontal: 16.0 * 2),
-            physics: const NeverScrollableScrollPhysics(),
-            itemCount: state.experienceCompanyList.length * 2 - 1,
-            itemBuilder: (context, index) {
-              if (index.isEven) {
-                return ExperienceCompanyCardWidget(
-                  experience: state.experienceCompanyList[index ~/ 2],
-                );
-              }
+          // _Grid(state: state),
+          _List(state: state),
 
-              return const SizedBox(height: 16);
-            },
-          ),
           Column(
             children: [
               SizedBox(
@@ -95,6 +50,72 @@ class ExperiencePageSuccessStateUltraWide extends StatelessWidget {
             ],
           ),
         ],
+      ),
+    );
+  }
+}
+
+class _List extends StatelessWidget {
+  const _List({super.key, required this.state});
+
+  final ExperienceStoreSuccessState state;
+
+  @override
+  Widget build(BuildContext context) {
+    final companies = state.experienceCompanyList;
+
+    final children = List<Widget>.generate(
+      companies.length,
+      (index) => ExperienceCompanyCardWidget(
+        experience: state.experienceCompanyList[index],
+      ),
+    );
+
+    children.insert(
+      0,
+      const Padding(
+        padding: EdgeInsets.only(bottom: 32.0),
+        child: CareerOverviewComponent(),
+      ),
+    );
+
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16.0 * 3),
+      child: FixedTimeline.tileBuilder(
+        theme: TimelineTheme.of(context).copyWith(
+          nodePosition: 0,
+        ),
+        builder: TimelineTileBuilder(
+          itemCount: children.length,
+          contentsAlign: ContentsAlign.basic,
+          contentsBuilder:
+              (context, index) => Padding(
+                padding: const EdgeInsets.only(
+                  left: 16.0,
+                  bottom: 16.0,
+                ),
+                child: children[index],
+              ),
+          indicatorBuilder:
+              (_, index) => Indicator.dot(
+                // borderWidth: 1.0,
+                color: context.colorScheme.primaryContainer,
+              ),
+          startConnectorBuilder:
+              (_, index) =>
+                  index == 0
+                      ? null
+                      : Connector.solidLine(
+                        color: context.colorScheme.primaryContainer,
+                      ),
+          endConnectorBuilder:
+              (_, index) =>
+                  index == children.length - 1
+                      ? null
+                      : Connector.solidLine(
+                        color: context.colorScheme.primaryContainer,
+                      ),
+        ),
       ),
     );
   }

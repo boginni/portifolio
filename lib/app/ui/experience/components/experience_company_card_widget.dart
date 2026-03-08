@@ -1,3 +1,4 @@
+import 'package:ds_assets/ds_assets.dart';
 import 'package:flutter/material.dart';
 
 import '../../../domain/dto/entities/resume_experience_entity.dart';
@@ -19,41 +20,48 @@ class ExperienceCompanyCardWidget extends StatelessWidget {
 
     return Card(
       elevation: 0,
-      shape: RoundedRectangleBorder(
-        side: BorderSide(color: colorScheme.outlineVariant),
-        borderRadius: BorderRadius.circular(16),
+      // Using ContinuousRectangleBorder for "Squircle" corners (smoother transition)
+      shape: ContinuousRectangleBorder(
+        side: BorderSide(color: colorScheme.outlineVariant.withOpacity(0.5)),
+        borderRadius: BorderRadius.circular(
+          16 * 3,
+        ), // High value for Continuous is required
       ),
       clipBehavior: Clip.antiAlias,
       child: InkWell(
         onTap: onTap,
+        // Subtle hover color to signify interactivity on Web
+        hoverColor: colorScheme.primary.withOpacity(0.04),
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
+          // Increased padding for a more "premium" air
+          padding: const EdgeInsets.all(24.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
-                    width: 48,
-                    height: 48,
+                    width: 16 * 5, // Slightly larger for better branding visibility
+                    height: 16 * 5,
                     decoration: BoxDecoration(
                       color: colorScheme.surfaceContainerHighest,
-                      borderRadius: BorderRadius.circular(12),
+                      borderRadius: BorderRadius.circular(16),
                     ),
                     child: ClipRRect(
-                      borderRadius: BorderRadius.circular(12),
+                      borderRadius: BorderRadius.circular(16),
                       child: Image.asset(
-                        experience.icon,
+                        DsAssetsResources.logoCognizantJpg,
+                        fit: BoxFit.cover,
                         errorBuilder:
                             (context, _, _) => Icon(
-                              Icons.work_outline,
+                              Icons.business_rounded,
                               color: colorScheme.primary,
                             ),
                       ),
                     ),
                   ),
-                  const SizedBox(width: 16),
+                  const SizedBox(width: 20),
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -61,22 +69,33 @@ class ExperienceCompanyCardWidget extends StatelessWidget {
                         Text(
                           experience.title,
                           style: theme.textTheme.titleMedium?.copyWith(
-                            fontWeight: FontWeight.bold,
                             color: colorScheme.onSurface,
                           ),
                         ),
-                        Text(
-                          experience.subtitle,
-                          style: theme.textTheme.bodyMedium?.copyWith(
-                            color: colorScheme.onSurfaceVariant,
-                          ),
+                        Row(
+                          children: [
+                            Icon(
+                              Icons.work_outline_rounded,
+                              size: 16,
+                              color: colorScheme.onSurfaceVariant,
+                            ),
+                            const SizedBox(width: 4),
+                            Text(
+                              experience.subtitle,
+                              style: theme.textTheme.labelMedium?.copyWith(
+                                color: colorScheme.onSurfaceVariant,
+                              ),
+                            ),
+                          ],
                         ),
-                        const SizedBox(height: 4),
+                        const SizedBox(height: 8),
                         Text(
-                          '${experience.startDate} — ${experience.endDate}',
+                          '${experience.startDate} — ${experience.endDate}'
+                              .toUpperCase(),
                           style: theme.textTheme.labelSmall?.copyWith(
                             color: colorScheme.secondary,
-                            letterSpacing: 0.5,
+                            letterSpacing: 1.2,
+                            fontWeight: FontWeight.bold,
                           ),
                         ),
                       ],
@@ -84,14 +103,14 @@ class ExperienceCompanyCardWidget extends StatelessWidget {
                   ),
                 ],
               ),
-              const Padding(
-                padding: EdgeInsets.symmetric(vertical: 12.0),
-                child: Divider(height: 1),
+              const Divider(
+                thickness: 1,
               ),
               Text(
                 experience.description,
                 style: theme.textTheme.bodyMedium?.copyWith(
                   color: colorScheme.onSurfaceVariant,
+                  height: 1.6,
                 ),
               ),
             ],
