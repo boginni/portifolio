@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../app/extensions/context_extensions.dart';
+
 class SocialIconWidget extends StatelessWidget {
   const SocialIconWidget(
     this.icon, {
@@ -14,13 +16,13 @@ class SocialIconWidget extends StatelessWidget {
       margin: const EdgeInsets.only(right: 15),
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: Colors.grey[300],
+        color: context.colorScheme.surfaceContainerHighest,
         borderRadius: BorderRadius.circular(4),
-        boxShadow: const [
+        boxShadow: [
           BoxShadow(
-            color: Colors.black12,
+            color: context.colorScheme.outline,
             blurRadius: 4,
-            offset: Offset(0, 2),
+            offset: const Offset(0, 2),
           ),
         ],
       ),

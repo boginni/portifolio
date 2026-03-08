@@ -6,6 +6,8 @@ class DsAssetsPhotos {
 
   static const _prefix = 'packages/$packageName';
 
+  static String path() => '$_prefix/assets/photos/';
+
   static const String faceSweaterStraightPng = '$_prefix/assets/photos/face_sweater_straight.png';
   static const String flutterBrPng = '$_prefix/assets/photos/flutter_br.png';
   static const String professionalFullSuitSeriousPng = '$_prefix/assets/photos/professional_full_suit_serious.png';

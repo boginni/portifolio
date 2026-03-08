@@ -36,6 +36,10 @@ void main() {
     buffer.writeln('  const $className._();\n');
     buffer.writeln("  static const _prefix = 'packages/\$packageName';\n");
 
+    // --- ADDED PATH VARIABLE ---
+    // Provides the base directory path for this specific asset category
+    buffer.writeln("  static String path() => '\$_prefix/assets/$folderName/';\n");
+
     final seenNames = <String>{};
     final files = subDir
         .listSync(recursive: true)
