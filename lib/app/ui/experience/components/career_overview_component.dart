@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 
+import '../../../domain/dto/entities/resume_experience_entity.dart';
+
 class CareerOverviewComponent extends StatelessWidget {
-  const CareerOverviewComponent({super.key});
+  const CareerOverviewComponent({
+    super.key,
+    required this.experience,
+  });
+
+  final ResumeExperienceEntity experience;
 
   @override
   Widget build(BuildContext context) {
@@ -28,9 +35,7 @@ class CareerOverviewComponent extends StatelessWidget {
         ),
         const SizedBox(height: 8),
         Text(
-          'Specializing in building scalable, high-performance cross-platform applications. '
-          'I bridge the gap between complex app architecture and pixel-perfect UI, '
-          'with a deep focus on SOLID principles and automated testing to ensure long-term maintainability.',
+          experience.overview,
           style: theme.textTheme.bodyLarge?.copyWith(
             color: colorScheme.onSurfaceVariant,
             height: 1.6,
@@ -39,14 +44,24 @@ class CareerOverviewComponent extends StatelessWidget {
         const SizedBox(height: 32),
         const Divider(),
         const SizedBox(height: 32),
-        const Row(
+        Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            _StatItem(value: '7+', label: 'Years Exp.'),
-            _StatItem(value: '2M+', label: 'Users Impacted'),
-            _StatItem(value: '97%', label: 'Error-free'),
-            _StatItem(value: '50+', label: 'Projects'),
-          ],
+          children:
+              experience.kpis
+                  .map(
+                    (kpi) => _StatItem(
+                      value: kpi.value,
+                      label: kpi.name,
+                    ),
+                  )
+                  .toList(),
+
+          // [
+          //   _StatItem(value: '7+', label: 'Years Exp.'),
+          //   _StatItem(value: '2M+', label: 'Users Impacted'),
+          //   _StatItem(value: '97%', label: 'Error-free'),
+          //   _StatItem(value: '50+', label: 'Projects'),
+          // ],
         ),
       ],
     );

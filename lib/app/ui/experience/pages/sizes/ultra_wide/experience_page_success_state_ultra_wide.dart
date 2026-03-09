@@ -57,20 +57,22 @@ class _List extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final companies = state.experienceCompanyList;
+    final companies = state.experienceObject.experienceCompanyList;
 
     final children = List<Widget>.generate(
       companies.length,
       (index) => ExperienceCompanyCardWidget(
-        experience: state.experienceCompanyList[index],
+        experience: companies[index],
       ),
     );
 
     children.insert(
       0,
-      const Padding(
+      Padding(
         padding: EdgeInsets.only(bottom: 32.0),
-        child: CareerOverviewComponent(),
+        child: CareerOverviewComponent(
+          experience: state.experienceObject,
+        ),
       ),
     );
 

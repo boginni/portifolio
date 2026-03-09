@@ -1,5 +1,6 @@
 import 'package:ds_assets/ds_assets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 
 import '../../app/components/responsive_builder.dart';
 import '../../app/extensions/context_extensions.dart';
@@ -51,6 +52,7 @@ class SideBarComponent extends StatelessWidget {
               controller: contactController,
               forceDisplaySize: ResponsiveDisplaySizeEnum.wide,
             ),
+
             const SizedBox(
               height: 16 * 2,
             ),

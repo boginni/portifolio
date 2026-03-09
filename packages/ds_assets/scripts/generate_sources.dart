@@ -38,7 +38,8 @@ void main() {
 
     // --- ADDED PATH VARIABLE ---
     // Provides the base directory path for this specific asset category
-    buffer.writeln("  static String path() => '\$_prefix/assets/$folderName/';\n");
+    buffer.writeln(
+        "  static String path() => '\$_prefix/assets/$folderName/';\n");
 
     final seenNames = <String>{};
     final files = subDir
@@ -49,6 +50,8 @@ void main() {
 
     // Sort files alphabetically for consistent generation
     files.sort((a, b) => a.path.compareTo(b.path));
+
+    final variables = <String>[];
 
     for (final file in files) {
       final extension = file.path.split('.').last.toLowerCase();
@@ -72,12 +75,25 @@ void main() {
       final variableName = _toCamelCase(nameWithExtension, seenNames);
       seenNames.add(variableName);
 
+      variables.add(variableName);
+
       final assetPath =
           finalFile.path.replaceAll(r'\', '/').split('assets/').last;
       buffer.writeln(
         "  static const String $variableName = '\$_prefix/assets/$assetPath';",
       );
     }
+
+    buffer.writeln('');
+    buffer.writeln('  static List<String> values() => [');
+
+    for (final v in variables) {
+      buffer.writeln('        $v,');
+    }
+
+    buffer.writeln(
+      '      ];',
+    );
 
     buffer.writeln('}');
 

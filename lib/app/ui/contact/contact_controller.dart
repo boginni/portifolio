@@ -1,10 +1,10 @@
 import '../../domain/dto/entities/resume_contact_entity.dart';
-import '../../domain/repositories/resume_contact_repository.dart';
+import '../../domain/repositories/resume_information_repository.dart';
 import '../app/store/generic_store.dart';
 
 class ContactController {
   final GenericStore<ResumeContactEntity> store;
-  final ResumeContactRepository experiencesRepository;
+  final ResumeInformationRepository experiencesRepository;
 
   const ContactController(
     this.experiencesRepository, {

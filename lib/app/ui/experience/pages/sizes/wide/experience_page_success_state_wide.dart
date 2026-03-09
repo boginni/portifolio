@@ -54,8 +54,8 @@ class ExperiencePageSuccessStateWide extends StatelessWidget {
                 'Overview',
                 style: context.textTheme.titleLarge,
               ),
-              const Text(
-                'Currently a Senior Software Engineer at Cognizant, contributing to MGM Rewards with a focus on complex UI and app architecture. ',
+              Text(
+                state.experienceObject.overview,
               ),
             ],
           ),
@@ -64,11 +64,11 @@ class ExperiencePageSuccessStateWide extends StatelessWidget {
           shrinkWrap: true,
           padding: const EdgeInsets.symmetric(horizontal: 16.0 * 2),
           physics: const NeverScrollableScrollPhysics(),
-          itemCount: state.experienceCompanyList.length * 2 - 1,
+          itemCount: state.experienceObject.experienceCompanyList.length * 2 - 1,
           itemBuilder: (context, index) {
             if (index.isEven) {
               return ExperienceCompanyCardWidget(
-                experience: state.experienceCompanyList[index ~/ 2],
+                experience: state.experienceObject.experienceCompanyList[index ~/ 2],
               );
             }
 

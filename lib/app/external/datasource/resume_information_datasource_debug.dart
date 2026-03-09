@@ -1,4 +1,81 @@
+import 'dart:convert';
 
+import 'package:dio/dio.dart';
+import 'package:error_handler_with_result/error_handler_with_result.dart';
+
+import '../../domain/dto/entities/resume_contact_entity.dart';
+import '../../domain/dto/entities/resume_experience_company_entity.dart';
+import '../../domain/dto/entities/resume_experience_entity.dart';
+import '../../domain/dto/entities/resume_overview_entity.dart';
+import 'resume_information_datasource.dart';
+
+class ResumeInformationDatasourceDebug implements ResumeInformationDatasource {
+  const ResumeInformationDatasourceDebug(this.dio);
+
+  final Dio dio;
+
+  @override
+  Future<ResumeContactEntity> getResumeContact() async {
+    final response = await dio.get(
+      'https://raw.githubusercontent.com/boginni/portifolio/refs/heads/main/github_files/contact.json',
+    );
+
+    if (response.statusCode == 200) {
+      final data = response.data;
+
+      final jsonData = jsonDecode(data);
+
+      return ResumeContactEntity.fromJson(jsonData);
+    }
+
+    throw UnknownFailure(
+      'Failed to fetch resume Contact: ${response.statusCode}',
+      StackTrace.current,
+    );
+  }
+
+  @override
+  Future<ResumeExperienceEntity> getResumeExperiences() async {
+    final response = await dio.get(
+      'https://raw.githubusercontent.com/boginni/portifolio/refs/heads/main/github_files/experience.json',
+    );
+
+    if (response.statusCode == 200) {
+      final data = response.data;
+
+      final jsonData = jsonDecode(json);
+
+      return ResumeExperienceEntity.fromJson(jsonData);
+    }
+
+    throw UnknownFailure(
+      'Failed to fetch resume overview: ${response.statusCode}',
+      StackTrace.current,
+    );
+  }
+
+  @override
+  Future<ResumeOverviewEntity> getResumeOverview() async {
+    final response = await dio.get(
+      'https://raw.githubusercontent.com/boginni/portifolio/refs/heads/main/github_files/overview.json',
+    );
+
+    if (response.statusCode == 200) {
+      final data = response.data;
+
+      final jsonData = jsonDecode(data);
+
+      return ResumeOverviewEntity.fromJson(jsonData);
+    }
+
+    throw UnknownFailure(
+      'Failed to fetch resume overview: ${response.statusCode}',
+      StackTrace.current,
+    );
+  }
+}
+
+const json = r'''
 {
   "overview" : "Specializing in building scalable, high-performance cross-platform applications. I bridge the gap between complex app architecture and pixel-perfect UI, with a deep focus on SOLID principles and automated testing to ensure long-term maintainability.",
   "kpis": [
@@ -131,3 +208,4 @@
     }
   ]
 }
+''';

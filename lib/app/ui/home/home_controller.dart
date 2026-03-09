@@ -1,10 +1,10 @@
-import '../../domain/repositories/resume_overview_repository.dart';
+import '../../domain/repositories/resume_information_repository.dart';
 import 'home_store.dart';
 
 class HomeController {
   final HomeStore store;
 
-  final ResumeOverviewRepository resumeOverviewRepository;
+  final ResumeInformationRepository resumeOverviewRepository;
 
   const HomeController(
     this.resumeOverviewRepository, {

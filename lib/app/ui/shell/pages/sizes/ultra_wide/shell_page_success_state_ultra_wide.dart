@@ -99,27 +99,22 @@ class ShellPageSuccessStateUltraWide extends StatelessWidget {
                                 HomePage(
                                   controller: controller.homeController,
                                 ),
-                                Container(
-                                  constraints: const BoxConstraints(
-                                    maxWidth: 1080,
-                                  ),
-                                  padding: const EdgeInsets.symmetric(
-                                    horizontal: 16 * 2,
-                                  ),
-                                  child: Column(
-                                    children: [
-                                      const Divider(thickness: 2),
-                                      const SizedBox(height: 16 * 4),
-                                      InverseBrightnessBuilder(
-                                        builder: (context, theme) {
-                                          return const ProfessionalBackgroundComponent();
-                                        },
-                                      ),
-                                    ],
-                                  ),
+                                Column(
+                                  children: [
+                                    InverseBrightnessBuilder(
+                                      builder: (context, theme) {
+                                        return const ProfessionalBackgroundComponent();
+                                      },
+                                    ),
+                                  ],
                                 ),
                                 const SizedBox(height: 16 * 4),
-                                EventsPage(),
+                                Image.network(
+                                  context.isDarkMode
+                                      ? 'https://wakatime.com/share/@boginni/377bf0cc-80c8-4263-b9a2-2e06c5535e36.png'
+                                      : 'https://wakatime.com/share/@boginni/f9e946db-3a4f-4866-a680-4c74e7e26833.png',
+                                ),
+                                const EventsPage(),
                                 const SizedBox(height: 16 * 4),
                                 Padding(
                                   padding: const EdgeInsets.symmetric(

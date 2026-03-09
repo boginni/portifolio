@@ -1,26 +1,29 @@
+import 'package:dio/dio.dart';
+import 'package:flutter/foundation.dart';
 import 'package:get_it/get_it.dart';
 
-import '../../domain/repositories/resume_contact_repository.dart';
-import '../../domain/repositories/resume_experiences_repository.dart';
-import '../../domain/repositories/resume_overview_repository.dart';
-import '../../external/repositories/resume_contact_repository_impl.dart';
-import '../../external/repositories/resume_experiences_repository_impl.dart';
-import '../../external/repositories/resume_overview_repository_impl.dart';
+import '../../domain/repositories/resume_information_repository.dart';
+import '../../external/datasource/resume_information_datasource.dart';
+import '../../external/datasource/resume_information_datasource_debug.dart';
+import '../../external/repositories/resume_information_repository_impl.dart';
 import 'controllers/app_store.dart';
 
 class AppDependencies {
   static final GetIt _app = GetIt.asNewInstance();
 
   static void init() {
+    _app.registerSingleton(Dio());
     _app.registerSingleton(AppStore());
-    _app.registerFactory<ResumeOverviewRepository>(
-      ResumeOverviewRepositoryImpl.new,
+    _app.registerFactory<ResumeInformationDatasource>(
+      () =>
+          kDebugMode
+              ? ResumeInformationDatasourceDebug(_app.get())
+              : ResumeInformationDatasourceImpl(_app.get()),
     );
-    _app.registerFactory<ResumeExperiencesRepository>(
-      ResumeExperiencesRepositoryImpl.new,
-    );
-    _app.registerFactory<ResumeContactRepository>(
-      ResumeContactRepositoryImpl.new,
+    _app.registerFactory<ResumeInformationRepository>(
+      () => ResumeInformationRepositoryImpl(
+        _app.get(),
+      ),
     );
   }
 

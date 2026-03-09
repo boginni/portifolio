@@ -1,39 +1,40 @@
+import 'kpi_entity.dart';
+import 'resume_experience_company_entity.dart';
+
 class ResumeExperienceEntity {
-  final String title;
-  final String subtitle;
-  final String description;
-  final String icon;
-  final String startDate;
-  final String endDate;
+  final String overview;
+  final List<ResumeExperienceCompanyEntity> experienceCompanyList;
+  final List<KpiEntity> kpis;
 
   const ResumeExperienceEntity({
-    required this.title,
-    required this.subtitle,
-    required this.description,
-    required this.icon,
-    required this.startDate,
-    required this.endDate,
+    required this.overview,
+    required this.experienceCompanyList,
+    required this.kpis,
   });
 
   factory ResumeExperienceEntity.fromJson(Map<String, dynamic> json) {
+    final experienceCompanyList =
+        (json['experiences'] as List<dynamic>)
+            .map((item) => ResumeExperienceCompanyEntity.fromJson(item))
+            .toList();
+
+    final kpis = (json['kpis'] as List<dynamic>)
+        .map((item) => KpiEntity.fromJson(item))
+        .toList();
+
     return ResumeExperienceEntity(
-      title: json['title'] ?? '',
-      subtitle: json['subtitle'] ?? '',
-      description: json['description'] ?? '',
-      icon: json['icon'] ?? '',
-      startDate: json['startDate'] ?? '',
-      endDate: json['endDate'] ?? '',
+      overview: json['overview'] ?? '',
+      experienceCompanyList: experienceCompanyList,
+      kpis: kpis,
     );
   }
 
   Map<String, dynamic> toJson() {
     return {
-      'title': title,
-      'subtitle': subtitle,
-      'description': description,
-      'icon': icon,
-      'startDate': startDate,
-      'endDate': endDate,
+      'overview': overview,
+      'experiences':
+          experienceCompanyList.map((company) => company.toJson()).toList(),
+      'kpis': kpis.map((kpi) => kpi.toJson()).toList(),
     };
   }
 }

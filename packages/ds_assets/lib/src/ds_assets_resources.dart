@@ -22,4 +22,21 @@ class DsAssetsResources {
   static const String logoRecupJpg = '$_prefix/assets/resources/logo_recup.jpg';
   static const String logoSeaJpg = '$_prefix/assets/resources/logo_sea.jpg';
   static const String logoYukemJpg = '$_prefix/assets/resources/logo_yukem.jpg';
+
+  static List<String> values() => [
+        curriculumVitaeSvgrepoComSvg,
+        github142SvgrepoComSvg,
+        linkedinSvgrepoComSvg,
+        logoAltheroJpg,
+        logoCognizantJpg,
+        logoDentistaJpg,
+        logoExmioJpg,
+        logoFarmaciasappJpg,
+        logoFlutterbrasilJpg,
+        logoMgmResortsInternationalJpg,
+        logoPupzJpg,
+        logoRecupJpg,
+        logoSeaJpg,
+        logoYukemJpg,
+      ];
 }

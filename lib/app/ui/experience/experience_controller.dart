@@ -1,10 +1,10 @@
-import '../../domain/dto/entities/resume_experience_entity.dart';
-import '../../domain/repositories/resume_experiences_repository.dart';
+import '../../domain/dto/entities/resume_experience_company_entity.dart';
+import '../../domain/repositories/resume_information_repository.dart';
 import 'experience_store.dart';
 
 class ExperienceController {
   final ExperienceStore store;
-  final ResumeExperiencesRepository experiencesRepository;
+  final ResumeInformationRepository experiencesRepository;
 
   const ExperienceController(
     this.experiencesRepository, {
@@ -21,10 +21,10 @@ class ExperienceController {
       result.failure.throwError();
     }
 
-    final List<ResumeExperienceEntity> experienceCompanyList = result.success;
+    final experienceCompanyList = result.success;
 
     final state = ExperienceStoreState.success(
-      experienceCompanyList: experienceCompanyList,
+      experienceObject: experienceCompanyList,
     );
 
     store.state = state;

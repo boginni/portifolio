@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 
 class AppFooter extends StatelessWidget {
   const AppFooter({super.key});

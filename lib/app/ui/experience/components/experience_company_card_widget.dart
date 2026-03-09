@@ -1,7 +1,7 @@
 import 'package:ds_assets/ds_assets.dart';
 import 'package:flutter/material.dart';
 
-import '../../../domain/dto/entities/resume_experience_entity.dart';
+import '../../../domain/dto/entities/resume_experience_company_entity.dart';
 
 class ExperienceCompanyCardWidget extends StatelessWidget {
   const ExperienceCompanyCardWidget({
@@ -10,7 +10,7 @@ class ExperienceCompanyCardWidget extends StatelessWidget {
     this.onTap,
   });
 
-  final ResumeExperienceEntity experience;
+  final ResumeExperienceCompanyEntity experience;
   final VoidCallback? onTap;
 
   @override
@@ -20,20 +20,17 @@ class ExperienceCompanyCardWidget extends StatelessWidget {
 
     return Card(
       elevation: 0,
-      // Using ContinuousRectangleBorder for "Squircle" corners (smoother transition)
       shape: ContinuousRectangleBorder(
-        side: BorderSide(color: colorScheme.outlineVariant.withOpacity(0.5)),
+        side: BorderSide(color: colorScheme.outline),
         borderRadius: BorderRadius.circular(
           16 * 3,
-        ), // High value for Continuous is required
+        ),
       ),
       clipBehavior: Clip.antiAlias,
       child: InkWell(
         onTap: onTap,
-        // Subtle hover color to signify interactivity on Web
-        hoverColor: colorScheme.primary.withOpacity(0.04),
+        hoverColor: colorScheme.surfaceContainerHighest,
         child: Padding(
-          // Increased padding for a more "premium" air
           padding: const EdgeInsets.all(24.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -42,7 +39,7 @@ class ExperienceCompanyCardWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
-                    width: 16 * 5, // Slightly larger for better branding visibility
+                    width: 16 * 5,
                     height: 16 * 5,
                     decoration: BoxDecoration(
                       color: colorScheme.surfaceContainerHighest,
@@ -51,7 +48,7 @@ class ExperienceCompanyCardWidget extends StatelessWidget {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(16),
                       child: Image.asset(
-                        DsAssetsResources.logoCognizantJpg,
+                        DsAssetsResources.path() + experience.icon,
                         fit: BoxFit.cover,
                         errorBuilder:
                             (context, _, _) => Icon(

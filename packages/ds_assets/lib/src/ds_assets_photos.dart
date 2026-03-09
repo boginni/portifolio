@@ -16,4 +16,15 @@ class DsAssetsPhotos {
   static const String purpleTCrossedArmsPng = '$_prefix/assets/photos/purple_t_crossed_arms.png';
   static const String tdcPng = '$_prefix/assets/photos/tdc.png';
   static const String workingMacPng = '$_prefix/assets/photos/working_mac.png';
+
+  static List<String> values() => [
+        faceSweaterStraightPng,
+        flutterBrPng,
+        professionalFullSuitSeriousPng,
+        professionalPortraitSweaterApproachablePng,
+        professionalSuitDistractedPng,
+        purpleTCrossedArmsPng,
+        tdcPng,
+        workingMacPng,
+      ];
 }
