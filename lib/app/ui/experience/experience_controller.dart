@@ -1,4 +1,3 @@
-import '../../domain/dto/entities/resume_experience_company_entity.dart';
 import '../../domain/repositories/resume_information_repository.dart';
 import 'experience_store.dart';
 

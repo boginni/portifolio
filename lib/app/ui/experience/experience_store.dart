@@ -1,6 +1,5 @@
 import 'package:flutter/foundation.dart';
 
-import '../../domain/dto/entities/resume_experience_company_entity.dart';
 import '../../domain/dto/entities/resume_experience_entity.dart';
 
 class ExperienceStore extends ChangeNotifier

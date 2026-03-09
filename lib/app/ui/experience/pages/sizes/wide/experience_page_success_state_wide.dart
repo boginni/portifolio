@@ -2,7 +2,6 @@ import 'package:ds_assets/ds_assets.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../app/extensions/context_extensions.dart';
-import '../../../../home/components/high_resolution_image.dart';
 import '../../../components/experience_company_card_widget.dart';
 import '../../../experience_store.dart';
 

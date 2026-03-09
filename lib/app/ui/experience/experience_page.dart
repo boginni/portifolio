@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import '../app/components/responsive_builder.dart';
-import '../app/generic_state_pages/generic_failure_state_page.dart';
-import '../app/generic_state_pages/generic_loading_state_page.dart';
 import 'experience_controller.dart';
 import 'pages/sizes/phone/experience_page_phone.dart';
-import 'pages/sizes/phone/experience_page_success_state_phone.dart';
 import 'experience_store.dart';
 import 'pages/sizes/ultra_wide/experience_page_ultra_wide.dart';
 import 'pages/sizes/wide/experience_page_wide.dart';

@@ -1,10 +1,6 @@
-import 'dart:convert';
-
-import 'package:dio/dio.dart';
 import 'package:error_handler_with_result/error_handler_with_result.dart';
 
 import '../../domain/dto/entities/resume_contact_entity.dart';
-import '../../domain/dto/entities/resume_experience_company_entity.dart';
 import '../../domain/dto/entities/resume_experience_entity.dart';
 import '../../domain/dto/entities/resume_overview_entity.dart';
 import '../../domain/repositories/resume_information_repository.dart';

@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../../../app/components/responsive_builder.dart';
-import '../../../../app/extensions/context_extensions.dart';
-import '../../../../contact/contact_page.dart';
 import '../../../../experience/experience_page.dart';
 import '../../../../home/pages/home_page.dart';
 import '../../../../skills/professional_background_component.dart';

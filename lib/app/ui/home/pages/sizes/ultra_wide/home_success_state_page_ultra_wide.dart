@@ -2,11 +2,9 @@ import 'package:ds_assets/ds_assets.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../domain/dto/entities/resume_overview_entity.dart';
-import '../../../../app/components/inverse_brightness_builder.dart';
 import '../../../../app/extensions/context_extensions.dart';
 import '../../../components/background_split.dart';
 import '../../../components/high_resolution_image.dart';
-import '../../../../skills/professional_background_component.dart';
 import '../../../components/professional_summary_widget.dart';
 import '../../../components/social_icon_widget.dart';
 

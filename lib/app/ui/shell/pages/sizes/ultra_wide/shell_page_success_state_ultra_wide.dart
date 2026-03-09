@@ -1,10 +1,8 @@
-import 'package:ds_assets/ds_assets.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../app/components/inverse_brightness_builder.dart';
 import '../../../../app/components/responsive_builder.dart';
 import '../../../../app/extensions/context_extensions.dart';
-import '../../../../contact/contact_page.dart';
 import '../../../../events/events_page.dart';
 import '../../../../experience/experience_page.dart';
 import '../../../../footer/footer_component.dart';

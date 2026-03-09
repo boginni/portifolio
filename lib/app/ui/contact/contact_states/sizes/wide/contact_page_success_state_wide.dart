@@ -1,4 +1,3 @@
-import 'package:ds_assets/ds_assets.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../domain/dto/entities/resume_contact_entity.dart';
