@@ -97,65 +97,9 @@ class HomeSuccessStatePageUltraWide extends StatelessWidget {
             color: colorScheme.inverseSurface,
             child: Center(
               child: Container(
-                constraints: const BoxConstraints(maxWidth: 1000),
+                constraints: const BoxConstraints(maxWidth: 1080),
                 padding: const EdgeInsets.symmetric(
-                  vertical: 80,
-                  horizontal: 32,
-                ),
-                child: Semantics(
-                  explicitChildNodes: true,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Overview',
-                        style: textTheme.displaySmall?.copyWith(
-                          color: colorScheme.onInverseSurface,
-                        ),
-                      ),
-                      const SizedBox(height: 16),
-                      const Divider(thickness: 2),
-                      const SizedBox(height: 16),
-                      ProfessionalSummaryWidget(
-                        data.professionalSummary,
-                        textStyle: textTheme.titleLarge?.copyWith(
-                          color: colorScheme.onInverseSurface,
-                          height: 1.6,
-                          fontWeight: FontWeight.w300,
-                        ),
-                      ),
-                      const SizedBox(height: 16),
-                      const Divider(thickness: 2),
-                      const SizedBox(height: 16),
-                      InverseBrightnessBuilder(
-                        builder: (context, theme) {
-                          return const ProfessionalBackgroundComponent();
-                        },
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          ),
-          const SizedBox(
-            height: 720,
-            width: double.infinity,
-            child: HighResolutionImage(
-              assetPath: DsAssetsPhotos.tdcPng,
-              fit: BoxFit.cover,
-              ratio: 1,
-              useCacheHeight: false,
-            ),
-          ),
-          Container(
-            width: double.infinity,
-            color: colorScheme.inverseSurface,
-            child: Center(
-              child: Container(
-                constraints: const BoxConstraints(maxWidth: 1000),
-                padding: const EdgeInsets.symmetric(
-                  vertical: 16 * 2,
+                  vertical: 16 * 4,
                   horizontal: 16 * 2,
                 ),
                 child: Semantics(
@@ -163,10 +107,22 @@ class HomeSuccessStatePageUltraWide extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        'The Developers Conference - SP | 2025',
-                        style: textTheme.displaySmall?.copyWith(
+                      Row(
+                        children: [
+                          Text(
+                            'About me',
+                            style: textTheme.displaySmall?.copyWith(
+                              color: colorScheme.onInverseSurface,
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 16),
+                      ProfessionalSummaryWidget(
+                        data.professionalSummary,
+                        textStyle: textTheme.titleLarge?.copyWith(
                           color: colorScheme.onInverseSurface,
+                          height: 1.6,
                         ),
                       ),
                     ],

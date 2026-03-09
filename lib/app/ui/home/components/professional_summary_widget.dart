@@ -14,10 +14,11 @@ class ProfessionalSummaryWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final paragraphs = data.slipParagraphs();
+
     return Column(
       children:
-          data
-              .slipParagraphs()
+          paragraphs
               .map(
                 (e) => Padding(
                   padding: const EdgeInsets.only(bottom: 8),

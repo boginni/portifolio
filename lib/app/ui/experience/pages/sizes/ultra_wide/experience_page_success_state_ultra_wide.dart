@@ -20,37 +20,32 @@ class ExperiencePageSuccessStateUltraWide extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      color: context.colorScheme.surface,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        spacing: 32,
-        children: [
-          const SizedBox(
-            height: 16 * 4,
-          ),
-          // _Grid(state: state),
-          _List(state: state),
-
-          Column(
-            children: [
-              SizedBox(
-                height: 16 * 10 * 10,
-                width: double.infinity,
-                child: HighResolutionImage(
-                  assetPath:
-                      context.isDarkMode
-                          ? DsAssetsPhotos.professionalFullSuitSeriousPng
-                          : DsAssetsPhotos.workingMacPng,
-                  fit: BoxFit.fitWidth,
-                  alignment: Alignment.topCenter,
-                  ratio: 3330 / 5000,
-                ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      spacing: 32,
+      children: [
+        const SizedBox(
+          height: 16 * 4,
+        ),
+        _List(state: state),
+        Column(
+          children: [
+            SizedBox(
+              height: 16 * 10 * 10,
+              width: double.infinity,
+              child: HighResolutionImage(
+                assetPath:
+                    context.isDarkMode
+                        ? DsAssetsPhotos.professionalFullSuitSeriousPng
+                        : DsAssetsPhotos.workingMacPng,
+                fit: BoxFit.fitWidth,
+                alignment: Alignment.topCenter,
+                ratio: 3330 / 5000,
               ),
-            ],
-          ),
-        ],
-      ),
+            ),
+          ],
+        ),
+      ],
     );
   }
 }

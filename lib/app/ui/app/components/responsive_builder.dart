@@ -29,36 +29,32 @@ class ResponsiveBuilder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        final width = MediaQuery.of(context).size.width;
+    final width = MediaQuery.of(context).size.width;
 
-        final builder = () {
-          if (forceDisplaySize != null) {
-            return switch (forceDisplaySize!) {
-                  ResponsiveDisplaySizeEnum.ultraWide =>
-                    ultraWide ?? wide ?? desktop ?? tablet,
+    final builder = () {
+      if (forceDisplaySize != null) {
+        return switch (forceDisplaySize!) {
+              ResponsiveDisplaySizeEnum.ultraWide =>
+                ultraWide ?? wide ?? desktop ?? tablet,
 
-                  ResponsiveDisplaySizeEnum.wide => wide ?? desktop ?? tablet,
-                  ResponsiveDisplaySizeEnum.desktop => desktop ?? tablet,
-                  ResponsiveDisplaySizeEnum.tablet => tablet,
-                  ResponsiveDisplaySizeEnum.phone => phone,
-                } ??
-                phone;
-          }
+              ResponsiveDisplaySizeEnum.wide => wide ?? desktop ?? tablet,
+              ResponsiveDisplaySizeEnum.desktop => desktop ?? tablet,
+              ResponsiveDisplaySizeEnum.tablet => tablet,
+              ResponsiveDisplaySizeEnum.phone => phone,
+            } ??
+            phone;
+      }
 
-          return switch (width) {
-                >= 2560 => ultraWide ?? wide ?? desktop ?? tablet,
-                >= 1440 => wide ?? desktop ?? tablet,
-                >= 1024 => desktop ?? tablet,
-                >= 600 => tablet,
-                _ => null,
-              } ??
-              phone;
-        }();
+      return switch (width) {
+            >= 2560 => ultraWide ?? wide ?? desktop ?? tablet,
+            >= 1440 => wide ?? desktop ?? tablet,
+            >= 1024 => desktop ?? tablet,
+            >= 600 => tablet,
+            _ => null,
+          } ??
+          phone;
+    }();
 
-        return builder(context);
-      },
-    );
+    return builder(context);
   }
 }
