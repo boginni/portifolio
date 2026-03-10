@@ -96046,7 +96046,7 @@ break
 case 0:q=r.c
 break
 default:q=null}return q==null?r.c:q}s=this.b
-A:{if(s>=2560){q=r.r
+A:{if(s>=2180){q=r.r
 if(q==null)q=r.f
 break A}if(s>=1440){q=r.f
 break A}if(s>=1024){q=r.e
