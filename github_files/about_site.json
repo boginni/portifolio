@@ -3,32 +3,32 @@
   "description": "This portfolio serves as a live technical demonstration of enterprise-grade Flutter development. Instead of a static build, it operates as a dynamic system with real-world infrastructure.",
   "features": [
     {
-      "icon": "sync_rounded",
+      "icon": "0xf0207",
       "title": "Dynamic Data",
       "description": "Experience data fetched via GitHub API."
     },
     {
-      "icon": "rocket_launch_rounded",
+      "icon": "0xf0372",
       "title": "CI/CD Pipeline",
       "description": "Automated builds via GitHub Actions."
     },
     {
-      "icon": "devices_rounded",
+      "icon": "0xf6a8",
       "title": "Responsive Architecture",
       "description": "Reactive layout for 5 breakpoints."
     },
     {
-      "icon": "translate_rounded",
+      "icon": "0xf0250",
       "title": "Localization",
       "description": "Full i18n support & translations."
     },
     {
-      "icon": "analytics_rounded",
+      "icon": "0xf561",
       "title": "Monitoring",
       "description": "Firebase Crashlytics & Event tracking."
     },
     {
-      "icon": "shield_rounded",
+      "icon": "0xf016b",
       "title": "Security",
       "description": "Cloudflare edge protection."
     }
