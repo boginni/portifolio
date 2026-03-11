@@ -1,209 +1,177 @@
 import 'dart:convert';
 
-import 'package:dio/dio.dart';
-import 'package:error_handler_with_result/error_handler_with_result.dart';
-
+import '../../domain/dto/entities/resume_about_site_entity.dart';
 import '../../domain/dto/entities/resume_contact_entity.dart';
 import '../../domain/dto/entities/resume_experience_entity.dart';
 import '../../domain/dto/entities/resume_overview_entity.dart';
+import '../../domain/dto/entities/resume_skills_entity.dart';
 import 'resume_information_datasource.dart';
 
 class ResumeInformationDatasourceDebug implements ResumeInformationDatasource {
-  const ResumeInformationDatasourceDebug(this.dio);
+  const ResumeInformationDatasourceDebug(this.datasource);
 
-  final Dio dio;
+  final ResumeInformationDatasource datasource;
 
   @override
   Future<ResumeContactEntity> getResumeContact() async {
-    final response = await dio.get(
-      'https://raw.githubusercontent.com/boginni/portifolio/refs/heads/main/github_files/contact.json',
-    );
-
-    if (response.statusCode == 200) {
-      final data = response.data;
-
-      final jsonData = jsonDecode(data);
-
-      return ResumeContactEntity.fromJson(jsonData);
-    }
-
-    throw UnknownFailure(
-      'Failed to fetch resume Contact: ${response.statusCode}',
-      StackTrace.current,
-    );
+    return datasource.getResumeContact();
   }
 
   @override
   Future<ResumeExperienceEntity> getResumeExperiences() async {
-    final response = await dio.get(
-      'https://raw.githubusercontent.com/boginni/portifolio/refs/heads/main/github_files/experience.json',
-    );
-
-    if (response.statusCode == 200) {
-      final data = response.data;
-
-      final jsonData = jsonDecode(json);
-
-      return ResumeExperienceEntity.fromJson(jsonData);
-    }
-
-    throw UnknownFailure(
-      'Failed to fetch resume overview: ${response.statusCode}',
-      StackTrace.current,
-    );
+    return datasource.getResumeExperiences();
   }
 
   @override
   Future<ResumeOverviewEntity> getResumeOverview() async {
-    final response = await dio.get(
-      'https://raw.githubusercontent.com/boginni/portifolio/refs/heads/main/github_files/overview.json',
-    );
+    return datasource.getResumeOverview();
+  }
 
-    if (response.statusCode == 200) {
-      final data = response.data;
+  @override
+  Future<ResumeSkillsEntity> getResumeSkills() async {
+    final jsonDecoded = jsonDecode(skillsJson);
 
-      final jsonData = jsonDecode(data);
+    final resumeSkillsEntity = ResumeSkillsEntity.fromJson(jsonDecoded);
 
-      return ResumeOverviewEntity.fromJson(jsonData);
-    }
+    return resumeSkillsEntity;
+  }
 
-    throw UnknownFailure(
-      'Failed to fetch resume overview: ${response.statusCode}',
-      StackTrace.current,
-    );
+  @override
+  Future<ResumeAboutSiteEntity> getResumeAboutSite() {
+    final jsonDecoded = jsonDecode(aboutSiteJson);
+
+    final resumeAboutSiteEntity = ResumeAboutSiteEntity.fromJson(jsonDecoded);
+
+    return Future.value(resumeAboutSiteEntity);
   }
 }
 
-const json = r'''
+const skillsJson = r'''
 {
-  "overview" : "Specializing in building scalable, high-performance cross-platform applications. I bridge the gap between complex app architecture and pixel-perfect UI, with a deep focus on SOLID principles and automated testing to ensure long-term maintainability.",
-  "kpis": [
+  "title" : "Skills", 
+  "technologies" : [
     {
-      "value": "7+",
-      "name": "Years Exp."
+      "name" : "Android",
+      "icon" : "android.png",
+      "description" : ""
     },
     {
-      "value": "3M+",
-      "name": "Users Impacted"
+      "name" : "Android Auto",
+      "icon" : "androidauto.png",
+      "description" : ""
     },
     {
-      "value": "97%",
-      "name": "Error-free"
+      "name" : "Android Studio",
+      "icon" : "androidstudio.png",
+      "description" : ""
     },
     {
-      "value": "50+",
-      "name": "Projects"
-    }
-  ],
-  "experiences": [
-    {
-      "title": "Senior Software Engineer",
-      "subtitle": "Cognizant",
-      "description": "• Collaborated with MGM Rewards focusing on complex UI and app architecture.\n• Implemented Clean Architecture and SOLID principles.\n• Developed and maintained a robust design system with accessibility standards.\n• Utilized CI/CD and conducted unit, golden, and integration tests.",
-      "icon": "logo_cognizant.jpg",
-      "startDate": "May 2025",
-      "endDate": "Present",
-      "location": "Remote"
+      "name" : "C++",
+      "icon" : "cplusplus.png",
+      "description" : ""
     },
     {
-      "title": "Flutter Developer - Pleno",
-      "subtitle": "Farmácias APP | Delivery | By GrupoSC",
-      "description": "• Developed the mobile version of the Farmácias App with robust error handling.\n• Collaborated with industry leaders like Toshi Ossada.\n• Contributed to 2M+ users and a 97% error-free rate.",
-      "icon": "logo_farmaciasapp.jpg",
-      "startDate": "Mar 2024",
-      "endDate": "Present",
-      "location": "Vila Olímpia, São Paulo - Brazil"
+      "name" : "Dart",
+      "icon" : "dart.png",
+      "description" : ""
     },
     {
-      "title": "Flutter Developer",
-      "subtitle": "B M FRANCA TECNOLOGIA",
-      "description": "• Developed high-quality Flutter applications as an independent contractor.\n• Collaborated with clients to deliver tailored solutions.\n• Ensured optimal performance through rigorous testing and debugging.",
-      "icon": "pj.png",
-      "startDate": "Sep 2022",
-      "endDate": "Present",
-      "location": "Vila Velha, Espirito Santo, Brasil"
+      "name" : "Docker",
+      "icon" : "docker.png",
+      "description" : ""
     },
     {
-      "title": "Cofundador da Comunidade",
-      "subtitle": "Flutter Brasil",
-      "description": "• Creation of one of the largest Flutter communities in Brazil.\n• Organization of meetups and events to promote Flutter.\n• Production of educational content and moderation of discussion groups.",
-      "icon": "logo_flutterbrasil.jpg",
-      "startDate": "Jan 2024",
-      "endDate": "Present",
-      "location": "Brazil"
+      "name" : "Figma",
+      "icon" : "figma.png",
+      "description" : ""
     },
     {
-      "title": "Senior Software Engineer",
-      "subtitle": "MGM Resorts International",
-      "description": "Senior Software Engineer role focusing on hospitality and gaming enterprise solutions.",
-      "icon": "logo_mgm_resorts_international.jpg",
-      "startDate": "Jun 2025",
-      "endDate": "Dec 2025",
-      "location": ""
+      "name" : "Firebase",
+      "icon" : "firebase.png",
+      "description" : ""
     },
     {
-      "title": "Flutter Developer",
-      "subtitle": "Althero",
-      "description": "Flutter development for international projects based in France.",
-      "icon": "logo_althero.jpg",
-      "startDate": "Jun 2024",
-      "endDate": "Oct 2025",
-      "location": "Rouen, Normandie"
+      "name" : "Flutter",
+      "icon" : "flutter.png",
+      "description" : ""
     },
     {
-      "title": "Full-stack Developer",
-      "subtitle": "RécUp",
-      "description": "Full-stack development responsibilities within the Normandie tech ecosystem.",
-      "icon": "logo_recup.jpg",
-      "startDate": "Sep 2023",
-      "endDate": "Oct 2025",
-      "location": "Rouen, Normandie"
+      "name" : "GitHub",
+      "icon" : "github.png",
+      "description" : ""
     },
     {
-      "title": "Flutter Developer",
-      "subtitle": "PupzDoBrasil®",
-      "description": "• Led migration from Flutter 1 to Flutter 3 (40k+ lines refactored).\n• Implemented Null Safety and Flutter Modular for Micro-Frontends.\n• Employed MobX and Triple for state management.",
-      "icon": "logo_pupz.jpg",
-      "startDate": "Nov 2023",
-      "endDate": "Mar 2024",
-      "location": ""
+      "name" : "iOS",
+      "icon" : "ios.png",
+      "description" : ""
     },
     {
-      "title": "Flutter Developer",
-      "subtitle": "Dentista Organizado",
-      "description": "• Refactored source code removing GetX and implementing Flutter Modular.\n• Leveraged ValueNotifier and ChangeNotifier.\n• Conducted UI/UX refactoring to Material Design 3.",
-      "icon": "logo_dentista.jpg",
-      "startDate": "Aug 2023",
-      "endDate": "Nov 2023",
-      "location": ""
-    },
-
-    {
-      "title": "Flutter Developer",
-      "subtitle": "COM TECNOLOGIA LTDA",
-      "description": "• Led development of a Sales Force application.\n• Designed intuitive UI/UX and implemented SetState.\n• Executed Offline-First approach with SQLite (50+ tables).",
-      "icon": "logo_yukem.jpg",
-      "startDate": "Sep 2021",
-      "endDate": "Dec 2022",
-      "location": "Castanhal, Pará, Brazil"
+      "name" : "JavaScript",
+      "icon" : "javascript.png",
+      "description" : ""
     },
     {
-      "title": "IT Assistant",
-      "subtitle": "Sea Telecom",
-      "description": "• Maintained database and managed customer data.\n• Developed Java scripts for automation.\n• Utilized JavaScript for ERP data entry.",
-      "icon": "logo_sea.jpg",
-      "startDate": "Feb 2021",
-      "endDate": "Jul 2021",
-      "location": "Castanhal, Pará, Brazil"
+      "name" : "Laravel",
+      "icon" : "laravel.png",
+      "description" : ""
     },
     {
-      "title": "PHP Web Developer",
-      "subtitle": "Exímio Solutions Jr",
-      "description": "• Developed websites using PHP, MySQL, and Apache.\n• Led a team of interns and provided mentorship.",
-      "icon": "logo_exmio.jpg",
-      "startDate": "Oct 2019",
-      "endDate": "May 2020",
-      "location": "Castanhal, Pará, Brazil"
+      "name" : ".NET (Node.js)",
+      "icon" : "nodedotjs.png",
+      "description" :""
+    },
+    {
+      "name": "PHP",
+      "icon": "php.png",
+      "description": ""
+    },
+    {
+        "name": "PostgreSQL",
+        "icon": "postgresql.png",
+        "description": ""
+     },
+     {
+        "name": "Unity",
+        "icon": "unity.png",
+        "description": ""
+     }
+  ]
+}
+''';
+const aboutSiteJson = r'''
+{
+  "title": "About This Project",
+  "description": "This portfolio serves as a live technical demonstration of enterprise-grade Flutter development. Instead of a static build, it operates as a dynamic system with real-world infrastructure.",
+  "features": [
+    {
+      "icon": "0xf0207",
+      "title": "Dynamic Data",
+      "description": "Experience data fetched via GitHub API."
+    },
+    {
+      "icon": "0xf0372",
+      "title": "CI/CD Pipeline",
+      "description": "Automated builds via GitHub Actions."
+    },
+    {
+      "icon": "0xf6a8",
+      "title": "Responsive Architecture",
+      "description": "Reactive layout for 5 breakpoints."
+    },
+    {
+      "icon": "0xf0250",
+      "title": "Localization",
+      "description": "Full i18n support & translations."
+    },
+    {
+      "icon": "0xf561",
+      "title": "Monitoring",
+      "description": "Firebase Crashlytics & Event tracking."
+    },
+    {
+      "icon": "0xf016b",
+      "title": "Security",
+      "description": "Cloudflare edge protection."
     }
   ]
 }

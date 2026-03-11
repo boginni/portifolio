@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../../../app/generic_state_pages/generic_failure_state_page.dart';
 import '../../../../app/generic_state_pages/generic_loading_state_page.dart';
-import '../../../experience_controller.dart';
-import '../../../experience_store.dart';
+import '../../../controller/experience_controller.dart';
+import '../../../controller/experience_store.dart';
 import 'experience_page_success_state_wide.dart';
 
 class ExperiencePageWide extends StatelessWidget {

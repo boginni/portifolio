@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../app/extensions/context_extensions.dart';
 import '../../../components/experience_company_card_widget.dart';
-import '../../../experience_store.dart';
+import '../../../controller/experience_store.dart';
 
 class ExperiencePageSuccessStatePhone extends StatelessWidget {
   const ExperiencePageSuccessStatePhone(

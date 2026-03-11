@@ -7,6 +7,7 @@ list(APPEND FLUTTER_PLUGIN_LIST
   firebase_core
   flutter_localization
   geolocator_windows
+  printing
   url_launcher_windows
 )
 

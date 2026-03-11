@@ -51,7 +51,8 @@ dependencies:
   vector_math: ^2.1.4
   get_it: ^9.2.1
   flutter_widget_from_html: ^0.17.1
-
+  printing: ^5.14.2
+  pdf: ^3.11.3
 
 
 dev_dependencies:

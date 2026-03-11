@@ -1,4 +1,4 @@
-import '../../domain/repositories/resume_information_repository.dart';
+import '../../../domain/repositories/resume_information_repository.dart';
 import 'experience_store.dart';
 
 class ExperienceController {

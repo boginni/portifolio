@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../app/components/responsive_builder.dart';
 import '../../../../experience/experience_page.dart';
 import '../../../../home/pages/home_page.dart';
-import '../../../../skills/professional_background_component.dart';
+import '../../../../skills/skills_page.dart';
 import '../../../components/side_bar_component.dart';
 import '../../../controller/shell_controller.dart';
 
@@ -21,6 +21,7 @@ class ShellPageWide extends StatelessWidget {
           children: [
             SideBarComponent(
               contactController: controller.contactController,
+              pdfController: controller.pdfController,
             ),
             Expanded(
               child: SingleChildScrollView(
@@ -33,12 +34,14 @@ class ShellPageWide extends StatelessWidget {
                       forcedDisplaySize: ResponsiveDisplaySizeEnum.wide,
                       controller: controller.experienceController,
                     ),
-                    const Padding(
-                      padding: EdgeInsets.symmetric(
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
                         horizontal: 16 * 2,
                         vertical: 16 * 3,
                       ),
-                      child: ProfessionalBackgroundComponent(),
+                      child: SkillsPage(
+                        controller: controller.skillsController,
+                      ),
                     ),
                   ],
                 ),

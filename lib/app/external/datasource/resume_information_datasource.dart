@@ -3,9 +3,11 @@ import 'dart:convert';
 import 'package:dio/dio.dart';
 import 'package:error_handler_with_result/error_handler_with_result.dart';
 
+import '../../domain/dto/entities/resume_about_site_entity.dart';
 import '../../domain/dto/entities/resume_contact_entity.dart';
 import '../../domain/dto/entities/resume_experience_entity.dart';
 import '../../domain/dto/entities/resume_overview_entity.dart';
+import '../../domain/dto/entities/resume_skills_entity.dart';
 
 abstract class ResumeInformationDatasource {
   Future<ResumeContactEntity> getResumeContact();
@@ -13,6 +15,10 @@ abstract class ResumeInformationDatasource {
   Future<ResumeExperienceEntity> getResumeExperiences();
 
   Future<ResumeOverviewEntity> getResumeOverview();
+
+  Future<ResumeSkillsEntity> getResumeSkills();
+
+  Future<ResumeAboutSiteEntity> getResumeAboutSite();
 }
 
 class ResumeInformationDatasourceImpl implements ResumeInformationDatasource {
@@ -72,6 +78,46 @@ class ResumeInformationDatasourceImpl implements ResumeInformationDatasource {
       final jsonData = jsonDecode(data);
 
       return ResumeOverviewEntity.fromJson(jsonData);
+    }
+
+    throw UnknownFailure(
+      'Failed to fetch resume overview: ${response.statusCode}',
+      StackTrace.current,
+    );
+  }
+
+  @override
+  Future<ResumeSkillsEntity> getResumeSkills() async {
+    final response = await dio.get(
+      'https://raw.githubusercontent.com/boginni/portifolio/refs/heads/main/github_files/skills.json',
+    );
+
+    if (response.statusCode == 200) {
+      final data = response.data;
+
+      final jsonData = jsonDecode(data);
+
+      return ResumeSkillsEntity.fromJson(jsonData);
+    }
+
+    throw UnknownFailure(
+      'Failed to fetch resume overview: ${response.statusCode}',
+      StackTrace.current,
+    );
+  }
+
+  @override
+  Future<ResumeAboutSiteEntity> getResumeAboutSite() async {
+    final response = await dio.get(
+      'https://raw.githubusercontent.com/boginni/portifolio/refs/heads/main/github_files/about_site.json',
+    );
+
+    if (response.statusCode == 200) {
+      final data = response.data;
+
+      final jsonData = jsonDecode(data);
+
+      return ResumeAboutSiteEntity.fromJson(jsonData);
     }
 
     throw UnknownFailure(

@@ -14,12 +14,21 @@ class AppDependencies {
   static void init() {
     _app.registerSingleton(Dio());
     _app.registerSingleton(AppStore());
+    _app.registerFactory<ResumeInformationDatasourceImpl>(
+      () => ResumeInformationDatasourceImpl(_app.get()),
+    );
+
+    _app.registerFactory<ResumeInformationDatasourceDebug>(
+      () => ResumeInformationDatasourceDebug(_app.get<ResumeInformationDatasourceImpl>()),
+    );
+
     _app.registerFactory<ResumeInformationDatasource>(
       () =>
           kDebugMode
-              ? ResumeInformationDatasourceDebug(_app.get())
-              : ResumeInformationDatasourceImpl(_app.get()),
+              ? _app.get<ResumeInformationDatasourceDebug>()
+              : _app.get<ResumeInformationDatasourceImpl>(),
     );
+
     _app.registerFactory<ResumeInformationRepository>(
       () => ResumeInformationRepositoryImpl(
         _app.get(),

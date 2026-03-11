@@ -1,8 +1,10 @@
 import 'package:error_handler_with_result/error_handler_with_result.dart';
 
+import '../../domain/dto/entities/resume_about_site_entity.dart';
 import '../../domain/dto/entities/resume_contact_entity.dart';
 import '../../domain/dto/entities/resume_experience_entity.dart';
 import '../../domain/dto/entities/resume_overview_entity.dart';
+import '../../domain/dto/entities/resume_skills_entity.dart';
 import '../../domain/repositories/resume_information_repository.dart';
 import '../datasource/resume_information_datasource.dart';
 
@@ -41,6 +43,32 @@ class ResumeInformationRepositoryImpl implements ResumeInformationRepository {
   Future<Result<ResumeOverviewEntity>> getResumeOverview() async {
     try {
       final response = await dataSource.getResumeOverview();
+
+      return Result.success(
+        response,
+      );
+    } catch (e, s) {
+      return Result.failureFromCatch(e, s);
+    }
+  }
+
+  @override
+  Future<Result<ResumeSkillsEntity>> getResumeSkills() async {
+    try {
+      final response = await dataSource.getResumeSkills();
+
+      return Result.success(
+        response,
+      );
+    } catch (e, s) {
+      return Result.failureFromCatch(e, s);
+    }
+  }
+
+  @override
+  Future<Result<ResumeAboutSiteEntity>> getResumeAboutSite() async {
+    try {
+      final response = await dataSource.getResumeAboutSite();
 
       return Result.success(
         response,

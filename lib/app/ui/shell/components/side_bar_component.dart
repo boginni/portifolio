@@ -2,18 +2,24 @@ import 'package:ds_assets/ds_assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 
+import '../../app/components/rainbow_theme_builder.dart';
 import '../../app/components/responsive_builder.dart';
 import '../../app/extensions/context_extensions.dart';
+import '../../app/store/generic_store.dart';
 import '../../contact/contact_controller.dart';
 import '../../contact/contact_page.dart';
+import '../../pdf/pdf_controller.dart';
+import '../../pdf/components/pdf_download_component.dart';
 
 class SideBarComponent extends StatelessWidget {
   const SideBarComponent({
     super.key,
     required this.contactController,
+    required this.pdfController,
   });
 
   final ContactController contactController;
+  final PdfController pdfController;
 
   @override
   Widget build(BuildContext context) {
@@ -31,6 +37,11 @@ class SideBarComponent extends StatelessWidget {
           children: [
             Material(
               clipBehavior: Clip.antiAlias,
+              shape: LinearBorder.bottom(
+                side: BorderSide(
+                  color: context.colorScheme.outline,
+                ),
+              ),
               child: Material(
                 color: context.colorScheme.primaryContainer,
                 shape: const CircleBorder(),
@@ -44,15 +55,26 @@ class SideBarComponent extends StatelessWidget {
                 ),
               ),
             ),
+
             const _NavLink('About me'),
             const _NavLink('Skills'),
-            const _NavLink('Portfolio'),
+            const _NavLink('The project'),
+            const Divider(),
+            const _NavLink('Languages'),
+            const _NavLink('Brightness mode'),
+            const SizedBox(
+              height: 16,
+            ),
+            Center(
+              child: PdfDownloadComponent(
+                pdfController,
+              ),
+            ),
             const Spacer(),
             ContactPage(
               controller: contactController,
               forceDisplaySize: ResponsiveDisplaySizeEnum.wide,
             ),
-
             const SizedBox(
               height: 16 * 2,
             ),

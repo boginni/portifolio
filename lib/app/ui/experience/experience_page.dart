@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import '../app/components/responsive_builder.dart';
-import 'experience_controller.dart';
+import 'controller/experience_controller.dart';
 import 'pages/sizes/phone/experience_page_phone.dart';
-import 'experience_store.dart';
+import 'controller/experience_store.dart';
 import 'pages/sizes/ultra_wide/experience_page_ultra_wide.dart';
 import 'pages/sizes/wide/experience_page_wide.dart';
 
