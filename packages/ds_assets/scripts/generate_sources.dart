@@ -39,7 +39,7 @@ void main() {
     // --- ADDED PATH VARIABLE ---
     // Provides the base directory path for this specific asset category
     buffer.writeln(
-        "  static String path() => '\$_prefix/assets/$folderName/';\n");
+        "  static String path() => '\$_prefix/assets/$folderName/';\n",);
 
     final seenNames = <String>{};
     final files = subDir

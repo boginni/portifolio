@@ -99,11 +99,14 @@ class ExperiencePageSuccessStatePhone extends StatelessWidget {
               vertical: 24,
             ),
             sliver: SliverList.builder(
-              itemCount: state.experienceObject.experienceCompanyList.length * 2 - 1,
+              itemCount:
+                  state.experienceObject.experienceCompanyList.length * 2 - 1,
               itemBuilder: (context, index) {
                 if (index.isEven) {
                   return ExperienceCompanyCardWidget(
-                    experience: state.experienceObject.experienceCompanyList[index ~/ 2],
+                    experience:
+                        state.experienceObject.experienceCompanyList[index ~/
+                            2],
                   );
                 }
 

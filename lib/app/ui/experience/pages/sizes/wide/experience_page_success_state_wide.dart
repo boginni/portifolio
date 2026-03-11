@@ -1,4 +1,3 @@
-import 'package:ds_assets/ds_assets.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../app/extensions/context_extensions.dart';
@@ -63,11 +62,13 @@ class ExperiencePageSuccessStateWide extends StatelessWidget {
           shrinkWrap: true,
           padding: const EdgeInsets.symmetric(horizontal: 16.0 * 2),
           physics: const NeverScrollableScrollPhysics(),
-          itemCount: state.experienceObject.experienceCompanyList.length * 2 - 1,
+          itemCount:
+              state.experienceObject.experienceCompanyList.length * 2 - 1,
           itemBuilder: (context, index) {
             if (index.isEven) {
               return ExperienceCompanyCardWidget(
-                experience: state.experienceObject.experienceCompanyList[index ~/ 2],
+                experience:
+                    state.experienceObject.experienceCompanyList[index ~/ 2],
               );
             }
 

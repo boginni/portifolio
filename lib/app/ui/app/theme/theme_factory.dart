@@ -38,7 +38,7 @@ class ThemeFactory {
       secondary: secondary,
       surface: surface,
       onSurface: onSurface,
-      surfaceVariant: surfaceVariant,
+      // surfaceVariant: surfaceVariant,
       onSurfaceVariant: onSurfaceVariant,
       brightness: brightness,
     );
@@ -87,11 +87,11 @@ class ThemeFactory {
         ),
       ),
       checkboxTheme: CheckboxThemeData(
-        overlayColor: MaterialStateProperty.all<Color>(
+        overlayColor: WidgetStateProperty.all<Color>(
           colorScheme.onSurfaceVariant,
         ),
-        checkColor: MaterialStateProperty.all<Color>(
-          colorScheme.surfaceVariant,
+        checkColor: WidgetStateProperty.all<Color>(
+          colorScheme.surfaceContainerHighest,
         ),
         splashRadius: 24,
         shape: RoundedRectangleBorder(

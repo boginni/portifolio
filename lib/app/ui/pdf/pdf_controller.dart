@@ -53,13 +53,14 @@ class PdfController {
         skills: resumeSkills.success,
       );
 
-      await Printing.layoutPdf(onLayout: (PdfPageFormat format) async => pdfBytes);
+      await Printing.layoutPdf(
+        onLayout: (PdfPageFormat format) async => pdfBytes,
+      );
 
       store.state = GenericStoreState.initial();
     } catch (e, s) {
       store.state = GenericStoreState.failure();
       Result.failureFromCatch(e, s).failure.throwError();
     }
-
   }
 }

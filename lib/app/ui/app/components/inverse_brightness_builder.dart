@@ -11,7 +11,10 @@ class InverseBrightnessBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final theme = isDark ? ThemeData.light(useMaterial3: true) : ThemeData.dark(useMaterial3: true);
+    final theme =
+        isDark
+            ? ThemeData.light(useMaterial3: true)
+            : ThemeData.dark(useMaterial3: true);
 
     return Theme(
       data: theme,

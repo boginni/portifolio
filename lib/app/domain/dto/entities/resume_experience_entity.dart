@@ -18,9 +18,10 @@ class ResumeExperienceEntity {
             .map((item) => ResumeExperienceCompanyEntity.fromJson(item))
             .toList();
 
-    final kpis = (json['kpis'] as List<dynamic>)
-        .map((item) => KpiEntity.fromJson(item))
-        .toList();
+    final kpis =
+        (json['kpis'] as List<dynamic>)
+            .map((item) => KpiEntity.fromJson(item))
+            .toList();
 
     return ResumeExperienceEntity(
       overview: json['overview'] ?? '',

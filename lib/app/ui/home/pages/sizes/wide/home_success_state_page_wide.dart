@@ -60,7 +60,7 @@ class HomeSuccessStatePageWide extends StatelessWidget {
                                 data.title,
                                 style: textTheme.headlineSmall?.copyWith(
                                   color: colorScheme.onSurfaceVariant
-                                      .withOpacity(0.7),
+                                      .withValues(alpha: 0.7),
                                 ),
                               ),
                               const SizedBox(height: 48),

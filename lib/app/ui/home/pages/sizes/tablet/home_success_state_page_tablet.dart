@@ -38,9 +38,7 @@ class HomeSuccessStatePageTablet extends StatelessWidget {
                       child: const SizedBox(
                         height: 500,
                         child: HighResolutionImage(
-                          assetPath:
-                              DsAssetsPhotos
-                                  .purpleTCrossedArmsPng,
+                          assetPath: DsAssetsPhotos.purpleTCrossedArmsPng,
                           ratio: 3330 / 5000,
                           alignment: Alignment.topCenter,
                           fit: BoxFit.cover,

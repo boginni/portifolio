@@ -46,7 +46,7 @@ class ResumeInformationDatasourceDebug implements ResumeInformationDatasource {
   }
 }
 
-const skillsJson = r'''
+const skillsJson = '''
 {
   "title" : "Skills", 
   "technologies" : [
@@ -138,7 +138,7 @@ const skillsJson = r'''
   ]
 }
 ''';
-const aboutSiteJson = r'''
+const aboutSiteJson = '''
 {
   "title": "About This Project",
   "description": "This portfolio serves as a live technical demonstration of enterprise-grade Flutter development. Instead of a static build, it operates as a dynamic system with real-world infrastructure.",

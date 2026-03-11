@@ -19,7 +19,9 @@ class AppDependencies {
     );
 
     _app.registerFactory<ResumeInformationDatasourceDebug>(
-      () => ResumeInformationDatasourceDebug(_app.get<ResumeInformationDatasourceImpl>()),
+      () => ResumeInformationDatasourceDebug(
+        _app.get<ResumeInformationDatasourceImpl>(),
+      ),
     );
 
     _app.registerFactory<ResumeInformationDatasource>(

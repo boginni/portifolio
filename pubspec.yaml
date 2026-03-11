@@ -55,6 +55,8 @@ dependencies:
   pdf: ^3.11.3
 
 
+  crypto: any
+  go_router: any
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -23,10 +23,11 @@ class ExperiencePageUltraWide extends StatelessWidget {
       builder:
           (context, ExperienceStoreState value, child) => switch (value) {
             ExperienceStoreInitialState() => const GenericLoadingStatePage(),
-            ExperienceStoreSuccessState() => ExperiencePageSuccessStateUltraWide(
-              value,
-              onRefresh: init,
-            ),
+            ExperienceStoreSuccessState() =>
+              ExperiencePageSuccessStateUltraWide(
+                value,
+                onRefresh: init,
+              ),
             ExperienceStoreLoadingState() => const GenericLoadingStatePage(),
             ExperienceStoreFailureState() => GenericFailureStatePage(
               onTryAgain: init,

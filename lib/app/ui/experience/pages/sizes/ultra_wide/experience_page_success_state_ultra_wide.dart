@@ -51,7 +51,7 @@ class ExperiencePageSuccessStateUltraWide extends StatelessWidget {
 }
 
 class _List extends StatelessWidget {
-  const _List({super.key, required this.state});
+  const _List({required this.state});
 
   final ExperienceStoreSuccessState state;
 
@@ -69,7 +69,7 @@ class _List extends StatelessWidget {
     children.insert(
       0,
       Padding(
-        padding: EdgeInsets.only(bottom: 32.0),
+        padding: const EdgeInsets.only(bottom: 32.0),
         child: CareerOverviewComponent(
           experience: state.experienceObject,
         ),

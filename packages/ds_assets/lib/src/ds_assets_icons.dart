@@ -10,7 +10,8 @@ class DsAssetsIcons {
 
   static const String androidPng = '$_prefix/assets/icons/android.png';
   static const String androidautoPng = '$_prefix/assets/icons/androidauto.png';
-  static const String androidstudioPng = '$_prefix/assets/icons/androidstudio.png';
+  static const String androidstudioPng =
+      '$_prefix/assets/icons/androidstudio.png';
   static const String cplusplusPng = '$_prefix/assets/icons/cplusplus.png';
   static const String dartPng = '$_prefix/assets/icons/dart.png';
   static const String dockerPng = '$_prefix/assets/icons/docker.png';

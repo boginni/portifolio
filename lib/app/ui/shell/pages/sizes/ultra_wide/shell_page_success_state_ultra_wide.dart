@@ -77,7 +77,7 @@ class ShellPageSuccessStateUltraWide extends StatelessWidget {
                                     builder: (context, theme) {
                                       return AboutSitePage(
                                         controller:
-                                        controller.aboutSiteController,
+                                            controller.aboutSiteController,
                                       );
                                     },
                                   ),

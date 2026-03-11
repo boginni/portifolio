@@ -19,16 +19,13 @@ abstract class Failure implements Exception {
       );
     }
 
-    Error.throwWithStackTrace(
-      this,
-      stackTrace,
-    );
+    Error.throwWithStackTrace(this, stackTrace);
   }
 }
 
 class SerializationFailure extends Failure {
   const SerializationFailure(this.error, StackTrace stackTrace)
-      : super(stackTrace);
+    : super(stackTrace);
 
   final dynamic error;
 

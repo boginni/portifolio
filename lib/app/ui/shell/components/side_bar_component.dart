@@ -1,11 +1,8 @@
 import 'package:ds_assets/ds_assets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 
-import '../../app/components/rainbow_theme_builder.dart';
 import '../../app/components/responsive_builder.dart';
 import '../../app/extensions/context_extensions.dart';
-import '../../app/store/generic_store.dart';
 import '../../contact/contact_controller.dart';
 import '../../contact/contact_page.dart';
 import '../../pdf/pdf_controller.dart';
@@ -87,9 +84,7 @@ class SideBarComponent extends StatelessWidget {
 
 class _NavLink extends StatelessWidget {
   const _NavLink(
-    this.label, {
-    super.key,
-  });
+    this.label);
 
   final String label;
 

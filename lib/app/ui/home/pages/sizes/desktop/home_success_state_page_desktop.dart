@@ -67,8 +67,8 @@ class HomeSuccessStatePageDesktop extends StatelessWidget {
                           Text(
                             data.title,
                             style: textTheme.titleMedium?.copyWith(
-                              color: colorScheme.onSurfaceVariant.withOpacity(
-                                0.7,
+                              color: colorScheme.onSurfaceVariant.withValues(alpha:
+                              0.7,
                               ),
                             ),
                           ),

@@ -41,8 +41,7 @@ class HomeSuccessStatePagePhone extends StatelessWidget {
           SizedBox(
             height: MediaQuery.sizeOf(context).height * 0.6,
             child: const HighResolutionImage(
-              assetPath:
-                  DsAssetsPhotos.purpleTCrossedArmsPng,
+              assetPath: DsAssetsPhotos.purpleTCrossedArmsPng,
               ratio: 3330 / 5000,
               alignment: Alignment.topCenter,
               fit: BoxFit.cover,
