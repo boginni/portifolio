@@ -8,9 +8,23 @@ class AppStore extends ChangeNotifier implements ValueListenable<AppStore> {
   @override
   AppStore get value => this;
 
-  ThemeMode? themeMode;
+  ThemeMode? _themeMode;
 
-  Locale? locale;
+  Locale? _locale;
 
   Vector2? initialPosition;
+
+  ThemeMode? get themeMode => _themeMode;
+
+  Locale? get locale => _locale;
+
+  set themeMode(ThemeMode? value) {
+    _themeMode = value;
+    notifyListeners();
+  }
+
+  set locale(Locale? value) {
+    _locale = value;
+    notifyListeners();
+  }
 }

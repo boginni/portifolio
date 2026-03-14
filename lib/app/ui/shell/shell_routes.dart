@@ -50,10 +50,8 @@ class ShellRoute extends AppRoute {
   late final aboutStore = GenericStore<ResumeAboutSiteEntity>();
   late final resumePdfService = GenericStore<Uint8List>();
 
-  late final appStore = AppDependencies.get<AppStore>();
-
   late final shellController = ShellController(
-    appStore: appStore,
+    appController: AppDependencies.get(),
     store: store,
     homeController: HomeController(
       AppDependencies.get(),

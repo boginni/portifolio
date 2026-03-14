@@ -32,6 +32,7 @@ class ShellPageSuccessStateUltraWide extends StatelessWidget {
             SideBarComponent(
               contactController: controller.contactController,
               pdfController: controller.pdfController,
+              appController: controller.appController,
             ),
             Expanded(
               child: SingleChildScrollView(

@@ -19,19 +19,27 @@ class ContactPageSuccessStateWide extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
       children: [
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
               'Get in Touch',
-              style: theme.textTheme.headlineSmall,
+              style: theme.textTheme.titleMedium,
             ),
-            Text(
-              'Direct channels',
-              style: theme.textTheme.bodyMedium?.copyWith(
-                color: colorScheme.onSurfaceVariant,
-              ),
+            const Spacer(),
+            const Icon(
+              Icons.person,
             ),
+            // IconButton(
+            //   onPressed: () {},
+            //   icon: ,
+            // ),
+            // Text(
+            //   'Direct channels',
+            //   // style: theme.textTheme.bodyMedium?.copyWith(
+            //   //   color: colorScheme.onSurfaceVariant,
+            //   // ),
+            // ),
           ],
         ),
         const SizedBox(height: 16),
@@ -60,15 +68,15 @@ class ContactPageSuccessStateWide extends StatelessWidget {
             ),
           ],
         ),
-        const SizedBox(height: 16 * 2),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            _socialIconButton(Icons.facebook, colorScheme),
-            _socialIconButton(Icons.camera_alt_outlined, colorScheme),
-            _socialIconButton(Icons.link, colorScheme),
-          ],
-        ),
+        // const SizedBox(height: 16 * 2),
+        // Row(
+        //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        //   children: [
+        //     _socialIconButton(Icons.facebook, colorScheme),
+        //     _socialIconButton(Icons.camera_alt_outlined, colorScheme),
+        //     _socialIconButton(Icons.link, colorScheme),
+        //   ],
+        // ),
       ],
     );
   }

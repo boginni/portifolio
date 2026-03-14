@@ -1,5 +1,5 @@
 import '../../about_site/about_site_controller.dart';
-import '../../app/controllers/app_store.dart';
+import '../../app/controllers/app_controller.dart';
 import '../../contact/contact_controller.dart';
 import '../../experience/controller/experience_controller.dart';
 import '../../home/home_controller.dart';
@@ -9,7 +9,7 @@ import 'shell_store.dart';
 
 class ShellController {
   final ShellStore store;
-  final AppStore appStore;
+  final AppController appController;
   final HomeController homeController;
   final ExperienceController experienceController;
   final ContactController contactController;
@@ -20,7 +20,7 @@ class ShellController {
   const ShellController({
     required this.pdfController,
     required this.store,
-    required this.appStore,
+    required this.appController,
     required this.homeController,
     required this.experienceController,
     required this.contactController,

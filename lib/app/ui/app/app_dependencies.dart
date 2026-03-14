@@ -6,6 +6,7 @@ import '../../domain/repositories/resume_information_repository.dart';
 import '../../external/datasource/resume_information_datasource.dart';
 import '../../external/datasource/resume_information_datasource_debug.dart';
 import '../../external/repositories/resume_information_repository_impl.dart';
+import 'controllers/app_controller.dart';
 import 'controllers/app_store.dart';
 
 class AppDependencies {
@@ -48,4 +49,8 @@ class AppDependencies {
     String? instanceName,
     Type? type,
   }) => _app.get();
+
+  static void registerSingleton<T extends Object>(T instance) {
+    _app.registerSingleton(instance);
+  }
 }

@@ -9,7 +9,7 @@ enum ResponsiveDisplaySizeEnum {
 }
 
 class ResponsiveBuilder extends StatelessWidget {
-  final WidgetBuilder phone;
+  final WidgetBuilder? phone;
   final WidgetBuilder? tablet;
   final WidgetBuilder? desktop;
   final WidgetBuilder? wide;
@@ -19,7 +19,7 @@ class ResponsiveBuilder extends StatelessWidget {
 
   const ResponsiveBuilder({
     super.key,
-    required this.phone,
+    this.phone,
     this.tablet,
     this.desktop,
     this.wide,
@@ -34,15 +34,14 @@ class ResponsiveBuilder extends StatelessWidget {
     final builder = () {
       if (forceDisplaySize != null) {
         return switch (forceDisplaySize!) {
-              ResponsiveDisplaySizeEnum.ultraWide =>
-                ultraWide ?? wide ?? desktop ?? tablet,
+          ResponsiveDisplaySizeEnum.ultraWide =>
+            ultraWide ?? wide ?? desktop ?? tablet,
 
-              ResponsiveDisplaySizeEnum.wide => wide ?? desktop ?? tablet,
-              ResponsiveDisplaySizeEnum.desktop => desktop ?? tablet,
-              ResponsiveDisplaySizeEnum.tablet => tablet,
-              ResponsiveDisplaySizeEnum.phone => phone,
-            } ??
-            phone;
+          ResponsiveDisplaySizeEnum.wide => wide ?? desktop ?? tablet,
+          ResponsiveDisplaySizeEnum.desktop => desktop ?? tablet,
+          ResponsiveDisplaySizeEnum.tablet => tablet ?? phone,
+          ResponsiveDisplaySizeEnum.phone => phone,
+        };
       }
 
       return switch (width) {
@@ -55,6 +54,6 @@ class ResponsiveBuilder extends StatelessWidget {
           phone;
     }();
 
-    return builder(context);
+    return builder?.call(context) ?? const Offstage();
   }
 }
