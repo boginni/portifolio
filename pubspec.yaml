@@ -52,8 +52,7 @@ dependencies:
   get_it: ^9.2.1
   flutter_widget_from_html: ^0.17.1
   printing: ^5.14.2
-  pdf: ^3.11.3
-
+  html_to_pdf_plus: ^1.0.7
 
   crypto: any
   go_router: any

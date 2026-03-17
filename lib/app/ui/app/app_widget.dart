@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../../gen/app_localizations.g.dart';
 import 'app_dependencies.dart';
+import 'components/global_context_provider.dart';
 import 'controllers/app_controller.dart';
 
 class AppWidget extends StatefulWidget {
@@ -54,6 +55,10 @@ class _AppWidgetState extends State<AppWidget> {
           supportedLocales: AppLocalizations.supportedLocales,
           localizationsDelegates: AppLocalizations.localizationsDelegates,
           routerConfig: widget.controller.appRoutes.routes,
+          builder:
+              (context, child) => GlobalContextProviderWidget(
+                child: child ?? const Offstage(),
+              ),
         );
       },
     );

@@ -1,0 +1,90 @@
+{
+  "title": "Skills",
+  "technologies": [
+    {
+      "name": "Android",
+      "icon": "android.png",
+      "description": ""
+    },
+    {
+      "name": "Android Auto",
+      "icon": "androidauto.png",
+      "description": ""
+    },
+    {
+      "name": "Android Studio",
+      "icon": "androidstudio.png",
+      "description": ""
+    },
+    {
+      "name": "C++",
+      "icon": "cplusplus.png",
+      "description": ""
+    },
+    {
+      "name": "Dart",
+      "icon": "dart.png",
+      "description": ""
+    },
+    {
+      "name": "Docker",
+      "icon": "docker.png",
+      "description": ""
+    },
+    {
+      "name": "Figma",
+      "icon": "figma.png",
+      "description": ""
+    },
+    {
+      "name": "Firebase",
+      "icon": "firebase.png",
+      "description": ""
+    },
+    {
+      "name": "Flutter",
+      "icon": "flutter.png",
+      "description": ""
+    },
+    {
+      "name": "GitHub",
+      "icon": "github.png",
+      "description": ""
+    },
+    {
+      "name": "iOS",
+      "icon": "ios.png",
+      "description": ""
+    },
+    {
+      "name": "JavaScript",
+      "icon": "javascript.png",
+      "description": ""
+    },
+    {
+      "name": "Laravel",
+      "icon": "laravel.png",
+      "description": ""
+    },
+    {
+      "name": ".NET (Node.js)",
+      "icon": "nodedotjs.png",
+      "description": ""
+    },
+    {
+      "name": "PHP",
+      "icon": "php.png",
+      "description": ""
+    },
+    {
+      "name": "PostgreSQL",
+      "icon": "postgresql.png",
+      "description": ""
+    },
+    {
+      "name": "Unity",
+      "icon": "unity.png",
+      "description": ""
+    }
+  ]
+}

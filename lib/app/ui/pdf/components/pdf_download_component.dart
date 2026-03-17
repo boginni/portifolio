@@ -28,7 +28,9 @@ class _PdfDownloadComponentState extends State<PdfDownloadComponent> {
             onPressed: controller.generatePdf,
             child: const Text('Download CV'),
           ),
-          GenericStoreLoadingState() => const CircularProgressIndicator(),
+          GenericStoreLoadingState() => const Center(
+            child: CircularProgressIndicator(),
+          ),
           GenericStoreFailureState() => FilledButton(
             onPressed: controller.generatePdf,
             child: const Text('Try Again'),

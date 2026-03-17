@@ -8,7 +8,6 @@ import '../../domain/dto/entities/resume_contact_entity.dart';
 import '../../domain/dto/entities/resume_skills_entity.dart';
 import '../about_site/about_site_controller.dart';
 import '../app/app_dependencies.dart';
-import '../app/controllers/app_store.dart';
 import '../app/store/generic_store.dart';
 import '../contact/contact_controller.dart';
 import '../experience/controller/experience_controller.dart';
@@ -16,7 +15,6 @@ import '../experience/controller/experience_store.dart';
 import '../home/home_controller.dart';
 import '../home/home_store.dart';
 import '../pdf/pdf_controller.dart';
-import '../pdf/pages/resume_pdf_service.dart';
 import '../skills/controllers/skills_controller.dart';
 import 'controller/shell_controller.dart';
 import 'controller/shell_store.dart';
@@ -71,7 +69,6 @@ class ShellRoute extends AppRoute {
     ),
     pdfController: PdfController(
       AppDependencies.get(),
-      ResumePdfService(),
       store: resumePdfService,
     ),
     aboutSiteController: AboutSiteController(

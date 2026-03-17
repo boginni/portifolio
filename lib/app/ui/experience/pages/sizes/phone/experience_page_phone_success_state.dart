@@ -83,8 +83,8 @@ class ExperiencePagePhoneSuccessState extends StatelessWidget {
                         'Overview',
                         style: context.textTheme.titleLarge,
                       ),
-                      const Text(
-                        'Currently a Senior Software Engineer at Cognizant, contributing to MGM Rewards with a focus on complex UI and app architecture. ',
+                      Text(
+                        state.experienceObject.overview,
                       ),
                     ],
                   ),

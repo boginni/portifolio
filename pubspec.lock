@@ -587,6 +587,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.15.6"
+  html_to_pdf_plus:
+    dependency: "direct main"
+    description:
+      name: html_to_pdf_plus
+      sha256: d71185bbf11a3f0893d248a572cd0c677459d80f25caa72edb81c692dedd0ac5
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.7"
   http:
     dependency: "direct main"
     description:
@@ -820,7 +828,7 @@ packages:
     source: hosted
     version: "2.3.0"
   pdf:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: pdf
       sha256: "28eacad99bffcce2e05bba24e50153890ad0255294f4dd78a17075a2ba5c8416"
