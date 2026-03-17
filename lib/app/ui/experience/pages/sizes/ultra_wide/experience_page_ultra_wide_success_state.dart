@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import
+
 import 'package:ds_assets/ds_assets.dart';
 import 'package:flutter/material.dart';
 import 'package:timelines_plus/timelines_plus.dart';

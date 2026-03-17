@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../../../../../domain/dto/entities/resume_about_site_entity.dart';
-import '../../../../app/components/inverse_brightness_builder.dart';
 import '../../../components/feature_tile_widget.dart';
 
 class AboutSitePageDesktopSuccessState extends StatelessWidget {
@@ -53,22 +52,22 @@ class AboutSitePageDesktopSuccessState extends StatelessWidget {
                   spacing: 16,
                   alignment: WrapAlignment.center,
                   children:
-                  entity.features
-                      .map(
-                        (e) => SizedBox(
-                      width: 16 * 10 * 2,
-                      height: 16 * 10,
-                      child: FeatureTileWidget(
-                        icon: IconData(
-                          int.parse(e.icon),
-                          fontFamily: 'MaterialIcons',
-                        ),
-                        title: e.title,
-                        desc: e.description,
-                      ),
-                    ),
-                  )
-                      .toList(),
+                      entity.features
+                          .map(
+                            (e) => SizedBox(
+                              width: 16 * 10 * 2,
+                              height: 16 * 10,
+                              child: FeatureTileWidget(
+                                icon: IconData(
+                                  int.parse(e.icon),
+                                  fontFamily: 'MaterialIcons',
+                                ),
+                                title: e.title,
+                                desc: e.description,
+                              ),
+                            ),
+                          )
+                          .toList(),
                 ),
               ],
             ),
@@ -102,8 +101,7 @@ class AboutSitePageDesktopSuccessState extends StatelessWidget {
                       ),
                       Text(
                         'Built with Flutter • Hosted on GitHub Pages',
-                        style: theme.textTheme.bodyMedium?.copyWith(
-                        ),
+                        style: theme.textTheme.bodyMedium?.copyWith(),
                       ),
                     ],
                   ),

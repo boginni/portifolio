@@ -38,7 +38,7 @@ class TestController {
       return doubleStringValueUsecase.call(input);
     }
 
-    return "";
+    return '';
   }
 }
 
@@ -52,17 +52,4 @@ String getString(String s) {
   );
 
   return controller.execute(s);
-}
-
-void test(){
-  final usecase = VerifyStringIsNumberUsecase();
-  print(usecase.call("123"));
-
-}
-
-
-void main() {
-  final value = getString("1111");
-
-  print(value);
 }

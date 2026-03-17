@@ -1,6 +1,5 @@
 import '../../domain/datasources/storage_datasource.dart';
 import '../../domain/dto/entities/preferences_entity.dart';
-import '../../domain/repositories/preferences_repository.dart';
 import '../dto/model/preferences_model.dart';
 
 class PreferencesDatasource {

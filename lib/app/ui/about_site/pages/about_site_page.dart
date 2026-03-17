@@ -4,7 +4,6 @@ import '../../app/mixin/change_language_listener_mixin.dart';
 import '../../app/store/generic_store.dart';
 import '../about_site_controller.dart';
 import 'sizes/desktop/about_site_page_desktop.dart';
-import 'sizes/desktop/about_site_page_desktop_success_state.dart';
 import 'sizes/ultra_wide/about_site_page_ultra_wide.dart';
 
 class AboutSitePage extends StatefulWidget {

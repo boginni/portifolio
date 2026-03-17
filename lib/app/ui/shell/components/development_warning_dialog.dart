@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 
 import '../../app/extensions/context_extensions.dart';
@@ -31,7 +29,7 @@ class DevelopmentWarningDialog extends StatelessWidget {
           onPressed: () {
             Navigator.of(context).pop();
             WidgetsBinding.instance.addPostFrameCallback(
-                  (timeStamp) {
+              (timeStamp) {
                 if (context.mounted) {
                   showDialog(
                     context: context,

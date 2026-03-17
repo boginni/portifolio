@@ -45,9 +45,11 @@ class _ContactPAgeState extends State<ContactPage> {
       forceDisplaySize: widget.forceDisplaySize,
       phone: (context) => ContactPagePhone(controller: controller, init: init),
       tablet: (context) => ContactPagePhone(controller: controller, init: init),
-      desktop: (context) => ContactPageDesktop(controller: controller, init: init),
+      desktop:
+          (context) => ContactPageDesktop(controller: controller, init: init),
       wide: (context) => ContactPageWide(controller: controller, init: init),
-      ultraWide: (context) => ContactPageWide(controller: controller, init: init),
+      ultraWide:
+          (context) => ContactPageWide(controller: controller, init: init),
     );
   }
 }

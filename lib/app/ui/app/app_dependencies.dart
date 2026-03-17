@@ -11,7 +11,6 @@ import '../../external/datasource/resume_information_datasource_debug.dart';
 import '../../external/datasource/storage_datasource_impl.dart';
 import '../../external/repositories/preferences_repository_impl.dart';
 import '../../external/repositories/resume_information_repository_impl.dart';
-import 'controllers/app_controller.dart';
 import 'controllers/app_store.dart';
 
 class AppDependencies {

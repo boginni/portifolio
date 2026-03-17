@@ -1,7 +1,4 @@
-enum StorageEnum {
-  preferences,
-  credentials;
-}
+enum StorageEnum { preferences, credentials }
 
 abstract interface class StorageDatasource {
   const StorageDatasource();

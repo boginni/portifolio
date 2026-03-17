@@ -130,5 +130,4 @@ class ContactPageSuccessStatePhone extends StatelessWidget {
       ),
     );
   }
-
 }

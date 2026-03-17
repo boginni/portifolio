@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import
+
 import 'package:ds_assets/ds_assets.dart';
 import 'package:flutter/material.dart';
 
@@ -67,8 +69,8 @@ class HomeSuccessStatePageDesktop extends StatelessWidget {
                           Text(
                             data.title,
                             style: textTheme.titleMedium?.copyWith(
-                              color: colorScheme.onSurfaceVariant.withValues(alpha:
-                              0.7,
+                              color: colorScheme.onSurfaceVariant.withValues(
+                                alpha: 0.7,
                               ),
                             ),
                           ),

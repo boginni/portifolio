@@ -1,3 +1,5 @@
+// ignore_for_file: unused_element
+
 import 'package:ds_assets/ds_assets.dart';
 import 'package:flutter/material.dart';
 
@@ -69,8 +71,8 @@ class SideBarComponent extends StatelessWidget {
               const Divider(),
               Row(
                 children: [
-                  Text('Brightness'),
-                  Spacer(),
+                  const Text('Brightness'),
+                  const Spacer(),
                   IconButton(
                     isSelected:
                         appController.store.value.themeMode == ThemeMode.dark,
@@ -91,8 +93,8 @@ class SideBarComponent extends StatelessWidget {
               ),
               Row(
                 children: [
-                  Text('Language'),
-                  Spacer(),
+                  const Text('Language'),
+                  const Spacer(),
                   _LocaleButton(
                     label: 'EN',
                     isSelected:

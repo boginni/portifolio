@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import
+
 import 'dart:isolate';
 import 'dart:typed_data';
 
@@ -19,7 +21,5 @@ class PdfController {
 
   Future<void> generatePdf() async {
     store.state = GenericStoreState.loading();
-
-
   }
 }

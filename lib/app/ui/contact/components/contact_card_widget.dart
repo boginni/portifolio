@@ -19,13 +19,11 @@ class ContactCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final colorScheme = Theme
-        .of(context)
-        .colorScheme;
+    final colorScheme = Theme.of(context).colorScheme;
 
     return ResponsiveBuilder(
-      wide: (context) =>
-          Card(
+      wide:
+          (context) => Card(
             elevation: 0,
             color: colorScheme.surfaceContainerLow,
             shape: RoundedRectangleBorder(
@@ -46,7 +44,8 @@ class ContactCardWidget extends StatelessWidget {
                       padding: const EdgeInsets.all(10),
                       decoration: BoxDecoration(
                         color: colorScheme.primaryContainer.withValues(
-                            alpha: 0.4),
+                          alpha: 0.4,
+                        ),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: Icon(icon, color: colorScheme.primary, size: 20),
@@ -59,21 +58,17 @@ class ContactCardWidget extends StatelessWidget {
                         children: [
                           Text(
                             title,
-                            style: Theme
-                                .of(context)
-                                .textTheme
-                                .labelSmall
-                                ?.copyWith(
+                            style: Theme.of(
+                              context,
+                            ).textTheme.labelSmall?.copyWith(
                               color: colorScheme.onSurfaceVariant,
                             ),
                           ),
                           Text(
-                            value ?? '',
-                            style: Theme
-                                .of(context)
-                                .textTheme
-                                .bodyMedium
-                                ?.copyWith(
+                            value,
+                            style: Theme.of(
+                              context,
+                            ).textTheme.bodyMedium?.copyWith(
                               fontWeight: FontWeight.w600,
                               color: colorScheme.onSurface,
                             ),
@@ -87,8 +82,8 @@ class ContactCardWidget extends StatelessWidget {
               ),
             ),
           ),
-      desktop: (context) =>
-          Card(
+      desktop:
+          (context) => Card(
             elevation: 0,
             color: colorScheme.surfaceContainerLow,
             shape: RoundedRectangleBorder(
@@ -109,7 +104,8 @@ class ContactCardWidget extends StatelessWidget {
                       padding: const EdgeInsets.all(16),
                       decoration: BoxDecoration(
                         color: colorScheme.primaryContainer.withValues(
-                            alpha: 0.4),
+                          alpha: 0.4,
+                        ),
                         borderRadius: BorderRadius.circular(16),
                       ),
                       child: Icon(icon, color: colorScheme.primary, size: 20),
@@ -142,61 +138,68 @@ class ContactCardWidget extends StatelessWidget {
               ),
             ),
           ),
-      phone: (context) => Card(
-        elevation: 0,
-        // Use surfaceContainerLow for a subtle M3 look
-        color: colorScheme.surfaceContainerLow,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16),
-          side: BorderSide(color: colorScheme.outlineVariant, width: 0.5),
-        ),
-        child: InkWell(
-          onTap: onTap,
-          borderRadius: BorderRadius.circular(16),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 16.0,
-              vertical: 8,
+      phone:
+          (context) => Card(
+            elevation: 0,
+            // Use surfaceContainerLow for a subtle M3 look
+            color: colorScheme.surfaceContainerLow,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(16),
+              side: BorderSide(color: colorScheme.outlineVariant, width: 0.5),
             ),
-            child: Row(
-              children: [
-                // Icon container
-                Container(
-                  padding: const EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                    color: colorScheme.primaryContainer.withValues(alpha: 0.4),
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: Icon(icon, color: colorScheme.primary, size: 20),
+            child: InkWell(
+              onTap: onTap,
+              borderRadius: BorderRadius.circular(16),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 16.0,
+                  vertical: 8,
                 ),
-                const SizedBox(width: 16),
-                Expanded(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        title,
-                        style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                          color: colorScheme.onSurfaceVariant,
+                child: Row(
+                  children: [
+                    // Icon container
+                    Container(
+                      padding: const EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        color: colorScheme.primaryContainer.withValues(
+                          alpha: 0.4,
                         ),
+                        borderRadius: BorderRadius.circular(12),
                       ),
-                      Text(
-                        value,
-                        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                          fontWeight: FontWeight.w600,
-                          color: colorScheme.onSurface,
-                        ),
-                        overflow: TextOverflow.ellipsis,
+                      child: Icon(icon, color: colorScheme.primary, size: 20),
+                    ),
+                    const SizedBox(width: 16),
+                    Expanded(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            title,
+                            style: Theme.of(
+                              context,
+                            ).textTheme.labelSmall?.copyWith(
+                              color: colorScheme.onSurfaceVariant,
+                            ),
+                          ),
+                          Text(
+                            value,
+                            style: Theme.of(
+                              context,
+                            ).textTheme.bodyMedium?.copyWith(
+                              fontWeight: FontWeight.w600,
+                              color: colorScheme.onSurface,
+                            ),
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
-              ],
+              ),
             ),
           ),
-        ),
-      ),
     );
   }
 }

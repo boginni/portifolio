@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import
+
 import 'package:ds_assets/ds_assets.dart';
 import 'package:flutter/material.dart';
 
@@ -60,7 +62,6 @@ class SkillsPageDesktopSuccessState extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Wrap(
-
             spacing: 16,
             runSpacing: 16,
             alignment: WrapAlignment.center,
