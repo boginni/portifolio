@@ -1,92 +1,91 @@
-
 {
-  "overview" : "Specializing in building scalable, high-performance cross-platform applications. I bridge the gap between complex app architecture and pixel-perfect UI, with a deep focus on SOLID principles and automated testing to ensure long-term maintainability.",
+  "overview": "Especialista na construção de aplicações multiplataforma escaláveis e de alta performance. Faço a ponte entre arquiteturas complexas e interfaces (UI) pixel-perfect, com foco profundo em princípios SOLID e testes automatizados para garantir a manutenibilidade a longo prazo.",
   "kpis": [
     {
       "value": "7+",
-      "name": "Years Exp."
+      "name": "Anos de Exp."
     },
     {
       "value": "3M+",
-      "name": "Users Impacted"
+      "name": "Usuários Impactados"
     },
     {
       "value": "97%",
-      "name": "Error-free"
+      "name": "Livre de Erros"
     },
     {
       "value": "50+",
-      "name": "Projects"
+      "name": "Projetos"
     }
   ],
   "experiences": [
     {
       "title": "Senior Software Engineer",
       "subtitle": "Cognizant",
-      "description": "• Collaborated with MGM Rewards focusing on complex UI and app architecture.\n• Implemented Clean Architecture and SOLID principles.\n• Developed and maintained a robust design system with accessibility standards.\n• Utilized CI/CD and conducted unit, golden, and integration tests.",
+      "description": "• Colaboração com MGM Rewards focando em UI complexa e arquitetura de apps.\n• Implementação de Clean Architecture e princípios SOLID.\n• Desenvolvimento e manutenção de um design system robusto com padrões de acessibilidade.\n• Utilização de CI/CD e execução de testes unitários, golden e de integração.",
       "icon": "logo_cognizant.jpg",
-      "startDate": "May 2025",
-      "endDate": "Present",
-      "location": "Remote"
+      "startDate": "Maio 2025",
+      "endDate": "Presente",
+      "location": "Remoto"
     },
     {
       "title": "Flutter Developer - Pleno",
       "subtitle": "Farmácias APP | Delivery | By GrupoSC",
-      "description": "• Developed the mobile version of the Farmácias App with robust error handling.\n• Collaborated with industry leaders like Toshi Ossada.\n• Contributed to 2M+ users and a 97% error-free rate.",
+      "description": "• Desenvolvimento da versão mobile do Farmácias App com tratamento robusto de erros.\n• Colaboração com líderes da indústria como Toshi Ossada.\n• Contribuição para mais de 2 milhões de usuários e uma taxa de 97% livre de erros.",
       "icon": "logo_farmaciasapp.jpg",
       "startDate": "Mar 2024",
-      "endDate": "Present",
-      "location": "Vila Olímpia, São Paulo - Brazil"
+      "endDate": "Presente",
+      "location": "Vila Olímpia, São Paulo - Brasil"
     },
     {
       "title": "Flutter Developer",
       "subtitle": "B M FRANCA TECNOLOGIA",
-      "description": "• Developed high-quality Flutter applications as an independent contractor.\n• Collaborated with clients to deliver tailored solutions.\n• Ensured optimal performance through rigorous testing and debugging.",
+      "description": "• Desenvolvimento de aplicações Flutter de alta qualidade como contratante independente.\n• Colaboração com clientes para entregar soluções personalizadas.\n• Garantia de performance ideal através de testes rigorosos e depuração.",
       "icon": "pj.png",
-      "startDate": "Sep 2022",
-      "endDate": "Present",
-      "location": "Vila Velha, Espirito Santo, Brasil"
+      "startDate": "Set 2022",
+      "endDate": "Presente",
+      "location": "Vila Velha, Espírito Santo, Brasil"
     },
     {
       "title": "Cofundador da Comunidade",
       "subtitle": "Flutter Brasil",
-      "description": "• Creation of one of the largest Flutter communities in Brazil.\n• Organization of meetups and events to promote Flutter.\n• Production of educational content and moderation of discussion groups.",
+      "description": "• Criação de uma das maiores comunidades de Flutter do Brasil.\n• Organização de meetups e eventos para promover o ecossistema Flutter.\n• Produção de conteúdo educacional e moderação de grupos de discussão.",
       "icon": "logo_flutterbrasil.jpg",
       "startDate": "Jan 2024",
-      "endDate": "Present",
-      "location": "Brazil"
+      "endDate": "Presente",
+      "location": "Brasil"
     },
     {
       "title": "Senior Software Engineer",
       "subtitle": "MGM Resorts International",
-      "description": "Senior Software Engineer role focusing on hospitality and gaming enterprise solutions.",
+      "description": "Atuação como Engenheiro de Software Sênior com foco em soluções corporativas para hospitalidade e jogos.",
       "icon": "logo_mgm_resorts_international.jpg",
       "startDate": "Jun 2025",
-      "endDate": "Dec 2025",
+      "endDate": "Dez 2025",
       "location": ""
     },
     {
       "title": "Flutter Developer",
       "subtitle": "Althero",
-      "description": "Flutter development for international projects based in France.",
+      "description": "Desenvolvimento Flutter para projetos internacionais baseados na França.",
       "icon": "logo_althero.jpg",
       "startDate": "Jun 2024",
-      "endDate": "Oct 2025",
-      "location": "Rouen, Normandie"
+      "endDate": "Out 2025",
+      "location": "Rouen, Normandia"
     },
     {
       "title": "Full-stack Developer",
       "subtitle": "RécUp",
-      "description": "Full-stack development responsibilities within the Normandie tech ecosystem.",
+      "description": "Responsabilidades de desenvolvimento Full-stack dentro do ecossistema de tecnologia da Normandia.",
       "icon": "logo_recup.jpg",
-      "startDate": "Sep 2023",
-      "endDate": "Oct 2025",
-      "location": "Rouen, Normandie"
+      "startDate": "Set 2023",
+      "endDate": "Out 2025",
+      "location": "Rouen, Normandia"
     },
     {
       "title": "Flutter Developer",
       "subtitle": "PupzDoBrasil®",
-      "description": "• Led migration from Flutter 1 to Flutter 3 (40k+ lines refactored).\n• Implemented Null Safety and Flutter Modular for Micro-Frontends.\n• Employed MobX and Triple for state management.",
+      "description": "• Liderança na migração do Flutter 1 para Flutter 3 (mais de 40k linhas refatoradas).\n• Implementação de Null Safety e Flutter Modular para Micro-Frontends.\n• Utilização de MobX e Triple para gerenciamento de estado.",
       "icon": "logo_pupz.jpg",
       "startDate": "Nov 2023",
       "endDate": "Mar 2024",
@@ -95,39 +94,38 @@
     {
       "title": "Flutter Developer",
       "subtitle": "Dentista Organizado",
-      "description": "• Refactored source code removing GetX and implementing Flutter Modular.\n• Leveraged ValueNotifier and ChangeNotifier.\n• Conducted UI/UX refactoring to Material Design 3.",
+      "description": "• Refatoração de código fonte removendo GetX e implementando Flutter Modular.\n• Utilização de ValueNotifier e ChangeNotifier.\n• Execução de refatoração de UI/UX para Material Design 3.",
       "icon": "logo_dentista.jpg",
-      "startDate": "Aug 2023",
+      "startDate": "Ago 2023",
       "endDate": "Nov 2023",
       "location": ""
     },
-
     {
       "title": "Flutter Developer",
       "subtitle": "COM TECNOLOGIA LTDA",
-      "description": "• Led development of a Sales Force application.\n• Designed intuitive UI/UX and implemented SetState.\n• Executed Offline-First approach with SQLite (50+ tables).",
+      "description": "• Liderança no desenvolvimento de um aplicativo de Força de Vendas.\n• Design de UI/UX intuitivo e implementação de SetState.\n• Execução de abordagem Offline-First com SQLite (mais de 50 tabelas).",
       "icon": "logo_yukem.jpg",
-      "startDate": "Sep 2021",
-      "endDate": "Dec 2022",
-      "location": "Castanhal, Pará, Brazil"
+      "startDate": "Set 2021",
+      "endDate": "Dez 2022",
+      "location": "Castanhal, Pará, Brasil"
     },
     {
-      "title": "IT Assistant",
+      "title": "Assistente de TI",
       "subtitle": "Sea Telecom",
-      "description": "• Maintained database and managed customer data.\n• Developed Java scripts for automation.\n• Utilized JavaScript for ERP data entry.",
+      "description": "• Manutenção de banco de dados e gestão de dados de clientes.\n• Desenvolvimento de scripts Java para automação.\n• Utilização de JavaScript para entrada de dados em ERP.",
       "icon": "logo_sea.jpg",
-      "startDate": "Feb 2021",
+      "startDate": "Fev 2021",
       "endDate": "Jul 2021",
-      "location": "Castanhal, Pará, Brazil"
+      "location": "Castanhal, Pará, Brasil"
     },
     {
-      "title": "PHP Web Developer",
+      "title": "Desenvolvedor Web PHP",
       "subtitle": "Exímio Solutions Jr",
-      "description": "• Developed websites using PHP, MySQL, and Apache.\n• Led a team of interns and provided mentorship.",
+      "description": "• Desenvolvimento de sites utilizando PHP, MySQL e Apache.\n• Liderança de equipe de estagiários e fornecimento de mentoria.",
       "icon": "logo_exmio.jpg",
-      "startDate": "Oct 2019",
-      "endDate": "May 2020",
-      "location": "Castanhal, Pará, Brazil"
+      "startDate": "Out 2019",
+      "endDate": "Maio 2020",
+      "location": "Castanhal, Pará, Brasil"
     }
   ]
 }

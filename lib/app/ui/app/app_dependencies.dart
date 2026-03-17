@@ -5,6 +5,7 @@ import 'package:get_it/get_it.dart';
 import '../../domain/datasources/storage_datasource.dart';
 import '../../domain/repositories/preferences_repository.dart';
 import '../../domain/repositories/resume_information_repository.dart';
+import '../../external/datasource/preferences_datasource.dart';
 import '../../external/datasource/resume_information_datasource.dart';
 import '../../external/datasource/resume_information_datasource_debug.dart';
 import '../../external/datasource/storage_datasource_impl.dart';
@@ -22,12 +23,20 @@ class AppDependencies {
     _app.registerFactory<StorageDatasource>(
       StorageDatasourceImpl.new,
     );
+
     _app.registerFactory<ResumeInformationDatasourceImpl>(
       () => ResumeInformationDatasourceImpl(
         _app.get(),
         _app.get(),
       ),
     );
+
+    _app.registerFactory<PreferencesDatasource>(
+      () => PreferencesDatasource(
+        _app.get(),
+      ),
+    );
+
     _app.registerFactory<PreferencesRepository>(
       () => PreferencesRepositoryImpl(
         _app.get(),

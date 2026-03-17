@@ -27,7 +27,6 @@ class SplashRouteConfig extends AppRouteConfig {
 class SplashRoute extends AppRoute {
   SplashRoute();
 
-  late final AppStore appStore = AppDependencies.get();
   late final store = SplashStore();
 
   @override
@@ -40,7 +39,7 @@ class SplashRoute extends AppRoute {
   Widget toScreen({Object? extra}) {
     return SplashPage(
       controller: SplashController(
-        appStore: appStore,
+        AppDependencies.get(),
         store: store,
       ),
     );

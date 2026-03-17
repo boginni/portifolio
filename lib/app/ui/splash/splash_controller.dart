@@ -1,12 +1,12 @@
-import '../app/controllers/app_store.dart';
+import '../app/controllers/app_controller.dart';
 import 'splash_store.dart';
 
 class SplashController {
-  final AppStore appStore;
   final SplashStore store;
+  final AppController appController;
 
-  const SplashController({
-    required this.appStore,
+  const SplashController(
+    this.appController, {
     required this.store,
   });
 }

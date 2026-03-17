@@ -1,36 +1,36 @@
 {
-  "title": "About This Project",
-  "description": "This portfolio serves as a live technical demonstration of enterprise-grade Flutter development. Instead of a static build, it operates as a dynamic system with real-world infrastructure.",
+  "title": "Sobre Este Projeto",
+  "description": "Este portfólio serve como uma demonstração técnica em tempo real de desenvolvimento Flutter de nível empresarial. Em vez de uma compilação estática, ele opera como um sistema dinâmico com infraestrutura de mundo real.",
   "features": [
     {
       "icon": "0xf0207",
-      "title": "Dynamic Data",
-      "description": "Experience data fetched via GitHub API."
+      "title": "Dados Dinâmicos",
+      "description": "Experiência de dados buscados via API do GitHub."
     },
     {
       "icon": "0xf0372",
-      "title": "CI/CD Pipeline",
-      "description": "Automated builds via GitHub Actions."
+      "title": "Pipeline CI/CD",
+      "description": "Builds automatizados via GitHub Actions."
     },
     {
       "icon": "0xf6a8",
-      "title": "Responsive Architecture",
-      "description": "Reactive layout for 5 breakpoints."
+      "title": "Arquitetura Responsiva",
+      "description": "Layout reativo para 5 breakpoints."
     },
     {
       "icon": "0xf0250",
-      "title": "Localization",
-      "description": "Full i18n support & translations."
+      "title": "Localização",
+      "description": "Suporte completo a i18n e traduções."
     },
     {
       "icon": "0xf561",
-      "title": "Monitoring",
-      "description": "Firebase Crashlytics & Event tracking."
+      "title": "Monitoramento",
+      "description": "Firebase Crashlytics e rastreamento de eventos."
     },
     {
       "icon": "0xf016b",
-      "title": "Security",
-      "description": "Cloudflare edge protection."
+      "title": "Segurança",
+      "description": "Proteção de borda via Cloudflare."
     }
   ]
 }

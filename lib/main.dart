@@ -25,8 +25,9 @@ void main() {
   runApp(
     AppWidget(
       controller: AppController(
-        AppStore(),
-        AppRoutes(),
+        AppDependencies.get(),
+        store: AppStore(),
+        appRoutes: AppRoutes(),
       ),
     ),
   );

@@ -52,6 +52,10 @@ class PreferencesModel {
   }
 
   factory PreferencesModel.fromJson(Map<String, dynamic> json) {
+    final locale = json['locale']?.split('_') as List?;
+    final languageCode = locale?.elementAtOrNull(0);
+    final countryCode = locale?.elementAtOrNull(1);
+
     return PreferencesModel(
       beaconDriver: json['beaconDriver'],
       firstAccess: json['firstAccess'],
@@ -60,8 +64,8 @@ class PreferencesModel {
         orElse: () => ThemeMode.system,
       ),
       locale: Locale.fromSubtags(
-        languageCode: json['locale']?.split('_')[0] ?? 'en',
-        countryCode: json['locale']?.split('_')[1],
+        languageCode: languageCode ?? 'en',
+        countryCode: countryCode,
       ),
     );
   }

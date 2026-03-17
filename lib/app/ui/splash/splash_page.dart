@@ -37,7 +37,11 @@ class _SplashPageState extends State<SplashPage> {
 
   Future<void> initialize() async {
     store.state = SplashStoreLoadingState();
-    await navigate();
+    try {
+      await controller.appController.loadPreferences();
+    } finally {
+      await navigate();
+    }
   }
 
   Future<void> navigate() async {
