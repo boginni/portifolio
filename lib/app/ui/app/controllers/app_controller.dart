@@ -11,8 +11,8 @@ class AppController {
   final PreferencesRepository preferencesRepository;
 
   const AppController(
-    this.preferencesRepository, {
-    required this.store,
+    this.preferencesRepository,
+    this.store, {
     required this.appRoutes,
   });
 
@@ -44,6 +44,10 @@ class AppController {
   }
 
   Future<void> setLocale(Locale? locale) async {
+    if (locale == null) {
+      return;
+    }
+
     store.locale = locale;
 
     final result = await preferencesRepository.get();
@@ -57,5 +61,7 @@ class AppController {
         locale: locale,
       ),
     );
+
+    store.changeLanguageNotifierController.sink.add(locale);
   }
 }

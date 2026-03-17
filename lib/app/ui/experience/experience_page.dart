@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../app/components/responsive_builder.dart';
+import '../app/mixin/change_language_listener_mixin.dart';
 import 'controller/experience_controller.dart';
 import 'pages/sizes/desktop/experience_page_desktop.dart';
 import 'pages/sizes/phone/experience_page_phone.dart';
@@ -21,7 +22,8 @@ class ExperiencePage extends StatefulWidget {
   State<ExperiencePage> createState() => _ExperiencePAgeState();
 }
 
-class _ExperiencePAgeState extends State<ExperiencePage> {
+class _ExperiencePAgeState extends State<ExperiencePage>
+    with ChangeLanguageListenerMixin {
   ExperienceController get controller => widget.controller;
 
   @override
@@ -38,6 +40,11 @@ class _ExperiencePAgeState extends State<ExperiencePage> {
 
   Future<void> init() async {
     await controller.load();
+  }
+
+  @override
+  void onLanguageChanged(Locale newLocale) {
+    init();
   }
 
   @override

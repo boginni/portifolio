@@ -26,7 +26,7 @@ void main() {
     AppWidget(
       controller: AppController(
         AppDependencies.get(),
-        store: AppStore(),
+        AppDependencies.get(),
         appRoutes: AppRoutes(),
       ),
     ),
