@@ -4,10 +4,10 @@ import '../../../../app/generic_state_pages/generic_failure_state_page.dart';
 import '../../../../app/generic_state_pages/generic_loading_state_page.dart';
 import '../../../../app/store/generic_store.dart';
 import '../../../contact_controller.dart';
-import 'contact_page_wide_success_state.dart';
+import 'contact_page_desktop_success_state.dart';
 
-class ContactPageWide extends StatelessWidget {
-  const ContactPageWide({
+class ContactPageDesktop extends StatelessWidget {
+  const ContactPageDesktop({
     super.key,
     required this.controller,
     required this.init,
@@ -24,7 +24,7 @@ class ContactPageWide extends StatelessWidget {
           (context, value, child) => switch (value) {
             GenericStoreInitialState() => const GenericLoadingStatePage(),
             GenericStoreSuccessState(dataObject: final contact) =>
-              ContactPageDesktopSuccessState(
+              ContactPageSuccessStateDesktop(
                 entity: contact,
               ),
             GenericStoreLoadingState() => const GenericLoadingStatePage(),

@@ -89,38 +89,6 @@ class HomeSuccessStatePageDesktop extends StatelessWidget {
                 ],
               ),
             ),
-            Container(
-              padding: const EdgeInsets.all(32),
-              width: double.infinity,
-              color: colorScheme.inverseSurface,
-              child: Semantics(
-                explicitChildNodes: true,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Semantics(
-                      header: true,
-                      child: Text(
-                        'Overview',
-                        style: context.textTheme.titleLarge?.copyWith(
-                          color: context.colorScheme.onInverseSurface,
-                        ),
-                      ),
-                    ),
-                    const SizedBox(height: 8),
-                    const Divider(),
-                    const SizedBox(height: 8),
-                    ProfessionalSummaryWidget(
-                      data.professionalSummary,
-                      textStyle: context.textTheme.bodyMedium?.copyWith(
-                        color: context.colorScheme.onInverseSurface,
-                        height: 1.5,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
           ],
         ),
       ),

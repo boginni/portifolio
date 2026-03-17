@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../../../../app/components/responsive_builder.dart';
-import '../../../../experience/experience_page.dart';
-import '../../../../home/pages/home_page.dart';
-import '../../../../skills/skills_page.dart';
-import '../../../components/side_bar_component.dart';
 import '../../../controller/shell_controller.dart';
+import '../../../controller/shell_store.dart';
+import '../../shell_error_state_page.dart';
+import 'shell_page_wide_success_state.dart';
 
 class ShellPageWide extends StatelessWidget {
   const ShellPageWide({super.key, required this.controller});
@@ -14,43 +12,21 @@ class ShellPageWide extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SideBarComponent(
-              contactController: controller.contactController,
-              pdfController: controller.pdfController,
-              appController: controller.appController,
+    return ValueListenableBuilder(
+      valueListenable: controller.store,
+      builder: (context, value, child) {
+        return switch (value) {
+          ShellLoadingState() => const Scaffold(
+            body: Center(
+              child: CircularProgressIndicator(),
             ),
-            Expanded(
-              child: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    HomePage(
-                      controller: controller.homeController,
-                    ),
-                    ExperiencePage(
-                      forcedDisplaySize: ResponsiveDisplaySizeEnum.wide,
-                      controller: controller.experienceController,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 16 * 2,
-                        vertical: 16 * 3,
-                      ),
-                      child: SkillsPage(
-                        controller: controller.skillsController,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
+          ),
+          ShellSuccessState() => ShellPageWideSuccessState(
+            controller: controller,
+          ),
+          ShellErrorState() => const ShellPageErrorState(),
+        };
+      },
     );
   }
 }

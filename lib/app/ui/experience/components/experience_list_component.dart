@@ -1,57 +1,16 @@
-import 'package:ds_assets/ds_assets.dart';
 import 'package:flutter/material.dart';
 import 'package:timelines_plus/timelines_plus.dart';
 
-import '../../../../app/extensions/context_extensions.dart';
-import '../../../../home/components/high_resolution_image.dart';
-import '../../../components/career_overview_component.dart';
-import '../../../components/experience_company_card_widget.dart';
-import '../../../controller/experience_store.dart';
+import '../../app/extensions/context_extensions.dart';
+import '../controller/experience_store.dart';
+import 'career_overview_component.dart';
+import 'experience_company_card_widget.dart';
 
-class ExperiencePageSuccessStateUltraWide extends StatelessWidget {
-  const ExperiencePageSuccessStateUltraWide(
-    this.state, {
+class ExperienceListComponent extends StatelessWidget {
+  const ExperienceListComponent({
     super.key,
-    required this.onRefresh,
+    required this.state,
   });
-
-  final ExperienceStoreSuccessState state;
-  final RefreshCallback onRefresh;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      spacing: 32,
-      children: [
-        const SizedBox(
-          height: 16 * 4,
-        ),
-        _List(state: state),
-        Column(
-          children: [
-            SizedBox(
-              height: 16 * 10 * 10,
-              width: double.infinity,
-              child: HighResolutionImage(
-                assetPath:
-                    context.isDarkMode
-                        ? DsAssetsPhotos.professionalFullSuitSeriousPng
-                        : DsAssetsPhotos.workingMacPng,
-                fit: BoxFit.fitWidth,
-                alignment: Alignment.topCenter,
-                ratio: 3330 / 5000,
-              ),
-            ),
-          ],
-        ),
-      ],
-    );
-  }
-}
-
-class _List extends StatelessWidget {
-  const _List({required this.state});
 
   final ExperienceStoreSuccessState state;
 

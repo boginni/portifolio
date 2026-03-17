@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../app/components/responsive_builder.dart';
-import 'controllers/skills_controller.dart';
-import 'pages/sizes/skills_page_ultra_wide.dart';
+import '../../app/components/responsive_builder.dart';
+import '../controllers/skills_controller.dart';
+import 'sizes/desktop/skills_page_desktop.dart';
+import 'sizes/ultra_wide/skills_page_ultra_wide.dart';
+import 'sizes/wide/skills_page_wide.dart';
 
 class SkillsPage extends StatefulWidget {
   const SkillsPage({
@@ -38,6 +40,16 @@ class _SkillsPageState extends State<SkillsPage> {
     return ResponsiveBuilder(
       ultraWide:
           (context) => SkillsPageUltraWide(
+            controller: controller,
+            init: init,
+          ),
+      wide:
+          (context) => SkillsPageWide(
+            controller: controller,
+            init: init,
+          ),
+      desktop:
+          (context) => SkillsPageDesktop(
             controller: controller,
             init: init,
           ),

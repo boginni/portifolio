@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../controller/shell_controller.dart';
 import '../../../controller/shell_store.dart';
 import '../../shell_error_state_page.dart';
-import 'shell_success_state_page_phone.dart';
+import 'shell_page_phone_success_state.dart';
 
 class ShellPageMobile extends StatelessWidget {
   const ShellPageMobile({
@@ -24,7 +24,7 @@ class ShellPageMobile extends StatelessWidget {
               child: CircularProgressIndicator(),
             ),
           ),
-          ShellSuccessState() => ShellPageSuccessStatePhone(
+          ShellSuccessState() => ShellPagePhoneSuccessState(
             controller: controller,
           ),
           ShellErrorState() => const ShellPageErrorState(),

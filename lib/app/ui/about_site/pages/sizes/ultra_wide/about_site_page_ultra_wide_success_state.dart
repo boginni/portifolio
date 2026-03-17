@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../../domain/dto/entities/resume_about_site_entity.dart';
-import '../../app/components/inverse_brightness_builder.dart';
-import '../components/feature_tile_widget.dart';
+import '../../../../../domain/dto/entities/resume_about_site_entity.dart';
+import '../../../../app/components/inverse_brightness_builder.dart';
+import '../../../components/feature_tile_widget.dart';
 
 class AboutSitePageUltraWideSuccessState extends StatelessWidget {
   const AboutSitePageUltraWideSuccessState(
@@ -21,6 +21,7 @@ class AboutSitePageUltraWideSuccessState extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
+        const SizedBox(height: 16 * 4),
         Padding(
           padding: const EdgeInsets.symmetric(
             horizontal: 16 * 4,
@@ -39,25 +40,27 @@ class AboutSitePageUltraWideSuccessState extends StatelessWidget {
                 style: theme.textTheme.bodyLarge?.copyWith(
                   color: colorScheme.onSurfaceVariant,
                 ),
+                textAlign: TextAlign.center,
               ),
               const SizedBox(height: 16 * 3),
-              GridView.count(
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                crossAxisCount: 3,
-                mainAxisSpacing: 16 * 2,
-                crossAxisSpacing: 16 * 2,
-                childAspectRatio: 2.5,
+              Wrap(
+                runSpacing: 16,
+                spacing: 16,
+                alignment: WrapAlignment.center,
                 children:
                     entity.features
                         .map(
-                          (e) => FeatureTileWidget(
-                            icon: IconData(
-                              int.parse(e.icon),
-                              fontFamily: 'MaterialIcons',
+                          (e) => SizedBox(
+                            width: 16 * 10 * 2,
+                            height: 16 * 12,
+                            child: FeatureTileWidget(
+                              icon: IconData(
+                                int.parse(e.icon),
+                                fontFamily: 'MaterialIcons',
+                              ),
+                              title: e.title,
+                              desc: e.description,
                             ),
-                            title: e.title,
-                            desc: e.description,
                           ),
                         )
                         .toList(),

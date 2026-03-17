@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import '../app/components/responsive_builder.dart';
-import '../app/store/generic_store.dart';
-import 'about_site_controller.dart';
-import 'ultra_wide/about_site_page_ultra_wide.dart';
+import '../../app/components/responsive_builder.dart';
+import '../../app/store/generic_store.dart';
+import '../about_site_controller.dart';
+import 'sizes/desktop/about_site_page_desktop.dart';
+import 'sizes/desktop/about_site_page_desktop_success_state.dart';
+import 'sizes/ultra_wide/about_site_page_ultra_wide.dart';
 
 class AboutSitePage extends StatefulWidget {
   const AboutSitePage({
@@ -41,6 +43,16 @@ class _AboutSitePAgeState extends State<AboutSitePage> {
   Widget build(BuildContext context) {
     return ResponsiveBuilder(
       phone:
+          (context) => AboutSitePageUltraWide(
+            controller: controller,
+            init: init,
+          ),
+      desktop:
+          (context) => AboutSitePageDesktop(
+            controller: controller,
+            init: init,
+          ),
+      wide:
           (context) => AboutSitePageUltraWide(
             controller: controller,
             init: init,

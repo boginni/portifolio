@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../app/components/responsive_builder.dart';
 import '../app/store/generic_store.dart';
 import 'contact_controller.dart';
+import 'contact_states/sizes/desktop/contact_page_desktop.dart';
 import 'contact_states/sizes/phone/contact_page_phone.dart';
 import 'contact_states/sizes/wide/contact_page_wide.dart';
 
@@ -43,7 +44,10 @@ class _ContactPAgeState extends State<ContactPage> {
     return ResponsiveBuilder(
       forceDisplaySize: widget.forceDisplaySize,
       phone: (context) => ContactPagePhone(controller: controller, init: init),
+      tablet: (context) => ContactPagePhone(controller: controller, init: init),
+      desktop: (context) => ContactPageDesktop(controller: controller, init: init),
       wide: (context) => ContactPageWide(controller: controller, init: init),
+      ultraWide: (context) => ContactPageWide(controller: controller, init: init),
     );
   }
 }

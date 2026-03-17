@@ -6,8 +6,8 @@ import '../../../../home/pages/home_page.dart';
 import '../../../controller/shell_controller.dart';
 import '../../../controller/shell_store.dart';
 
-class ShellPageSuccessStatePhone extends StatelessWidget {
-  const ShellPageSuccessStatePhone({
+class ShellPagePhoneSuccessState extends StatelessWidget {
+  const ShellPagePhoneSuccessState({
     super.key,
     required this.controller,
   });

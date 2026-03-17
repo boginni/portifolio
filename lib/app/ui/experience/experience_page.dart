@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../app/components/responsive_builder.dart';
 import 'controller/experience_controller.dart';
+import 'pages/sizes/desktop/experience_page_desktop.dart';
 import 'pages/sizes/phone/experience_page_phone.dart';
 import 'controller/experience_store.dart';
 import 'pages/sizes/ultra_wide/experience_page_ultra_wide.dart';
@@ -47,13 +48,23 @@ class _ExperiencePAgeState extends State<ExperiencePage> {
             controller: controller,
             init: init,
           ),
-      ultraWide:
-          (context) => ExperiencePageUltraWide(
+      tablet:
+          (context) => ExperiencePagePhone(
+            controller: controller,
+            init: init,
+          ),
+      desktop:
+          (context) => ExperiencePageDesktop(
             controller: controller,
             init: init,
           ),
       wide:
           (context) => ExperiencePageWide(
+            controller: controller,
+            init: init,
+          ),
+      ultraWide:
+          (context) => ExperiencePageUltraWide(
             controller: controller,
             init: init,
           ),

@@ -88,49 +88,6 @@ class HomeSuccessStatePageWide extends StatelessWidget {
               ],
             ),
           ),
-
-          // OVERVIEW SECTION
-          Container(
-            width: double.infinity,
-            color: colorScheme.inverseSurface,
-            child: Center(
-              child: Container(
-                constraints: const BoxConstraints(maxWidth: 1000),
-                // Narrower for readability
-                padding: const EdgeInsets.symmetric(
-                  vertical: 80,
-                  horizontal: 32,
-                ),
-                child: Semantics(
-                  explicitChildNodes: true,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Overview',
-                        style: textTheme.displaySmall?.copyWith(
-                          // Larger header
-                          color: colorScheme.onInverseSurface,
-                        ),
-                      ),
-                      const SizedBox(height: 24),
-                      const Divider(thickness: 2),
-                      const SizedBox(height: 24),
-                      ProfessionalSummaryWidget(
-                        data.professionalSummary,
-                        textStyle: textTheme.titleLarge?.copyWith(
-                          // Larger body text for wide screens
-                          color: colorScheme.onInverseSurface,
-                          height: 1.6,
-                          fontWeight: FontWeight.w300,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          ),
         ],
       ),
     );

@@ -4,7 +4,7 @@ import '../../../../app/generic_state_pages/generic_failure_state_page.dart';
 import '../../../../app/generic_state_pages/generic_loading_state_page.dart';
 import '../../../../app/store/generic_store.dart';
 import '../../../contact_controller.dart';
-import 'contact_page_success_state_phone.dart';
+import 'contact_page_phone_success_state.dart';
 
 class ContactPagePhone extends StatelessWidget {
   const ContactPagePhone({

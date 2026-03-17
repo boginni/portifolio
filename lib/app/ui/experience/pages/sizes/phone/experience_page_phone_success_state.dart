@@ -5,8 +5,8 @@ import '../../../../app/extensions/context_extensions.dart';
 import '../../../components/experience_company_card_widget.dart';
 import '../../../controller/experience_store.dart';
 
-class ExperiencePageSuccessStatePhone extends StatelessWidget {
-  const ExperiencePageSuccessStatePhone(
+class ExperiencePagePhoneSuccessState extends StatelessWidget {
+  const ExperiencePagePhoneSuccessState(
     this.state, {
     super.key,
     required this.onRefresh,

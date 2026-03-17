@@ -1,10 +1,10 @@
 import 'package:ds_assets/ds_assets.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../domain/dto/entities/resume_skills_entity.dart';
+import '../../../../../domain/dto/entities/resume_skills_entity.dart';
 
-class SkillsPageUltraWideSuccessState extends StatelessWidget {
-  const SkillsPageUltraWideSuccessState({
+class SkillsPageWideSuccessState extends StatelessWidget {
+  const SkillsPageWideSuccessState({
     super.key,
     required this.entity,
   });

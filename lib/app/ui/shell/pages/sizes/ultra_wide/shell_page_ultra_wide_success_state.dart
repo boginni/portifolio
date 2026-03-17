@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
 
-import '../../../../about_site/about_site_page.dart';
+import '../../../../about_site/pages/about_site_page.dart';
 import '../../../../app/components/inverse_brightness_builder.dart';
 import '../../../../app/components/responsive_builder.dart';
+import '../../../../app/components/waka_time_grid_widget.dart';
 import '../../../../app/extensions/context_extensions.dart';
 import '../../../../events/events_page.dart';
 import '../../../../experience/experience_page.dart';
 import '../../../../home/pages/home_page.dart';
-import '../../../../skills/skills_page.dart';
+import '../../../../skills/pages/skills_page.dart';
 import '../../../components/side_bar_component.dart';
 import '../../../controller/shell_controller.dart';
 import '../../../controller/shell_store.dart';
 
-class ShellPageSuccessStateUltraWide extends StatelessWidget {
-  const ShellPageSuccessStateUltraWide({
+class ShellPageUltraWideSuccessState extends StatelessWidget {
+  const ShellPageUltraWideSuccessState({
     super.key,
     required this.controller,
   });
@@ -66,11 +67,7 @@ class ShellPageSuccessStateUltraWide extends StatelessWidget {
                                   ],
                                 ),
                                 const SizedBox(height: 16 * 4),
-                                Image.network(
-                                  context.isDarkMode
-                                      ? 'https://wakatime.com/share/@boginni/377bf0cc-80c8-4263-b9a2-2e06c5535e36.png'
-                                      : 'https://wakatime.com/share/@boginni/f9e946db-3a4f-4866-a680-4c74e7e26833.png',
-                                ),
+                                const WakaTimeGridWidget(),
                                 const EventsPage(),
                                 const SizedBox(height: 16 * 4),
                                 Expanded(

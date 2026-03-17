@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 
+import '../../../../app/extensions/context_extensions.dart';
+import '../../../../home/pages/home_page.dart';
 import '../../../controller/shell_controller.dart';
 import '../../../controller/shell_store.dart';
 import '../../shell_error_state_page.dart';
-import 'shell_page_ultra_wide_success_state.dart';
+import 'shell_page_desktop_success_state.dart';
 
-class ShellPageUltraWide extends StatelessWidget {
-  const ShellPageUltraWide({
-    super.key,
-    required this.controller,
-  });
+class ShellPageDesktop extends StatelessWidget {
+  const ShellPageDesktop({super.key, required this.controller});
 
   final ShellController controller;
 
@@ -24,7 +23,7 @@ class ShellPageUltraWide extends StatelessWidget {
               child: CircularProgressIndicator(),
             ),
           ),
-          ShellSuccessState() => ShellPageUltraWideSuccessState(
+          ShellSuccessState() => ShellPageDesktopSuccessState(
             controller: controller,
           ),
           ShellErrorState() => const ShellPageErrorState(),

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-import '../../app/generic_state_pages/generic_loading_state_page.dart';
-import '../../app/store/generic_store.dart';
-import '../about_site_controller.dart';
-import 'about_site_page_ultra_wide_success_state.dart';
+import '../../../../app/generic_state_pages/generic_loading_state_page.dart';
+import '../../../../app/store/generic_store.dart';
+import '../../../about_site_controller.dart';
+import 'about_site_page_wide_success_state.dart';
 
-class AboutSitePageUltraWide extends StatelessWidget {
-  const AboutSitePageUltraWide({
+class AboutSitePageWide extends StatelessWidget {
+  const AboutSitePageWide({
     super.key,
     required this.controller,
     required this.init,
@@ -24,7 +24,7 @@ class AboutSitePageUltraWide extends StatelessWidget {
             GenericStoreInitialState() => const GenericLoadingStatePage(),
             GenericStoreLoadingState() => const GenericLoadingStatePage(),
             GenericStoreFailureState() => const GenericLoadingStatePage(),
-            GenericStoreSuccessState() => AboutSitePageUltraWideSuccessState(
+            GenericStoreSuccessState() => AboutSitePageWideSuccessState(
               value.dataObject,
               onRefresh: init,
             ),
