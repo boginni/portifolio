@@ -4,8 +4,9 @@ import '../../app/mixin/change_language_listener_mixin.dart';
 import '../../app/store/generic_store.dart';
 import '../about_site_controller.dart';
 import 'sizes/desktop/about_site_page_desktop.dart';
-import 'sizes/phone/about_site_page_wide.dart';
+import 'sizes/phone/about_site_page_phone.dart';
 import 'sizes/ultra_wide/about_site_page_ultra_wide.dart';
+import 'sizes/wide/about_site_page_wide.dart';
 
 class AboutSitePage extends StatefulWidget {
   const AboutSitePage({
@@ -50,7 +51,7 @@ class _AboutSitePAgeState extends State<AboutSitePage>
   Widget build(BuildContext context) {
     return ResponsiveBuilder(
       phone:
-          (context) => AboutSitePageUltraWide(
+          (context) => AboutSitePagePhone(
             controller: controller,
             init: init,
           ),

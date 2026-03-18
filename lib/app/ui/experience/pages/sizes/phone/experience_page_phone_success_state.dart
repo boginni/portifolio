@@ -2,6 +2,8 @@ import 'package:ds_assets/ds_assets.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../app/extensions/context_extensions.dart';
+import '../../../../home/components/high_resolution_image.dart';
+import '../../../components/career_overview_component.dart';
 import '../../../components/experience_company_card_widget.dart';
 import '../../../controller/experience_store.dart';
 
@@ -24,12 +26,23 @@ class ExperiencePagePhoneSuccessState extends StatelessWidget {
           SliverToBoxAdapter(
             child: Stack(
               children: [
-                Image.asset(
+                Container(
                   height: 16 * 22,
                   width: double.infinity,
-                  fit: BoxFit.cover,
-                  DsAssetsPhotos.professionalSuitDistractedPng,
-                  alignment: Alignment.topCenter,
+                  decoration: BoxDecoration(
+                    border: Border(
+                      bottom: BorderSide(
+                        color: context.colorScheme.outline,
+                        width: 1,
+                      ),
+                    ),
+                  ),
+                  child: const HighResolutionImage(
+                    assetPath: DsAssetsPhotos.professionalSuitDistractedPng,
+                    ratio: 3330 / 5000,
+                    fit: BoxFit.cover,
+                    alignment: Alignment.topCenter,
+                  ),
                 ),
                 Container(
                   decoration: BoxDecoration(
@@ -53,13 +66,23 @@ class ExperiencePagePhoneSuccessState extends StatelessWidget {
                       Text(
                         'My Experience',
                         style: context.textTheme.displaySmall?.copyWith(
-                          color: context.colorScheme.surfaceContainerHighest,
+                          shadows: [
+                            const Shadow(
+                              offset: Offset(1, -1),
+                              blurRadius: 1,
+                            ),
+                          ],
                         ),
                       ),
                       Text(
                         'Senior Software Engineer',
                         style: context.textTheme.bodyLarge?.copyWith(
-                          color: context.colorScheme.surfaceContainerHighest,
+                          shadows: [
+                            const Shadow(
+                              offset: Offset(1, -1),
+                              blurRadius: 1,
+                            ),
+                          ],
                         ),
                       ),
                     ],
@@ -72,60 +95,47 @@ class ExperiencePagePhoneSuccessState extends StatelessWidget {
             child: Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const SizedBox(
-                        height: 16,
-                      ),
-                      Text(
-                        'Overview',
-                        style: context.textTheme.titleLarge,
-                      ),
-                      Text(
-                        state.experienceObject.overview,
-                      ),
-                    ],
+                  padding: const EdgeInsets.all(16),
+                  child: CareerOverviewComponent(
+                    experience: state.experienceObject,
                   ),
                 ),
               ],
             ),
           ),
-
           SliverPadding(
             padding: const EdgeInsets.symmetric(
               horizontal: 16.0,
               vertical: 24,
             ),
             sliver: SliverList.builder(
-              itemCount:
-                  state.experienceObject.experienceCompanyList.length * 2 - 1,
-              itemBuilder: (context, index) {
-                if (index.isEven) {
-                  return ExperienceCompanyCardWidget(
-                    experience:
-                        state.experienceObject.experienceCompanyList[index ~/
-                            2],
-                  );
-                }
-
-                return const SizedBox(height: 16);
-              },
+              itemCount: state.experienceObject.experienceCompanyList.length,
+              itemBuilder:
+                  (context, index) => Column(
+                    children: [
+                      ExperienceCompanyCardWidget(
+                        experience:
+                            state.experienceObject.experienceCompanyList[index],
+                      ),
+                      const SizedBox(height: 16),
+                    ],
+                  ),
             ),
           ),
-          SliverToBoxAdapter(
+          const SliverToBoxAdapter(
             child: Column(
               children: [
                 SizedBox(
                   height: 140 * 3,
                   width: double.infinity,
-                  child: Image.asset(
+                  child: HighResolutionImage(
+                    assetPath: DsAssetsPhotos.workingMacPng,
+                    ratio: 3330 / 5000,
                     fit: BoxFit.cover,
-                    DsAssetsPhotos.workingMacPng,
+                    alignment: Alignment(0, -.2),
                   ),
                 ),
-                const SizedBox(height: 64),
+                SizedBox(height: 64),
               ],
             ),
           ),

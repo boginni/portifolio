@@ -2,6 +2,7 @@ import 'package:ds_assets/ds_assets.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../domain/dto/entities/resume_overview_entity.dart';
+import '../../../../app/components/profile_avatar_widget.dart';
 import '../../../../app/extensions/context_extensions.dart';
 import '../../../components/high_resolution_image.dart';
 import '../../../components/professional_summary_widget.dart';
@@ -39,12 +40,10 @@ class HomeSuccessStatePagePhone extends StatelessWidget {
           ),
           const SizedBox(height: 32),
           SizedBox(
-            height: MediaQuery.sizeOf(context).height * 0.6,
-            child: const HighResolutionImage(
-              assetPath: DsAssetsPhotos.purpleTCrossedArmsPng,
-              ratio: 3330 / 5000,
-              alignment: Alignment.topCenter,
-              fit: BoxFit.cover,
+            height: MediaQuery.sizeOf(context).height * 0.5,
+            child: const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16.0),
+              child: ProfileAvatarWidget(),
             ),
           ),
           const SizedBox(height: 16),
@@ -54,10 +53,12 @@ class HomeSuccessStatePagePhone extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  data.title,
-                  style: context.textTheme.titleLarge,
+                  data.name,
+                  style: context.textTheme.headlineMedium,
                 ),
-                Text(data.status),
+                Text(
+                  data.title,
+                ),
               ],
             ),
           ),
