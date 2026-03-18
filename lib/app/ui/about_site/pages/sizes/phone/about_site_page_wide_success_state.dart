@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../../../../../domain/dto/entities/resume_about_site_entity.dart';
-import '../../../../app/components/inverse_brightness_builder.dart';
 import '../../../components/feature_tile_widget.dart';
 
 class AboutSitePageWideSuccessState extends StatelessWidget {
@@ -21,7 +20,10 @@ class AboutSitePageWideSuccessState extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Padding(
+        Container(
+          constraints: const BoxConstraints(
+            maxWidth: 1440,
+          ),
           padding: const EdgeInsets.symmetric(
             horizontal: 16 * 4,
           ),
@@ -39,6 +41,7 @@ class AboutSitePageWideSuccessState extends StatelessWidget {
                 style: theme.textTheme.bodyLarge?.copyWith(
                   color: colorScheme.onSurfaceVariant,
                 ),
+                textAlign: TextAlign.center,
               ),
               const SizedBox(height: 16 * 3),
               GridView.count(
@@ -47,7 +50,7 @@ class AboutSitePageWideSuccessState extends StatelessWidget {
                 crossAxisCount: 3,
                 mainAxisSpacing: 16 * 2,
                 crossAxisSpacing: 16 * 2,
-                childAspectRatio: 2.5,
+                childAspectRatio: 1.5,
                 children:
                     entity.features
                         .map(
@@ -65,10 +68,8 @@ class AboutSitePageWideSuccessState extends StatelessWidget {
             ],
           ),
         ),
-        const Spacer(),
-        InverseBrightnessBuilder(
-          builder: (_, _) => const Divider(),
-        ),
+        const SizedBox(height: 16 * 6),
+        const Divider(),
         Padding(
           padding: const EdgeInsets.symmetric(
             horizontal: 16 * 2,

@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import '../app/components/responsive_builder.dart';
 import '../app/store/generic_store.dart';
 import 'contact_controller.dart';
-import 'contact_states/sizes/desktop/contact_page_desktop.dart';
-import 'contact_states/sizes/phone/contact_page_phone.dart';
-import 'contact_states/sizes/wide/contact_page_wide.dart';
+import 'pages/sizes/desktop/contact_page_desktop.dart';
+import 'pages/sizes/phone/contact_page_phone.dart';
+import 'pages/sizes/wide/contact_page_wide.dart';
 
 class ContactPage extends StatefulWidget {
   const ContactPage({
@@ -17,10 +17,10 @@ class ContactPage extends StatefulWidget {
   final ResponsiveDisplaySizeEnum? forceDisplaySize;
 
   @override
-  State<ContactPage> createState() => _ContactPAgeState();
+  State<ContactPage> createState() => _ContactPageState();
 }
 
-class _ContactPAgeState extends State<ContactPage> {
+class _ContactPageState extends State<ContactPage> {
   ContactController get controller => widget.controller;
 
   @override

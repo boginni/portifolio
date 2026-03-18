@@ -30,68 +30,88 @@ class HomeSuccessStatePageDesktop extends StatelessWidget {
       physics: const ClampingScrollPhysics(),
       child: Material(
         color: context.colorScheme.surface,
-        child: Column(
-          children: [
-            SizedBox(
-              height: MediaQuery.of(context).size.height,
-              child: Stack(
-                clipBehavior: Clip.none,
-                children: [
-                  const Positioned.fill(
-                    child: BackgroundSplit(),
-                  ),
-                  const Positioned(
-                    top: 0,
-                    bottom: 0,
-                    right: 16,
-                    child: HighResolutionImage(
-                      assetPath: DsAssetsPhotos.professionalSuitDistractedPng,
-                      ratio: 3330 / 5000,
-                    ),
-                  ),
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: Container(
-                      padding: const EdgeInsets.only(left: 64.0),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
+        child: SizedBox(
+          height: MediaQuery.of(context).size.height,
+          child: Stack(
+            clipBehavior: Clip.none,
+            children: [
+              const Positioned.fill(
+                child: BackgroundSplit(),
+              ),
+              const Positioned(
+                top: 0,
+                bottom: 0,
+                right: 16,
+                child: HighResolutionImage(
+                  assetPath: DsAssetsPhotos.professionalSuitDistractedPng,
+                  ratio: 3330 / 5000,
+                ),
+              ),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Container(
+                  padding: const EdgeInsets.only(left: 64.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Hi, I am',
+                        style: textTheme.headlineSmall?.copyWith(
+                          shadows:  [
+                            Shadow(
+                              color:context.colorScheme.surface,
+                              offset: const Offset(1, 1),
+                              blurRadius: 2,
+                            ),
+                          ],
+                        ),
+
+                      ),
+                      const SizedBox(height: 16),
+                      Text(
+                        data.name,
+                        style: textTheme.displayLarge?.copyWith(
+                          fontWeight: FontWeight.bold,
+                          color: colorScheme.onSurface,
+                          shadows: [
+                            Shadow(
+                              color: context.colorScheme.surface,
+                              offset: const Offset(1, 1),
+                              blurRadius: 2,
+                            ),
+                          ],
+                        ),
+                      ),
+                      Text(
+                        data.title,
+                        style: textTheme.titleMedium?.copyWith(
+                          color: colorScheme.onSurfaceVariant,
+                          shadows:  [
+                            Shadow(
+                              color:context.colorScheme.surface,
+                              offset: const Offset(1, 1),
+                              blurRadius: 2,
+                            ),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 16 * 2,
+                      ),
+                      const Row(
                         children: [
-                          Text('Hi, I am', style: textTheme.headlineSmall),
-                          const SizedBox(height: 16),
-                          Text(
-                            data.name,
-                            style: textTheme.displayLarge?.copyWith(
-                              fontWeight: FontWeight.bold,
-                              color: colorScheme.onSurface,
-                            ),
-                          ),
-                          Text(
-                            data.title,
-                            style: textTheme.titleMedium?.copyWith(
-                              color: colorScheme.onSurfaceVariant.withValues(
-                                alpha: 0.7,
-                              ),
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 16 * 2,
-                          ),
-                          const Row(
-                            children: [
-                              SocialIconWidget(Icons.alternate_email),
-                              SocialIconWidget(Icons.code),
-                              SocialIconWidget(Icons.link),
-                            ],
-                          ),
+                          SocialIconWidget(Icons.alternate_email),
+                          SocialIconWidget(Icons.code),
+                          SocialIconWidget(Icons.link),
                         ],
                       ),
-                    ),
+                    ],
                   ),
-                ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

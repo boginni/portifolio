@@ -4,6 +4,7 @@ import '../../app/mixin/change_language_listener_mixin.dart';
 import '../../app/store/generic_store.dart';
 import '../about_site_controller.dart';
 import 'sizes/desktop/about_site_page_desktop.dart';
+import 'sizes/phone/about_site_page_wide.dart';
 import 'sizes/ultra_wide/about_site_page_ultra_wide.dart';
 
 class AboutSitePage extends StatefulWidget {
@@ -59,7 +60,7 @@ class _AboutSitePAgeState extends State<AboutSitePage>
             init: init,
           ),
       wide:
-          (context) => AboutSitePageUltraWide(
+          (context) => AboutSitePageWide(
             controller: controller,
             init: init,
           ),

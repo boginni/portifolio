@@ -1,21 +1,36 @@
-// ignore_for_file: unused_import
-
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../about_site/pages/about_site_page.dart';
 import '../../../../app/extensions/context_extensions.dart';
 import '../../../../contact/contact_page.dart';
-import '../../../../events/events_page.dart';
 import '../../../../experience/experience_page.dart';
 import '../../../../home/pages/home_page.dart';
 import '../../../../skills/pages/skills_page.dart';
 import '../../../components/heading_bar_component.dart';
 import '../../../controller/shell_controller.dart';
 
-class ShellPageDesktopSuccessState extends StatelessWidget {
+class ShellPageDesktopSuccessState extends StatefulWidget {
   const ShellPageDesktopSuccessState({super.key, required this.controller});
 
   final ShellController controller;
+
+  @override
+  State<ShellPageDesktopSuccessState> createState() =>
+      _ShellPageDesktopSuccessStateState();
+}
+
+class _ShellPageDesktopSuccessStateState
+    extends State<ShellPageDesktopSuccessState> {
+  bool isShowingContactDialog = false;
+
+  @override
+  void deactivate() {
+    super.deactivate();
+    if (isShowingContactDialog) {
+      context.pop();
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -27,38 +42,42 @@ class ShellPageDesktopSuccessState extends StatelessWidget {
             SliverAppBar(
               pinned: true,
               title: HeadingBarComponent(
-                onContactMe: () {
-                  showDialog(
+                appController: widget.controller.appController,
+                pdfController: widget.controller.pdfController,
+                onContactMe: () async {
+                  isShowingContactDialog = true;
+
+                  await showDialog(
                     context: context,
                     builder: (context) {
-                      return Dialog(
-                        child: ContactPage(
-                          controller: controller.contactController,
-                        ),
+                      return ContactPage(
+                        controller: widget.controller.contactController,
                       );
                     },
                   );
+
+                  isShowingContactDialog = false;
                 },
                 onAboutMe: () {},
                 onSkills: () {},
               ),
             ),
             SliverToBoxAdapter(
-              child: HomePage(controller: controller.homeController),
+              child: HomePage(controller: widget.controller.homeController),
             ),
             SliverToBoxAdapter(
               child: ExperiencePage(
-                controller: controller.experienceController,
+                controller: widget.controller.experienceController,
               ),
             ),
             SliverToBoxAdapter(
               child: SkillsPage(
-                controller: controller.skillsController,
+                controller: widget.controller.skillsController,
               ),
             ),
             SliverToBoxAdapter(
               child: AboutSitePage(
-                controller: controller.aboutSiteController,
+                controller: widget.controller.aboutSiteController,
               ),
             ),
           ],

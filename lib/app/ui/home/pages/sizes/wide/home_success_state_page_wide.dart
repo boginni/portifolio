@@ -1,5 +1,3 @@
-// ignore_for_file: unused_import
-
 import 'package:ds_assets/ds_assets.dart';
 import 'package:flutter/material.dart';
 
@@ -7,7 +5,6 @@ import '../../../../../domain/dto/entities/resume_overview_entity.dart';
 import '../../../../app/extensions/context_extensions.dart';
 import '../../../components/background_split.dart';
 import '../../../components/high_resolution_image.dart';
-import '../../../components/professional_summary_widget.dart';
 import '../../../components/social_icon_widget.dart';
 
 class HomeSuccessStatePageWide extends StatelessWidget {
@@ -35,53 +32,75 @@ class HomeSuccessStatePageWide extends StatelessWidget {
             child: Stack(
               children: [
                 const Positioned.fill(child: BackgroundSplit()),
+                const Positioned(
+                  top: 0,
+                  bottom: 0,
+                  right: 16,
+                  child: HighResolutionImage(
+                    assetPath: DsAssetsPhotos.professionalSuitDistractedPng,
+                    ratio: 3330 / 5000,
+                  ),
+                ),
                 Center(
                   child: Container(
                     constraints: const BoxConstraints(maxWidth: 1440),
                     padding: const EdgeInsets.symmetric(horizontal: 64),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Expanded(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text('Hi, I am', style: textTheme.displaySmall),
-                              // Upscaled for Wide
-                              const SizedBox(height: 16),
-                              Text(
-                                data.name,
-                                style: textTheme.displayLarge?.copyWith(
-                                  fontSize: 84,
-                                  fontWeight: FontWeight.bold,
-                                  color: colorScheme.onSurface,
-                                ),
-                              ),
-                              Text(
-                                data.title,
-                                style: textTheme.headlineSmall?.copyWith(
-                                  color: colorScheme.onSurfaceVariant
-                                      .withValues(alpha: 0.7),
-                                ),
-                              ),
-                              const SizedBox(height: 48),
-                              const Row(
-                                children: [
-                                  SocialIconWidget(Icons.alternate_email),
-                                  SizedBox(width: 16),
-                                  SocialIconWidget(Icons.code),
-                                  SizedBox(width: 16),
-                                  SocialIconWidget(Icons.link),
-                                ],
+                        Text(
+                          'Hi, I am',
+                          style: textTheme.displaySmall?.copyWith(
+                            shadows: [
+                              Shadow(
+                                color: context.colorScheme.surface,
+                                offset: const Offset(1, 1),
+                                blurRadius: 2,
                               ),
                             ],
                           ),
                         ),
-                        const HighResolutionImage(
-                          assetPath:
-                              DsAssetsPhotos.professionalSuitDistractedPng,
-                          ratio: 3330 / 5000,
+                        const SizedBox(height: 16),
+                        Text(
+                          data.name,
+                          style: textTheme.displayLarge?.copyWith(
+                            fontSize: 84,
+                            fontWeight: FontWeight.bold,
+                            color: colorScheme.onSurface,
+                            shadows: [
+                              Shadow(
+                                color: context.colorScheme.surface,
+                                offset: const Offset(1, 1),
+                                blurRadius: 2,
+                              ),
+                            ],
+                          ),
+                        ),
+                        Text(
+                          data.title,
+                          style: textTheme.headlineSmall?.copyWith(
+                            color: colorScheme.onSurfaceVariant,
+                            shadows: [
+                              Shadow(
+                                color: context.colorScheme.surface,
+                                offset: const Offset(1, 1),
+                                blurRadius: 2,
+                              ),
+                            ],
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 16 * 3,
+                        ),
+                        const Row(
+                          children: [
+                            SocialIconWidget(Icons.alternate_email),
+                            SizedBox(width: 16),
+                            SocialIconWidget(Icons.code),
+                            SizedBox(width: 16),
+                            SocialIconWidget(Icons.link),
+                          ],
                         ),
                       ],
                     ),

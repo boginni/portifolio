@@ -10,6 +10,8 @@ import '../../contact/contact_controller.dart';
 import '../../contact/contact_page.dart';
 import '../../pdf/pdf_controller.dart';
 import '../../pdf/components/pdf_download_component.dart';
+import '../../app/components/profile_avatar_widget.dart';
+import 'locale_button_widget.dart';
 
 class SideBarComponent extends StatelessWidget {
   const SideBarComponent({
@@ -38,27 +40,7 @@ class SideBarComponent extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
             children: [
-              Material(
-                clipBehavior: Clip.antiAlias,
-                shape: LinearBorder.bottom(
-                  side: BorderSide(
-                    color: context.colorScheme.outline,
-                  ),
-                ),
-                child: Material(
-                  color: context.colorScheme.primaryContainer,
-                  shape: const CircleBorder(),
-                  child: Transform.scale(
-                    scale: 1.5,
-                    alignment: Alignment.topCenter,
-                    child: Image.asset(
-                      DsAssetsPhotos.purpleTCrossedArmsPng,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
-              ),
-
+              const ProfileAvatarWidget(),
               const _NavLink('About me'),
               const _NavLink('Skills'),
               const _NavLink('The project'),
@@ -95,7 +77,7 @@ class SideBarComponent extends StatelessWidget {
                 children: [
                   const Text('Language'),
                   const Spacer(),
-                  _LocaleButton(
+                  LocaleButtonWidget(
                     label: 'EN',
                     isSelected:
                         appController.store.value.locale?.languageCode == 'en',
@@ -106,7 +88,7 @@ class SideBarComponent extends StatelessWidget {
                   const SizedBox(
                     width: 4,
                   ),
-                  _LocaleButton(
+                  LocaleButtonWidget(
                     label: 'PT',
                     isSelected:
                         appController.store.value.locale?.languageCode == 'pt',
@@ -114,19 +96,6 @@ class SideBarComponent extends StatelessWidget {
                       appController.setLocale(const Locale('pt'));
                     },
                   ),
-
-                  // TextButton(
-                  //   onPressed: () {
-                  //     appController.setLocale(const Locale('en'));
-                  //   },
-                  //   child: Text('EN'),
-                  // ),
-                  // TextButton(
-                  //   onPressed: () {
-                  //     appController.setLocale(const Locale('pt'));
-                  //   },
-                  //   child: Text('PT'),
-                  // ),
                 ],
               ),
               const Divider(),
@@ -134,64 +103,20 @@ class SideBarComponent extends StatelessWidget {
                 controller: contactController,
                 forceDisplaySize: ResponsiveDisplaySizeEnum.wide,
               ),
+              const SizedBox(
+                height: 16 * 2,
+              ),
+              Center(
+                child: Image.asset(
+                  DsAssetsIcons.bfPng,
+                  color: context.colorScheme.primary,
+                  height: 16 * 4,
+                  width: 16 * 4,
+                ),
+              ),
             ],
           ),
         ),
-      ),
-    );
-  }
-}
-
-class _LocaleButton extends StatelessWidget {
-  const _LocaleButton({
-    required this.label,
-    required this.onTap,
-    required this.isSelected,
-  });
-
-  final String label;
-  final VoidCallback onTap;
-  final bool isSelected;
-
-  @override
-  Widget build(BuildContext context) {
-    if (isSelected) {
-      return OutlinedButton(
-        onPressed: onTap,
-        child: Text(
-          label,
-        ),
-      );
-    }
-
-    return TextButton(
-      onPressed: onTap,
-      child: Text(
-        label,
-      ),
-    );
-  }
-}
-
-class _SelectionTile extends StatelessWidget {
-  const _SelectionTile(
-    this.label, {
-    required this.onTap,
-    required this.isSelected,
-  });
-
-  final String label;
-  final VoidCallback onTap;
-  final bool isSelected;
-
-  @override
-  Widget build(BuildContext context) {
-    return ListTile(
-      onTap: onTap,
-      selected: isSelected,
-      contentPadding: EdgeInsets.zero,
-      title: Text(
-        label,
       ),
     );
   }

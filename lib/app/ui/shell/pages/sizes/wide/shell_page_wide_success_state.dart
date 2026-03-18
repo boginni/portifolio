@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../app/components/responsive_builder.dart';
+import '../../../../about_site/pages/about_site_page.dart';
 import '../../../../experience/experience_page.dart';
 import '../../../../home/pages/home_page.dart';
 import '../../../../skills/pages/skills_page.dart';
@@ -35,7 +35,6 @@ class ShellPageWideSuccessState extends StatelessWidget {
                       controller: controller.homeController,
                     ),
                     ExperiencePage(
-                      forcedDisplaySize: ResponsiveDisplaySizeEnum.wide,
                       controller: controller.experienceController,
                     ),
                     Padding(
@@ -46,6 +45,9 @@ class ShellPageWideSuccessState extends StatelessWidget {
                       child: SkillsPage(
                         controller: controller.skillsController,
                       ),
+                    ),
+                    AboutSitePage(
+                      controller: controller.aboutSiteController,
                     ),
                   ],
                 ),

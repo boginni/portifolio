@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import '../../app/extensions/context_extensions.dart';
@@ -30,6 +31,10 @@ class DevelopmentWarningDialog extends StatelessWidget {
             Navigator.of(context).pop();
             WidgetsBinding.instance.addPostFrameCallback(
               (timeStamp) {
+                if (kDebugMode) {
+                  return;
+                }
+
                 if (context.mounted) {
                   showDialog(
                     context: context,

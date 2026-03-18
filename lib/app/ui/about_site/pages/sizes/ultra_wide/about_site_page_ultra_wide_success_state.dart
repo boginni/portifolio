@@ -28,19 +28,26 @@ class AboutSitePageUltraWideSuccessState extends StatelessWidget {
           ),
           child: Column(
             children: [
-              Text(
-                entity.title,
-                style: theme.textTheme.headlineSmall?.copyWith(
-                  fontWeight: FontWeight.bold,
+              Container(
+                constraints: const BoxConstraints(maxWidth: 1080),
+                child: Column(
+                  children: [
+                    Text(
+                      entity.title,
+                      style: theme.textTheme.headlineSmall?.copyWith(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    const SizedBox(height: 16),
+                    Text(
+                      entity.description,
+                      style: theme.textTheme.bodyLarge?.copyWith(
+                        color: colorScheme.onSurfaceVariant,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
                 ),
-              ),
-              const SizedBox(height: 16),
-              Text(
-                entity.description,
-                style: theme.textTheme.bodyLarge?.copyWith(
-                  color: colorScheme.onSurfaceVariant,
-                ),
-                textAlign: TextAlign.center,
               ),
               const SizedBox(height: 16 * 3),
               Wrap(
@@ -51,8 +58,8 @@ class AboutSitePageUltraWideSuccessState extends StatelessWidget {
                     entity.features
                         .map(
                           (e) => SizedBox(
-                            width: 16 * 10 * 2,
-                            height: 16 * 12,
+                            width: 16 * 12 * 2,
+                            height: 16 * 16,
                             child: FeatureTileWidget(
                               icon: IconData(
                                 int.parse(e.icon),

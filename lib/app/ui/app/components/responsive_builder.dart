@@ -1,11 +1,19 @@
 import 'package:flutter/material.dart';
 
+import '../../../domain/environment.dart';
+
 enum ResponsiveDisplaySizeEnum {
   phone,
   tablet,
   desktop,
   wide,
-  ultraWide,
+  ultraWide;
+
+  const ResponsiveDisplaySizeEnum();
+
+  static ResponsiveDisplaySizeEnum? fromString(String value) {
+    return values.where((element) => element.name == value).firstOrNull;
+  }
 }
 
 class ResponsiveBuilder extends StatelessWidget {
@@ -16,6 +24,9 @@ class ResponsiveBuilder extends StatelessWidget {
   final WidgetBuilder? ultraWide;
 
   final ResponsiveDisplaySizeEnum? forceDisplaySize;
+
+  static final ResponsiveDisplaySizeEnum? _environmentForceLayout =
+      ResponsiveDisplaySizeEnum.fromString(Environment.forceLayout);
 
   const ResponsiveBuilder({
     super.key,
@@ -31,9 +42,11 @@ class ResponsiveBuilder extends StatelessWidget {
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
 
+    final layoutSize = _environmentForceLayout ?? forceDisplaySize;
+
     final builder = () {
-      if (forceDisplaySize != null) {
-        return switch (forceDisplaySize!) {
+      if (layoutSize != null) {
+        return switch (layoutSize) {
           ResponsiveDisplaySizeEnum.ultraWide =>
             ultraWide ?? wide ?? desktop ?? tablet,
 
