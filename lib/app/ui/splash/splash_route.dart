@@ -1,10 +1,9 @@
-// ignore_for_file: unused_import
+
 
 import 'package:custom_go_router/custom_go_router.dart';
 import 'package:flutter/material.dart';
 
 import '../app/app_dependencies.dart';
-import '../app/controllers/app_store.dart';
 import 'splash_controller.dart';
 import 'splash_page.dart';
 import 'splash_store.dart';

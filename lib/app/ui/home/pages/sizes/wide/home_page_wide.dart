@@ -4,6 +4,7 @@ import '../../../../app/generic_state_pages/generic_failure_state_page.dart';
 import '../../../../app/generic_state_pages/generic_loading_state_page.dart';
 import '../../../home_controller.dart';
 import '../../../home_store.dart';
+import '../desktop/home_page_desktop_loading_state.dart';
 import 'home_success_state_page_wide.dart';
 
 class HomePageWide extends StatelessWidget {
@@ -28,7 +29,7 @@ class HomePageWide extends StatelessWidget {
                 data: overview,
                 onRefresh: onRefresh,
               ),
-            HomeStoreLoadingState() => const GenericLoadingStatePage(),
+            HomeStoreLoadingState() => const HomePageDesktopLoadingState(),
             HomeStoreFailureState() => GenericFailureStatePage(
               onTryAgain: onRefresh,
             ),

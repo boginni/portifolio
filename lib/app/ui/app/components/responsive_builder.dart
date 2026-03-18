@@ -58,7 +58,7 @@ class ResponsiveBuilder extends StatelessWidget {
       }
 
       return switch (width) {
-            >= 2180 => ultraWide ?? wide ?? desktop ?? tablet,
+            >= 1920 => ultraWide ?? wide ?? desktop ?? tablet,
             >= 1440 => wide ?? desktop ?? tablet,
             >= 1024 => desktop ?? tablet,
             >= 600 => tablet,

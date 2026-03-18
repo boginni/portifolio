@@ -1,9 +1,7 @@
-// ignore_for_file: unused_import
+
 
 import 'package:flutter/material.dart';
 
-import '../../../../app/extensions/context_extensions.dart';
-import '../../../components/experience_company_card_widget.dart';
 import '../../../components/experience_list_component.dart';
 import '../../../controller/experience_store.dart';
 

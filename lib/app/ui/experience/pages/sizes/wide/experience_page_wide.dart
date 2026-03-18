@@ -4,6 +4,7 @@ import '../../../../app/generic_state_pages/generic_failure_state_page.dart';
 import '../../../../app/generic_state_pages/generic_loading_state_page.dart';
 import '../../../controller/experience_controller.dart';
 import '../../../controller/experience_store.dart';
+import '../desktop/experience_page_desktop_loading_state.dart';
 import 'experience_page_wide_success_state.dart';
 
 class ExperiencePageWide extends StatelessWidget {
@@ -27,7 +28,7 @@ class ExperiencePageWide extends StatelessWidget {
               value,
               onRefresh: init,
             ),
-            ExperienceStoreLoadingState() => const GenericLoadingStatePage(),
+            ExperienceStoreLoadingState() => const ExperiencePageDesktopLoadingState(),
             ExperienceStoreFailureState() => GenericFailureStatePage(
               onTryAgain: init,
             ),

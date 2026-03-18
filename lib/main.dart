@@ -1,12 +1,9 @@
-// ignore_for_file: unused_import
-
 import 'package:flutter/material.dart';
 
 import 'app/ui/app/app_dependencies.dart';
 import 'app/ui/app/app_routes.dart';
 import 'app/ui/app/app_widget.dart';
 import 'app/ui/app/controllers/app_controller.dart';
-import 'app/ui/app/controllers/app_store.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

@@ -4,7 +4,8 @@ import '../../../../app/generic_state_pages/generic_failure_state_page.dart';
 import '../../../../app/generic_state_pages/generic_loading_state_page.dart';
 import '../../../home_controller.dart';
 import '../../../home_store.dart';
-import 'home_success_state_page_desktop.dart';
+import 'home_page_desktop_loading_state.dart';
+import 'home_page_desktop_success_state.dart';
 
 class HomePageDesktop extends StatelessWidget {
   const HomePageDesktop({
@@ -24,11 +25,11 @@ class HomePageDesktop extends StatelessWidget {
           (context, HomeStoreState value, child) => switch (value) {
             HomeStoreInitialState() => const GenericLoadingStatePage(),
             HomeStoreSuccessState(overview: final overview) =>
-              HomeSuccessStatePageDesktop(
+              HomePageDesktopSuccessState(
                 data: overview,
                 onRefresh: onRefresh,
               ),
-            HomeStoreLoadingState() => const GenericLoadingStatePage(),
+            HomeStoreLoadingState() => const HomePageDesktopLoadingState(),
             HomeStoreFailureState() => GenericFailureStatePage(
               onTryAgain: onRefresh,
             ),

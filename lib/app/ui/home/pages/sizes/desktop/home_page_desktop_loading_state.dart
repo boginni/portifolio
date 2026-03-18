@@ -1,24 +1,16 @@
-// ignore_for_file: unused_import
 
 import 'package:ds_assets/ds_assets.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../domain/dto/entities/resume_overview_entity.dart';
 import '../../../../app/extensions/context_extensions.dart';
 import '../../../components/background_split.dart';
 import '../../../components/high_resolution_image.dart';
-import '../../../components/professional_summary_widget.dart';
-import '../../../components/social_icon_widget.dart';
 
-class HomeSuccessStatePageDesktop extends StatelessWidget {
-  const HomeSuccessStatePageDesktop({
+class HomePageDesktopLoadingState extends StatelessWidget {
+  const HomePageDesktopLoadingState({
     super.key,
-    required this.data,
-    required this.onRefresh,
   });
 
-  final ResumeOverviewEntity data;
-  final RefreshCallback onRefresh;
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +48,7 @@ class HomeSuccessStatePageDesktop extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Hi, I am',
+                        ' ',
                         style: textTheme.headlineSmall?.copyWith(
                           shadows:  [
                             Shadow(
@@ -66,11 +58,10 @@ class HomeSuccessStatePageDesktop extends StatelessWidget {
                             ),
                           ],
                         ),
-
                       ),
                       const SizedBox(height: 16),
                       Text(
-                        data.name,
+                        ' ',
                         style: textTheme.displayLarge?.copyWith(
                           fontWeight: FontWeight.bold,
                           color: colorScheme.onSurface,
@@ -84,7 +75,7 @@ class HomeSuccessStatePageDesktop extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        data.title,
+                        ' ',
                         style: textTheme.titleMedium?.copyWith(
                           color: colorScheme.onSurfaceVariant,
                           shadows:  [
@@ -98,13 +89,6 @@ class HomeSuccessStatePageDesktop extends StatelessWidget {
                       ),
                       const SizedBox(
                         height: 16 * 2,
-                      ),
-                      const Row(
-                        children: [
-                          SocialIconWidget(Icons.alternate_email),
-                          SocialIconWidget(Icons.code),
-                          SocialIconWidget(Icons.link),
-                        ],
                       ),
                     ],
                   ),

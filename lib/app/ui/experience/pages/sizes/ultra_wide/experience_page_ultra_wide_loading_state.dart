@@ -1,22 +1,14 @@
-
-
 import 'package:ds_assets/ds_assets.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../app/extensions/context_extensions.dart';
 import '../../../../home/components/high_resolution_image.dart';
-import '../../../components/experience_list_component.dart';
-import '../../../controller/experience_store.dart';
+import '../../../components/experience_list_loading_component.dart';
 
-class ExperiencePageUltraWideSuccessState extends StatelessWidget {
-  const ExperiencePageUltraWideSuccessState(
-    this.state, {
+class ExperiencePageUltraWideLoadingState extends StatelessWidget {
+  const ExperiencePageUltraWideLoadingState({
     super.key,
-    required this.onRefresh,
   });
-
-  final ExperienceStoreSuccessState state;
-  final RefreshCallback onRefresh;
 
   @override
   Widget build(BuildContext context) {
@@ -27,9 +19,7 @@ class ExperiencePageUltraWideSuccessState extends StatelessWidget {
         const SizedBox(
           height: 16 * 4,
         ),
-        ExperienceListComponent(
-          state: state,
-        ),
+        const ExperienceListLoadingComponent(),
         Column(
           children: [
             SizedBox(

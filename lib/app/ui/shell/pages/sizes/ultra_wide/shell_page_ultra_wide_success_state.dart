@@ -80,19 +80,6 @@ class ShellPageUltraWideSuccessState extends StatelessWidget {
                                     },
                                   ),
                                 ),
-                                // const Spacer(),
-                                // Divider(
-                                //   color: context.colorScheme.outlineVariant,
-                                // ),
-                                // const SizedBox(height: 32),
-                                // Padding(
-                                //   padding: const EdgeInsets.all(16.0),
-                                //   child: InverseBrightnessBuilder(
-                                //     builder: (context, themeData) {
-                                //       return const AppFooter();
-                                //     },
-                                //   ),
-                                // ),
                               ],
                             ),
                           ),

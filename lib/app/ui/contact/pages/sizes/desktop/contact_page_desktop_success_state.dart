@@ -1,12 +1,9 @@
-// ignore_for_file: unused_import
 
-import 'package:ds_assets/ds_assets.dart';
+
 import 'package:flutter/material.dart';
 
 import '../../../../../domain/dto/entities/resume_contact_entity.dart';
 import '../../../../app/components/profile_avatar_widget.dart';
-import '../../../../app/extensions/context_extensions.dart';
-import '../../../../home/components/high_resolution_image.dart';
 import '../../../components/contact_card_widget.dart';
 
 class ContactPageSuccessStateDesktop extends StatefulWidget {
