@@ -2,13 +2,13 @@ import 'dart:convert';
 
 import 'package:dio/dio.dart';
 import 'package:error_handler_with_result/error_handler_with_result.dart';
+import 'package:flutter_purple_impl/flutter_purple_impl.dart';
 
 import '../../domain/dto/entities/resume_about_site_entity.dart';
 import '../../domain/dto/entities/resume_contact_entity.dart';
 import '../../domain/dto/entities/resume_experience_entity.dart';
 import '../../domain/dto/entities/resume_overview_entity.dart';
 import '../../domain/dto/entities/resume_skills_entity.dart';
-import 'preferences_datasource.dart';
 
 abstract class ResumeInformationDatasource {
   Future<ResumeContactEntity> getResumeContact();

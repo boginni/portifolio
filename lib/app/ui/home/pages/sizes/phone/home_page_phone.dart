@@ -27,6 +27,7 @@ class HomePagePhone extends StatelessWidget {
               HomeSuccessStatePagePhone(
                 overview,
                 onRefresh: onRefresh,
+                onTapUrl: controller.launchUrl,
               ),
             HomeStoreLoadingState() => const GenericLoadingStatePage(),
             HomeStoreFailureState() => GenericFailureStatePage(

@@ -3,7 +3,7 @@ description: "A new Flutter project."
 
 publish_to: 'none'
 
-version: 1.0.0+2
+version: 1.0.1+3
 
 workspace:
   - packages/ds_assets
@@ -22,9 +22,15 @@ dependencies:
   ds_assets:
     path: packages/ds_assets
 
-  error_handler_with_result:
-    path: packages/error_handler_with_result
+  flutter_purple_domains:
+    git: git@github.com:boginni/flutter_purple_domains.git
+    version: 0.0.2
 
+  flutter_purple_impl:
+    git: git@github.com:boginni/flutter_purple_impl.git
+    version: 0.0.2
+
+  error_handler_with_result: ^1.0.0
   timelines_plus: ^2.0.0
   flutter_localization: ^0.3.3
   cupertino_icons: ^1.0.8

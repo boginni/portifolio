@@ -12,10 +12,12 @@ class HomeSuccessStatePageWide extends StatelessWidget {
     super.key,
     required this.data,
     required this.onRefresh,
+    required this.onTapUrl,
   });
 
   final ResumeOverviewEntity data;
   final RefreshCallback onRefresh;
+  final ValueSetter<String> onTapUrl;
 
   @override
   Widget build(BuildContext context) {
@@ -93,13 +95,27 @@ class HomeSuccessStatePageWide extends StatelessWidget {
                         const SizedBox(
                           height: 16 * 3,
                         ),
-                        const Row(
+                        Row(
+                          spacing: 16,
                           children: [
-                            SocialIconWidget(Icons.alternate_email),
-                            SizedBox(width: 16),
-                            SocialIconWidget(Icons.code),
-                            SizedBox(width: 16),
-                            SocialIconWidget(Icons.link),
+                            SocialIconWidget(
+                              DsAssetsResources.linkedinSvg,
+                              onTap: () {
+                                onTapUrl(data.linkedinUrl);
+                              },
+                            ),
+                            SocialIconWidget(
+                              DsAssetsResources.githubSvg,
+                              onTap: () {
+                                onTapUrl(data.githubUrl);
+                              },
+                            ),
+                            SocialIconWidget(
+                              DsAssetsResources.curriculumVitaeSvg,
+                              onTap: () {
+                                onTapUrl(data.cvUrl);
+                              },
+                            ),
                           ],
                         ),
                       ],

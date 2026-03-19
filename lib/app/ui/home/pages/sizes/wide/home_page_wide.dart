@@ -28,6 +28,7 @@ class HomePageWide extends StatelessWidget {
               HomeSuccessStatePageWide(
                 data: overview,
                 onRefresh: onRefresh,
+                onTapUrl: controller.launchUrl,
               ),
             HomeStoreLoadingState() => const HomePageDesktopLoadingState(),
             HomeStoreFailureState() => GenericFailureStatePage(

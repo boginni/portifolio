@@ -1,6 +1,7 @@
 {
   "title": "About This Project",
   "description": "This portfolio serves as a live technical demonstration of enterprise-grade Flutter development. Instead of a static build, it operates as a dynamic system with real-world infrastructure.",
+  "repo_url" : "https://github.com/boginni/portifolio",
   "features": [
     {
       "icon": "0xf0207",

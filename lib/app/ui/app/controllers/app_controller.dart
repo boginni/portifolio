@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_purple_domains/flutter_purple_domains.dart';
 
-import '../../../domain/repositories/preferences_repository.dart';
 import '../app_routes.dart';
 import 'app_store.dart';
 

@@ -1,32 +1,32 @@
 import 'package:flutter/material.dart';
 
+import '../../app/components/svg_icon.dart';
 import '../../app/extensions/context_extensions.dart';
 
 class SocialIconWidget extends StatelessWidget {
   const SocialIconWidget(
     this.icon, {
     super.key,
+    this.onTap,
   });
 
-  final IconData icon;
+  final String icon;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(right: 15),
-      padding: const EdgeInsets.all(12),
-      decoration: BoxDecoration(
-        color: context.colorScheme.surfaceContainerHighest,
-        borderRadius: BorderRadius.circular(4),
-        boxShadow: [
-          BoxShadow(
-            color: context.colorScheme.outline,
-            blurRadius: 4,
-            offset: const Offset(0, 2),
-          ),
-        ],
+    return IconButton.filledTonal(
+      onPressed: onTap,
+      padding: const EdgeInsets.all(8),
+      style: IconButton.styleFrom(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(8)
+        )
       ),
-      child: Icon(icon, size: 20),
+      icon: SvgIcon(
+        icon,
+        size: 24,
+      ),
     );
   }
 }

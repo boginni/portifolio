@@ -1,15 +1,12 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter_purple_domains/flutter_purple_domains.dart';
+import 'package:flutter_purple_impl/flutter_purple_impl.dart';
 import 'package:get_it/get_it.dart';
 
-import '../../domain/datasources/storage_datasource.dart';
-import '../../domain/repositories/preferences_repository.dart';
 import '../../domain/repositories/resume_information_repository.dart';
-import '../../external/datasource/preferences_datasource.dart';
 import '../../external/datasource/resume_information_datasource.dart';
 import '../../external/datasource/resume_information_datasource_debug.dart';
-import '../../external/datasource/storage_datasource_impl.dart';
-import '../../external/repositories/preferences_repository_impl.dart';
 import '../../external/repositories/resume_information_repository_impl.dart';
 import 'controllers/app_store.dart';
 
@@ -23,40 +20,62 @@ class AppDependencies {
       StorageDatasourceImpl.new,
     );
 
+    // --
+
     _app.registerFactory<ResumeInformationDatasourceImpl>(
       () => ResumeInformationDatasourceImpl(
         _app.get(),
         _app.get(),
       ),
     );
-
-    _app.registerFactory<PreferencesDatasource>(
-      () => PreferencesDatasource(
-        _app.get(),
-      ),
-    );
-
-    _app.registerFactory<PreferencesRepository>(
-      () => PreferencesRepositoryImpl(
-        _app.get(),
-      ),
-    );
-
     _app.registerFactory<ResumeInformationDatasourceDebug>(
       () => ResumeInformationDatasourceDebug(
         _app.get<ResumeInformationDatasourceImpl>(),
       ),
     );
-
     _app.registerFactory<ResumeInformationDatasource>(
       () =>
           kDebugMode
               ? _app.get<ResumeInformationDatasourceDebug>()
               : _app.get<ResumeInformationDatasourceImpl>(),
     );
-
     _app.registerFactory<ResumeInformationRepository>(
       () => ResumeInformationRepositoryImpl(
+        _app.get(),
+      ),
+    );
+
+    // --
+
+    _app.registerFactory<LauncherDatasource>(
+      LauncherDatasource.new,
+    );
+    _app.registerFactory<LauncherRepository>(
+      () => LauncherRepositoryImpl(
+        _app.get(),
+      ),
+    );
+
+    // --
+
+    _app.registerFactory<PreferencesDatasource>(
+      () => PreferencesDatasource(
+        _app.get(),
+      ),
+    );
+    _app.registerFactory<PreferencesRepository>(
+      () => PreferencesRepositoryImpl(
+        _app.get(),
+      ),
+    );
+
+    // --
+
+    _app.registerFactory<DeviceDatasource>(
+      DeviceDatasource.new,
+    );
+    _app.registerFactory<DeviceRepository>(
+      () => DeviceRepositoryImpl(
         _app.get(),
       ),
     );

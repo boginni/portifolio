@@ -4,9 +4,9 @@
   "title": "Mais de 7 anos de experiência",
   "photo_asset": "DsAssetsPhotos.professionalPortraitSweaterApproachablePng",
   "social_links": {
-    "linkedin": "https://www.linkedin.com/in/luiz-fernando-oliveira/",
-    "github": "",
-    "cv_url": "https://drive.google"
+    "linkedin": "https://www.linkedin.com/in/boginni/",
+    "github": "https://github.com/boginni/",
+    "cv_url": "https://github.com/boginni/portifolio/blob/main/github_files/resume_data/pt/brunno_franca.pdf"
   },
   "professional_summary": "Sou especialista em Flutter há 4 anos e somo mais de 7 anos de experiência na área de tecnologia. Participei do desenvolvimento de aplicativos para milhões de usuários durante minha trajetória na MGM Resorts e no Farmácias App. Além disso, compartilho minha experiência em comunidades, especialmente na Flutter Brasil, ao lado das pessoas mais influentes do país no setor.\n\n Minha expertise em Flutter e Dart é profunda e abrange todo o ciclo de vida de desenvolvimento, desde arquitetura, gerenciamento de estado, componentização e design system, até performance e muito mais. Adicionalmente, possuo uma base sólida em tecnologias front-end e back-end, o que me permite liderar projetos com sucesso desde o conceito até a implementação.",
   "status": "success"

@@ -1,6 +1,7 @@
 {
   "title": "Sobre Este Projeto",
   "description": "Este portfólio serve como uma demonstração técnica em tempo real de desenvolvimento Flutter de nível empresarial. Em vez de uma compilação estática, ele opera como um sistema dinâmico com infraestrutura de mundo real.",
+  "repo_url" : "https://github.com/boginni/portifolio",
   "features": [
     {
       "icon": "0xf0207",

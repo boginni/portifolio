@@ -8,10 +8,12 @@ class SocialCardWidget extends StatelessWidget {
     super.key,
     required this.title,
     required this.icon,
+    this.onTap,
   });
 
   final String title;
   final String icon;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {

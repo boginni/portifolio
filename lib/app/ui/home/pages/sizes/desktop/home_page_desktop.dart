@@ -28,6 +28,7 @@ class HomePageDesktop extends StatelessWidget {
               HomePageDesktopSuccessState(
                 data: overview,
                 onRefresh: onRefresh,
+                onTapUrl: controller.launchUrl,
               ),
             HomeStoreLoadingState() => const HomePageDesktopLoadingState(),
             HomeStoreFailureState() => GenericFailureStatePage(

@@ -5,6 +5,7 @@ import '../../../../../domain/dto/entities/resume_overview_entity.dart';
 import '../../../../app/extensions/context_extensions.dart';
 import '../../../components/background_split.dart';
 import '../../../components/high_resolution_image.dart';
+import '../../../components/social_card_widget.dart';
 import '../../../components/social_icon_widget.dart';
 
 class HomePageDesktopSuccessState extends StatelessWidget {
@@ -12,10 +13,12 @@ class HomePageDesktopSuccessState extends StatelessWidget {
     super.key,
     required this.data,
     required this.onRefresh,
+    required this.onTapUrl,
   });
 
   final ResumeOverviewEntity data;
   final RefreshCallback onRefresh;
+  final ValueSetter<String> onTapUrl;
 
   @override
   Widget build(BuildContext context) {
@@ -55,15 +58,14 @@ class HomePageDesktopSuccessState extends StatelessWidget {
                       Text(
                         'Hi, I am',
                         style: textTheme.headlineSmall?.copyWith(
-                          shadows:  [
+                          shadows: [
                             Shadow(
-                              color:context.colorScheme.surface,
+                              color: context.colorScheme.surface,
                               offset: const Offset(1, 1),
                               blurRadius: 2,
                             ),
                           ],
                         ),
-
                       ),
                       const SizedBox(height: 16),
                       Text(
@@ -84,9 +86,9 @@ class HomePageDesktopSuccessState extends StatelessWidget {
                         data.title,
                         style: textTheme.titleMedium?.copyWith(
                           color: colorScheme.onSurfaceVariant,
-                          shadows:  [
+                          shadows: [
                             Shadow(
-                              color:context.colorScheme.surface,
+                              color: context.colorScheme.surface,
                               offset: const Offset(1, 1),
                               blurRadius: 2,
                             ),
@@ -96,11 +98,27 @@ class HomePageDesktopSuccessState extends StatelessWidget {
                       const SizedBox(
                         height: 16 * 2,
                       ),
-                      const Row(
+                      Row(
+                        spacing: 16,
                         children: [
-                          SocialIconWidget(Icons.alternate_email),
-                          SocialIconWidget(Icons.code),
-                          SocialIconWidget(Icons.link),
+                          SocialIconWidget(
+                            DsAssetsResources.linkedinSvg,
+                            onTap: () {
+                              onTapUrl(data.linkedinUrl);
+                            },
+                          ),
+                          SocialIconWidget(
+                            DsAssetsResources.githubSvg,
+                            onTap: () {
+                              onTapUrl(data.githubUrl);
+                            },
+                          ),
+                          SocialIconWidget(
+                            DsAssetsResources.curriculumVitaeSvg,
+                            onTap: () {
+                              onTapUrl(data.cvUrl);
+                            },
+                          ),
                         ],
                       ),
                     ],

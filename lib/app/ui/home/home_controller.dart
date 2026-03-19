@@ -1,3 +1,5 @@
+import 'package:flutter_purple_domains/flutter_purple_domains.dart';
+
 import '../../domain/repositories/resume_information_repository.dart';
 import 'home_store.dart';
 
@@ -5,9 +7,11 @@ class HomeController {
   final HomeStore store;
 
   final ResumeInformationRepository resumeOverviewRepository;
+  final LauncherRepository launcherRepository;
 
   const HomeController(
-    this.resumeOverviewRepository, {
+    this.resumeOverviewRepository,
+    this.launcherRepository, {
     required this.store,
   });
 
@@ -26,5 +30,9 @@ class HomeController {
     );
 
     store.state = state;
+  }
+
+  void launchUrl(String value) {
+    launcherRepository.openBrowser(value);
   }
 }

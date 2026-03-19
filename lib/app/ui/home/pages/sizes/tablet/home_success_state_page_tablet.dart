@@ -7,16 +7,19 @@ import '../../../components/high_resolution_image.dart';
 import '../../../components/professional_summary_widget.dart';
 import '../../../components/social_card_widget.dart';
 import '../../../components/social_carousel_widget.dart';
+import '../../../components/social_icon_widget.dart';
 
 class HomeSuccessStatePageTablet extends StatelessWidget {
   const HomeSuccessStatePageTablet(
     this.data, {
     super.key,
     required this.onRefresh,
+        required this.onTapUrl,
   });
 
   final ResumeOverviewEntity data;
   final RefreshCallback onRefresh;
+  final ValueSetter<String> onTapUrl;
 
   @override
   Widget build(BuildContext context) {
@@ -77,21 +80,26 @@ class HomeSuccessStatePageTablet extends StatelessWidget {
                     const SizedBox(height: 32),
 
                     // Social Actions (Grid-like Row)
-                    const Wrap(
+                    Row(
                       spacing: 16,
-                      runSpacing: 16,
                       children: [
-                        SocialCardWidget(
-                          title: 'Linkedin',
-                          icon: DsAssetsResources.linkedinSvgrepoComSvg,
+                        SocialIconWidget(
+                          DsAssetsResources.linkedinSvg,
+                          onTap: () {
+                            onTapUrl(data.linkedinUrl);
+                          },
                         ),
-                        SocialCardWidget(
-                          title: 'Currículo',
-                          icon: DsAssetsResources.curriculumVitaeSvgrepoComSvg,
+                        SocialIconWidget(
+                          DsAssetsResources.githubSvg,
+                          onTap: () {
+                            onTapUrl(data.githubUrl);
+                          },
                         ),
-                        SocialCardWidget(
-                          title: 'Github',
-                          icon: DsAssetsResources.github142SvgrepoComSvg,
+                        SocialIconWidget(
+                          DsAssetsResources.curriculumVitaeSvg,
+                          onTap: () {
+                            onTapUrl(data.cvUrl);
+                          },
                         ),
                       ],
                     ),

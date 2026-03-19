@@ -53,6 +53,7 @@ class ShellRoute extends AppRoute {
     store: store,
     homeController: HomeController(
       AppDependencies.get(),
+      AppDependencies.get(),
       store: homeStore,
     ),
     experienceController: ExperienceController(

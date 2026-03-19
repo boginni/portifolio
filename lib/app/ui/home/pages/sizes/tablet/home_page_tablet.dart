@@ -27,6 +27,7 @@ class HomePageTablet extends StatelessWidget {
               HomeSuccessStatePageTablet(
                 overview,
                 onRefresh: onRefresh,
+                onTapUrl: controller.launchUrl,
               ),
             HomeStoreLoadingState() => const GenericLoadingStatePage(),
             HomeStoreFailureState() => GenericFailureStatePage(
