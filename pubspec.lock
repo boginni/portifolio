@@ -360,7 +360,7 @@ packages:
       path: "."
       ref: HEAD
       resolved-ref: "382d4684e7c3823160b0bef1d19b4e7c4b665eb5"
-      url: "git@github.com:boginni/flutter_purple_domains.git"
+      url: "https://github.com/boginni/flutter_purple_domains.git"
     source: git
     version: "0.0.2"
   flutter_purple_impl:
@@ -368,10 +368,10 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: "8d7e95f34004c3b3f8708f4c3a36b4b49cc8fd4c"
-      url: "git@github.com:boginni/flutter_purple_impl.git"
+      resolved-ref: "083c937226643b30cf72460883dbd7a825bc9370"
+      url: "https://github.com/boginni/flutter_purple_impl.git"
     source: git
-    version: "0.0.2"
+    version: "0.0.3"
   flutter_svg:
     dependency: "direct main"
     description:
