@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../extensions/context_extensions.dart';
+
 class UnsupportedResolutionPage extends StatelessWidget {
   const UnsupportedResolutionPage({super.key});
 
@@ -10,6 +12,8 @@ class UnsupportedResolutionPage extends StatelessWidget {
     return Scaffold(
       body: Container(
         width: double.infinity,
+        height: context.height,
+        padding: const EdgeInsets.all(8.0),
         decoration: BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
@@ -20,51 +24,50 @@ class UnsupportedResolutionPage extends StatelessWidget {
             ],
           ),
         ),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 32),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              // Use a container with a circle background for the icon
-              Container(
-                padding: const EdgeInsets.all(24),
-                decoration: BoxDecoration(
-                  color: theme.colorScheme.errorContainer,
-                  shape: BoxShape.circle,
+        child: Center(
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                Container(
+                  padding: const EdgeInsets.all(24),
+                  decoration: BoxDecoration(
+                    color: theme.colorScheme.errorContainer,
+                    shape: BoxShape.circle,
+                  ),
+                  child: Icon(
+                    Icons.phonelink_erase_rounded,
+                    size: 16 * 3,
+                    color: theme.colorScheme.error,
+                  ),
                 ),
-                child: Icon(
-                  Icons.phonelink_erase_rounded,
-                  size: 64,
-                  color: theme.colorScheme.error,
+                const SizedBox(height: 16),
+                Text(
+                  'Screen size too small',
+                  style: theme.textTheme.headlineSmall?.copyWith(
+                    fontWeight: FontWeight.bold,
+                    color: theme.colorScheme.onSurface,
+                  ),
+                  textAlign: TextAlign.center,
                 ),
-              ),
-              const SizedBox(height: 32),
-              Text(
-                'Screen size too small',
-                style: theme.textTheme.headlineSmall?.copyWith(
-                  fontWeight: FontWeight.bold,
-                  color: theme.colorScheme.onSurface,
+                const SizedBox(height: 4),
+                Text(
+                  'This project is designed for larger displays. Please try rotating your device or using a larger screen for the best experience.',
+                  style: theme.textTheme.bodyMedium?.copyWith(
+                    color: theme.colorScheme.onPrimaryContainer,
+                  ),
+                  textAlign: TextAlign.center,
                 ),
-                textAlign: TextAlign.center,
-              ),
-              const SizedBox(height: 12),
-              Text(
-                'This project is designed for larger displays. Please try rotating your device or using a larger screen for the best experience.',
-                style: theme.textTheme.bodyMedium?.copyWith(
-                  color: theme.colorScheme.onSurfaceVariant,
+                const SizedBox(height: 16),
+                // Optional: A little "back" button or "try anyway" if you want
+                Text(
+                  'MINIMUM WIDTH: 320px',
+                  style: theme.textTheme.labelSmall?.copyWith(
+                    letterSpacing: 2,
+                  ),
+                  textAlign: TextAlign.center,
                 ),
-                textAlign: TextAlign.center,
-              ),
-              const SizedBox(height: 40),
-              // Optional: A little "back" button or "try anyway" if you want
-              Text(
-                'MINIMUM WIDTH: 360px',
-                style: theme.textTheme.labelSmall?.copyWith(
-                  letterSpacing: 2,
-                  color: theme.colorScheme.outline,
-                ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
