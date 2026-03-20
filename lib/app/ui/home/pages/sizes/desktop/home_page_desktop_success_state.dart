@@ -5,7 +5,6 @@ import '../../../../../domain/dto/entities/resume_overview_entity.dart';
 import '../../../../app/extensions/context_extensions.dart';
 import '../../../components/background_split.dart';
 import '../../../components/high_resolution_image.dart';
-import '../../../components/social_card_widget.dart';
 import '../../../components/social_icon_widget.dart';
 
 class HomePageDesktopSuccessState extends StatelessWidget {

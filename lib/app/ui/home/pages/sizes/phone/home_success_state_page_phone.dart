@@ -4,9 +4,7 @@ import 'package:flutter/material.dart';
 import '../../../../../domain/dto/entities/resume_overview_entity.dart';
 import '../../../../app/components/profile_avatar_widget.dart';
 import '../../../../app/extensions/context_extensions.dart';
-import '../../../components/high_resolution_image.dart';
 import '../../../components/professional_summary_widget.dart';
-import '../../../components/social_card_widget.dart';
 import '../../../components/social_carousel_widget.dart';
 import '../../../components/social_icon_widget.dart';
 

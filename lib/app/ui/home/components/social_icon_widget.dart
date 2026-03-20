@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../app/components/svg_icon.dart';
-import '../../app/extensions/context_extensions.dart';
 
 class SocialIconWidget extends StatelessWidget {
   const SocialIconWidget(
