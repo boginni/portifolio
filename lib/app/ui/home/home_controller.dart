@@ -15,7 +15,7 @@ class HomeController {
     required this.store,
   });
 
-  Future<void> loadResume() async {
+  Future<void> load() async {
     store.state = HomeStoreState.loading();
 
     final result = await resumeOverviewRepository.getResumeOverview();

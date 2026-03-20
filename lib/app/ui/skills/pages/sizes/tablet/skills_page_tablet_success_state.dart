@@ -5,8 +5,8 @@ import '../../../../app/components/inverse_brightness_builder.dart';
 import '../../../../app/components/waka_time_grid_widget.dart';
 import '../../../components/skill_card_widget.dart';
 
-class SkillsPagePhoneSuccessState extends StatelessWidget {
-  const SkillsPagePhoneSuccessState({
+class SkillsPageTabletSuccessState extends StatelessWidget {
+  const SkillsPageTabletSuccessState({
     super.key,
     required this.entity,
   });
@@ -56,16 +56,17 @@ class SkillsPagePhoneSuccessState extends StatelessWidget {
               ],
             ),
           ),
-          const SizedBox(height: 16 * 1),
-
+          const SizedBox(
+            height: 16 * 1,
+          ),
           GridView.count(
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
             padding: const EdgeInsets.symmetric(horizontal: 16),
-            crossAxisCount: 2,
+            crossAxisCount: 4,
             mainAxisSpacing: 8,
             crossAxisSpacing: 8,
-            childAspectRatio: 1,
+            childAspectRatio: .9,
             children:
                 entity.technologies
                     .map(

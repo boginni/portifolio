@@ -42,7 +42,7 @@ class _ShellPageDesktopSuccessStateState
             SliverAppBar(
               pinned: true,
               title: HeadingBarComponent(
-                appController: widget.controller.appController,
+                shellController: widget.controller,
                 pdfController: widget.controller.pdfController,
                 onContactMe: () async {
                   isShowingContactDialog = true;

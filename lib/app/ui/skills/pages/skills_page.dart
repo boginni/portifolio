@@ -4,6 +4,7 @@ import '../../app/components/responsive_builder.dart';
 import '../controllers/skills_controller.dart';
 import 'sizes/desktop/skills_page_desktop.dart';
 import 'sizes/phone/skills_page_phone.dart';
+import 'sizes/tablet/skills_page_tablet.dart';
 import 'sizes/ultra_wide/skills_page_ultra_wide.dart';
 import 'sizes/wide/skills_page_wide.dart';
 
@@ -56,6 +57,11 @@ class _SkillsPageState extends State<SkillsPage> {
           ),
       phone:
           (context) => SkillsPagePhone(
+            controller: controller,
+            init: init,
+          ),
+      tablet:
+          (context) => SkillsPageTablet(
             controller: controller,
             init: init,
           ),

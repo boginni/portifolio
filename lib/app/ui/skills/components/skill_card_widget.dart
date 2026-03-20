@@ -26,6 +26,7 @@ class SkillCardWidget extends StatelessWidget {
               size * .33,
             ),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image.asset(
                   DsAssetsIcons.path() + icon,
@@ -54,6 +55,7 @@ class SkillCardWidget extends StatelessWidget {
               size * .33,
             ),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image.asset(
                   DsAssetsIcons.path() + icon,
@@ -82,6 +84,7 @@ class SkillCardWidget extends StatelessWidget {
               size * .33,
             ),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image.asset(
                   DsAssetsIcons.path() + icon,

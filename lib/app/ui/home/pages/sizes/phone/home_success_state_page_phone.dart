@@ -66,7 +66,7 @@ class HomeSuccessStatePagePhone extends StatelessWidget {
           const SizedBox(height: 16),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
-            padding: EdgeInsets.symmetric(horizontal: 16.0),
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
             child: Row(
               spacing: 16,
               children: [

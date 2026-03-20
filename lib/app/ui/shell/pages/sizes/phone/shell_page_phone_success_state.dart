@@ -34,7 +34,7 @@ class ShellPagePhoneSuccessState extends StatelessWidget {
               final newMode =
                   context.isDarkMode ? ThemeMode.light : ThemeMode.dark;
 
-              controller.appController.setThemeMode(
+              controller.setThemeMode(
                 newMode,
               );
             },
@@ -49,7 +49,7 @@ class ShellPagePhoneSuccessState extends StatelessWidget {
                 controller.appController.store.value.locale?.languageCode ==
                 'en',
             onTap: () {
-              controller.appController.setLocale(const Locale('en'));
+              controller.setLocale(const Locale('en'));
             },
           ),
           const SizedBox(
@@ -61,7 +61,7 @@ class ShellPagePhoneSuccessState extends StatelessWidget {
                 controller.appController.store.value.locale?.languageCode ==
                 'pt',
             onTap: () {
-              controller.appController.setLocale(const Locale('pt'));
+              controller.setLocale(const Locale('pt'));
             },
           ),
           const SizedBox(

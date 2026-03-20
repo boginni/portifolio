@@ -106,7 +106,7 @@ class FeatureTileWidget extends StatelessWidget {
           ),
       phone:
           (context) => Container(
-            padding: const EdgeInsets.all(16),
+            padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
               color: colorScheme.surfaceContainer,
               borderRadius: BorderRadius.circular(16),
@@ -120,7 +120,7 @@ class FeatureTileWidget extends StatelessWidget {
                 Icon(
                   icon,
                   color: colorScheme.primary,
-                  size: 16 * 3,
+                  size: 16 * 2,
                 ),
                 const SizedBox(height: 8),
                 Flexible(

@@ -1,7 +1,6 @@
-
-
 import 'package:flutter/material.dart';
 import '../app/components/responsive_builder.dart';
+import '../app/generic_state_pages/unsupported_resolution_page.dart';
 import 'components/development_warning_dialog.dart';
 import 'controller/shell_controller.dart';
 import 'controller/shell_store.dart';
@@ -49,12 +48,13 @@ class _ShellPageState extends State<ShellPage> {
 
   @override
   Widget build(BuildContext context) {
-    return ResponsiveBuilder(
+    return ResponsiveBuilder.required(
       phone: (context) => ShellPageMobile(controller: controller),
       tablet: (context) => ShellPageMobile(controller: controller),
       desktop: (context) => ShellPageDesktop(controller: controller),
       wide: (context) => ShellPageWide(controller: controller),
       ultraWide: (context) => ShellPageUltraWide(controller: controller),
+      unsupported: (context) => const UnsupportedResolutionPage(),
     );
   }
 }

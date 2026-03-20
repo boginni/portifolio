@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../app/store/generic_store.dart';
 import '../pdf_controller.dart';
 
 class PdfDownloadComponent extends StatefulWidget {
@@ -20,27 +19,29 @@ class _PdfDownloadComponentState extends State<PdfDownloadComponent> {
 
   @override
   Widget build(BuildContext context) {
-    return ValueListenableBuilder(
-      valueListenable: controller.store,
-      builder: (context, value, child) {
-        return switch (value) {
-          GenericStoreInitialState() => FilledButton(
-            onPressed: controller.generatePdf,
-            child: const Text('Download CV'),
-          ),
-          GenericStoreLoadingState() => const Center(
-            child: CircularProgressIndicator(),
-          ),
-          GenericStoreFailureState() => FilledButton(
-            onPressed: controller.generatePdf,
-            child: const Text('Try Again'),
-          ),
-          GenericStoreSuccessState() => FilledButton(
-            onPressed: controller.generatePdf,
-            child: const Text('Download Again'),
-          ),
-        };
-      },
-    );
+    return const Offstage();
+
+    // return ValueListenableBuilder(
+    //   valueListenable: controller.store,
+    //   builder: (context, value, child) {
+    //     return switch (value) {
+    //       GenericStoreInitialState() => FilledButton(
+    //         onPressed: controller.generatePdf,
+    //         child: const Text('Download CV'),
+    //       ),
+    //       GenericStoreLoadingState() => const Center(
+    //         child: CircularProgressIndicator(),
+    //       ),
+    //       GenericStoreFailureState() => FilledButton(
+    //         onPressed: controller.generatePdf,
+    //         child: const Text('Try Again'),
+    //       ),
+    //       GenericStoreSuccessState() => FilledButton(
+    //         onPressed: controller.generatePdf,
+    //         child: const Text('Download Again'),
+    //       ),
+    //     };
+    //   },
+    // );
   }
 }

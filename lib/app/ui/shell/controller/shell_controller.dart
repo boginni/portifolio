@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 import '../../about_site/about_site_controller.dart';
 import '../../app/controllers/app_controller.dart';
 import '../../contact/contact_controller.dart';
@@ -27,4 +29,19 @@ class ShellController {
     required this.skillsController,
     required this.aboutSiteController,
   });
+
+
+  Future<void> setThemeMode(ThemeMode? themeMode) async {
+    await appController.setThemeMode(themeMode);
+  }
+
+  Future<void> setLocale(Locale locale) async {
+    await appController.setLocale(locale);
+
+    await Future.wait([
+      aboutSiteController.load(),
+      homeController.load(),
+      experienceController.load(),
+    ]);
+  }
 }

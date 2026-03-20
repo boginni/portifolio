@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../../app/components/responsive_builder.dart';
-import '../../app/mixin/change_language_listener_mixin.dart';
 import '../home_controller.dart';
 import 'sizes/desktop/home_page_desktop.dart';
 import 'sizes/phone/home_page_phone.dart';
@@ -21,7 +20,7 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> with ChangeLanguageListenerMixin {
+class _HomePageState extends State<HomePage> {
   HomeController get controller => widget.controller;
 
   @override
@@ -37,13 +36,9 @@ class _HomePageState extends State<HomePage> with ChangeLanguageListenerMixin {
   }
 
   Future<void> init() async {
-    await controller.loadResume();
+    await controller.load();
   }
 
-  @override
-  void onLanguageChanged(Locale newLocale) {
-    init();
-  }
 
   @override
   Widget build(BuildContext context) {

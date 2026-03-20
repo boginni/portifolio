@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import '../../../../../domain/dto/entities/resume_about_site_entity.dart';
 import '../../../components/feature_tile_widget.dart';
 
-class AboutSitePagePhoneSuccessState extends StatelessWidget {
-  const AboutSitePagePhoneSuccessState(
+class AboutSitePageTabletSuccessState extends StatelessWidget {
+  const AboutSitePageTabletSuccessState(
     this.entity, {
     super.key,
     required this.onRefresh,
@@ -40,14 +40,14 @@ class AboutSitePagePhoneSuccessState extends StatelessWidget {
                 ),
                 textAlign: TextAlign.center,
               ),
-              const SizedBox(height: 16),
+              const SizedBox(height: 16 * 3),
               GridView.count(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
-                crossAxisCount: 2,
-                mainAxisSpacing: 8,
-                crossAxisSpacing: 8,
-                childAspectRatio: .9,
+                crossAxisCount: 3,
+                mainAxisSpacing: 16,
+                crossAxisSpacing: 16,
+                childAspectRatio: 1.2,
                 children:
                     entity.features
                         .map(

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../domain/environment.dart';
 
 enum ResponsiveDisplaySizeEnum {
+  unsupported,
   phone,
   tablet,
   desktop,
@@ -17,6 +18,7 @@ enum ResponsiveDisplaySizeEnum {
 }
 
 class ResponsiveBuilder extends StatelessWidget {
+  final WidgetBuilder? unsupported;
   final WidgetBuilder? phone;
   final WidgetBuilder? tablet;
   final WidgetBuilder? desktop;
@@ -36,6 +38,18 @@ class ResponsiveBuilder extends StatelessWidget {
     this.wide,
     this.ultraWide,
     this.forceDisplaySize,
+    this.unsupported,
+  });
+
+  const ResponsiveBuilder.required({
+    super.key,
+    this.forceDisplaySize,
+    required this.phone,
+    required this.tablet,
+    required this.desktop,
+    required this.wide,
+    required this.ultraWide,
+    required this.unsupported,
   });
 
   @override
@@ -54,17 +68,18 @@ class ResponsiveBuilder extends StatelessWidget {
           ResponsiveDisplaySizeEnum.desktop => desktop ?? tablet,
           ResponsiveDisplaySizeEnum.tablet => tablet ?? phone,
           ResponsiveDisplaySizeEnum.phone => phone,
+          ResponsiveDisplaySizeEnum.unsupported => unsupported,
         };
       }
 
       return switch (width) {
-            >= 1920 => ultraWide ?? wide ?? desktop ?? tablet,
-            >= 1440 => wide ?? desktop ?? tablet,
-            >= 1024 => desktop ?? tablet,
-            >= 600 => tablet,
-            _ => null,
-          } ??
-          phone;
+        >= 1920 => ultraWide ?? wide ?? desktop ?? tablet,
+        >= 1440 => wide ?? desktop ?? tablet,
+        >= 1024 => desktop ?? tablet,
+        >= 560 => tablet ?? phone,
+        >= 320 => phone,
+        _ => unsupported,
+      };
     }();
 
     return builder?.call(context) ?? const Offstage();

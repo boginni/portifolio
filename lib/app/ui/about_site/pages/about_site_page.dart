@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import '../../app/components/responsive_builder.dart';
-import '../../app/mixin/change_language_listener_mixin.dart';
 import '../../app/store/generic_store.dart';
 import '../about_site_controller.dart';
 import 'sizes/desktop/about_site_page_desktop.dart';
 import 'sizes/phone/about_site_page_phone.dart';
+import 'sizes/tablet/about_site_page_tablet.dart';
 import 'sizes/ultra_wide/about_site_page_ultra_wide.dart';
 import 'sizes/wide/about_site_page_wide.dart';
 
@@ -22,8 +22,7 @@ class AboutSitePage extends StatefulWidget {
   State<AboutSitePage> createState() => _AboutSitePAgeState();
 }
 
-class _AboutSitePAgeState extends State<AboutSitePage>
-    with ChangeLanguageListenerMixin {
+class _AboutSitePAgeState extends State<AboutSitePage> {
   AboutSiteController get controller => widget.controller;
 
   @override
@@ -43,15 +42,15 @@ class _AboutSitePAgeState extends State<AboutSitePage>
   }
 
   @override
-  void onLanguageChanged(Locale newLocale) {
-    init();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return ResponsiveBuilder(
       phone:
           (context) => AboutSitePagePhone(
+            controller: controller,
+            init: init,
+          ),
+      tablet:
+          (context) => AboutSitePageTablet(
             controller: controller,
             init: init,
           ),

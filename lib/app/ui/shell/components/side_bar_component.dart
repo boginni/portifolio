@@ -2,24 +2,24 @@ import 'package:ds_assets/ds_assets.dart';
 import 'package:flutter/material.dart';
 
 import '../../app/components/responsive_builder.dart';
-import '../../app/controllers/app_controller.dart';
 import '../../app/extensions/context_extensions.dart';
 import '../../contact/contact_controller.dart';
 import '../../contact/contact_page.dart';
 import '../../pdf/pdf_controller.dart';
 import '../../pdf/components/pdf_download_component.dart';
 import '../../app/components/profile_avatar_widget.dart';
+import '../controller/shell_controller.dart';
 import 'locale_button_widget.dart';
 
 class SideBarComponent extends StatelessWidget {
   const SideBarComponent({
     super.key,
-    required this.appController,
+    required this.shellController,
     required this.contactController,
     required this.pdfController,
   });
 
-  final AppController appController;
+  final ShellController shellController;
   final ContactController contactController;
   final PdfController pdfController;
 
@@ -54,18 +54,16 @@ class SideBarComponent extends StatelessWidget {
                   const Text('Brightness'),
                   const Spacer(),
                   IconButton(
-                    isSelected:
-                        appController.store.value.themeMode == ThemeMode.dark,
+                    isSelected: context.isDarkMode == true,
                     onPressed: () {
-                      appController.setThemeMode(ThemeMode.dark);
+                      shellController.setThemeMode(ThemeMode.dark);
                     },
                     icon: const Icon(Icons.dark_mode),
                   ),
                   IconButton(
-                    isSelected:
-                        appController.store.value.themeMode == ThemeMode.light,
+                    isSelected: context.isDarkMode == false,
                     onPressed: () {
-                      appController.setThemeMode(ThemeMode.light);
+                      shellController.setThemeMode(ThemeMode.light);
                     },
                     icon: const Icon(Icons.light_mode),
                   ),
@@ -78,9 +76,14 @@ class SideBarComponent extends StatelessWidget {
                   LocaleButtonWidget(
                     label: 'EN',
                     isSelected:
-                        appController.store.value.locale?.languageCode == 'en',
+                        shellController
+                            .appController
+                            .store
+                            .locale
+                            ?.languageCode ==
+                        'en',
                     onTap: () {
-                      appController.setLocale(const Locale('en'));
+                      shellController.setLocale(const Locale('en'));
                     },
                   ),
                   const SizedBox(
@@ -89,9 +92,14 @@ class SideBarComponent extends StatelessWidget {
                   LocaleButtonWidget(
                     label: 'PT',
                     isSelected:
-                        appController.store.value.locale?.languageCode == 'pt',
+                        shellController
+                            .appController
+                            .store
+                            .locale
+                            ?.languageCode ==
+                        'pt',
                     onTap: () {
-                      appController.setLocale(const Locale('pt'));
+                      shellController.setLocale(const Locale('pt'));
                     },
                   ),
                 ],

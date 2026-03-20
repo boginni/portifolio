@@ -61,7 +61,5 @@ class AppController {
         locale: locale,
       ),
     );
-
-    store.changeLanguageNotifierController.sink.add(locale);
   }
 }
