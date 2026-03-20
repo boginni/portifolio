@@ -1,5 +1,8 @@
 {
   "title": "Sobre Este Projeto",
+  "author" : "Brunno Franca",
+  "disclaimer" : "Feito com Flutter • Hospedado com GitHub Pages",
+  "location" : "© 2026 — Vila Velha ES, Brazil",
   "description": "Este portfólio serve como uma demonstração técnica em tempo real de desenvolvimento Flutter de nível empresarial. Em vez de uma compilação estática, ele opera como um sistema dinâmico com infraestrutura de mundo real.",
   "repo_url" : "https://github.com/boginni/portifolio",
   "features": [
