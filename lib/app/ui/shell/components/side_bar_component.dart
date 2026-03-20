@@ -26,9 +26,8 @@ class SideBarComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: Container(
+      child: SizedBox(
         width: 16 * 22,
-        color: context.colorScheme.surfaceContainerHighest,
         child: Padding(
           padding: const EdgeInsets.symmetric(
             horizontal: 16 * 2,
@@ -40,9 +39,15 @@ class SideBarComponent extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               const ProfileAvatarWidget(),
-              const _NavLink('About me'),
-              const _NavLink('Skills'),
-              const _NavLink('The project'),
+              _NavLink(
+                context.l10n.about_me,
+              ),
+              _NavLink(
+                context.l10n.skills,
+              ),
+              _NavLink(
+                context.l10n.portfolio,
+              ),
               SizedBox(
                 width: double.infinity,
                 child: PdfDownloadComponent(
