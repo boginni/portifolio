@@ -28,7 +28,7 @@ dependencies:
 
   flutter_purple_impl:
     git: https://github.com/boginni/flutter_purple_impl.git
-    version: 0.0.2
+    version: 0.0.3
 
   error_handler_with_result: ^1.0.0
   timelines_plus: ^2.0.0
