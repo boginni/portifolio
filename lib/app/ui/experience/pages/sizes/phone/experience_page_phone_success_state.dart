@@ -63,8 +63,8 @@ class ExperiencePagePhoneSuccessState extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        'My Experience',
+                      SelectableText(
+                        context.l10n.my_experience,
                         style: context.textTheme.displaySmall?.copyWith(
                           shadows: [
                             const Shadow(
@@ -74,8 +74,8 @@ class ExperiencePagePhoneSuccessState extends StatelessWidget {
                           ],
                         ),
                       ),
-                      Text(
-                        'Senior Software Engineer',
+                      SelectableText(
+                        state.experienceObject.carrierTitle,
                         style: context.textTheme.bodyLarge?.copyWith(
                           shadows: [
                             const Shadow(

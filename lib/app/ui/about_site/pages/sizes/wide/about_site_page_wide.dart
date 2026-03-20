@@ -27,6 +27,7 @@ class AboutSitePageWide extends StatelessWidget {
             GenericStoreSuccessState() => AboutSitePageWideSuccessState(
               value.dataObject,
               onRefresh: init,
+              onTapRepository: controller.launchRepository,
             ),
           },
     );

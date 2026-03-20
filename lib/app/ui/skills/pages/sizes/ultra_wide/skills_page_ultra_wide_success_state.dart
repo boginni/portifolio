@@ -2,6 +2,7 @@ import 'package:ds_assets/ds_assets.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../domain/dto/entities/resume_skills_entity.dart';
+import '../../../../app/extensions/context_extensions.dart';
 
 class SkillsPageUltraWideSuccessState extends StatelessWidget {
   const SkillsPageUltraWideSuccessState({
@@ -41,14 +42,14 @@ class SkillsPageUltraWideSuccessState extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          'My Professional',
+                        SelectableText(
+                          context.l10n.skills,
                           style: textTheme.headlineMedium?.copyWith(),
                         ),
-                        Text(
-                          'Background Skills and\nAccomplishments',
-                          style: textTheme.headlineSmall?.copyWith(),
-                        ),
+                        // SelectableText(
+                        //   'Background Skills and\nAccomplishments',
+                        //   style: textTheme.headlineSmall?.copyWith(),
+                        // ),
                       ],
                     ),
                   ),
@@ -83,7 +84,7 @@ class SkillsPageUltraWideSuccessState extends StatelessWidget {
                           const SizedBox(
                             height: 8,
                           ),
-                          Text(
+                          SelectableText(
                             e.name,
                             style: textTheme.titleLarge?.copyWith(),
                           ),

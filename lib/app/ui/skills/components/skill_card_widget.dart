@@ -37,7 +37,7 @@ class SkillCardWidget extends StatelessWidget {
                 const SizedBox(
                   height: 8,
                 ),
-                Text(
+                SelectableText(
                   name,
                   style: context.textTheme.labelSmall?.copyWith(),
                 ),
@@ -66,7 +66,7 @@ class SkillCardWidget extends StatelessWidget {
                 const SizedBox(
                   height: 8,
                 ),
-                Text(
+                SelectableText(
                   name,
                   style: context.textTheme.titleSmall?.copyWith(),
                 ),
@@ -95,7 +95,7 @@ class SkillCardWidget extends StatelessWidget {
                 const SizedBox(
                   height: 8,
                 ),
-                Text(
+                SelectableText(
                   name,
                   style: context.textTheme.titleSmall?.copyWith(),
                 ),

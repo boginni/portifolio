@@ -51,8 +51,8 @@ class HomeSuccessStatePageWide extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          'Hi, I am',
+                        SelectableText(
+                          data.prefix,
                           style: textTheme.displaySmall?.copyWith(
                             shadows: [
                               Shadow(
@@ -64,7 +64,7 @@ class HomeSuccessStatePageWide extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(height: 16),
-                        Text(
+                        SelectableText(
                           data.name,
                           style: textTheme.displayLarge?.copyWith(
                             fontSize: 84,
@@ -79,7 +79,7 @@ class HomeSuccessStatePageWide extends StatelessWidget {
                             ],
                           ),
                         ),
-                        Text(
+                        SelectableText(
                           data.title,
                           style: textTheme.headlineSmall?.copyWith(
                             color: colorScheme.onSurfaceVariant,

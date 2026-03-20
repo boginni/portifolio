@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../domain/dto/entities/resume_contact_entity.dart';
+import '../../../../app/extensions/context_extensions.dart';
 import '../../../components/contact_card_widget.dart';
 
 class ContactPageDesktopSuccessState extends StatelessWidget {
@@ -22,8 +23,8 @@ class ContactPageDesktopSuccessState extends StatelessWidget {
         Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text(
-              'Get in Touch',
+            SelectableText(
+              context.l10n.get_in_touch,
               style: theme.textTheme.titleMedium,
             ),
             const Spacer(),
@@ -34,7 +35,7 @@ class ContactPageDesktopSuccessState extends StatelessWidget {
             //   onPressed: () {},
             //   icon: ,
             // ),
-            // Text(
+            // SelectableText(
             //   'Direct channels',
             //   // style: theme.textTheme.bodyMedium?.copyWith(
             //   //   color: colorScheme.onSurfaceVariant,

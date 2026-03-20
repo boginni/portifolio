@@ -27,6 +27,7 @@ class AboutSitePageUltraWide extends StatelessWidget {
             GenericStoreSuccessState() => AboutSitePageUltraWideSuccessState(
               value.dataObject,
               onRefresh: init,
+              onTapRepository: controller.launchRepository,
             ),
           },
     );

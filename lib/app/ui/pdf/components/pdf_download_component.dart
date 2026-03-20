@@ -27,18 +27,18 @@ class _PdfDownloadComponentState extends State<PdfDownloadComponent> {
     //     return switch (value) {
     //       GenericStoreInitialState() => FilledButton(
     //         onPressed: controller.generatePdf,
-    //         child: const Text('Download CV'),
+    //         child: const SelectableText('Download CV'),
     //       ),
     //       GenericStoreLoadingState() => const Center(
     //         child: CircularProgressIndicator(),
     //       ),
     //       GenericStoreFailureState() => FilledButton(
     //         onPressed: controller.generatePdf,
-    //         child: const Text('Try Again'),
+    //         child: const SelectableText('Try Again'),
     //       ),
     //       GenericStoreSuccessState() => FilledButton(
     //         onPressed: controller.generatePdf,
-    //         child: const Text('Download Again'),
+    //         child: const SelectableText('Download Again'),
     //       ),
     //     };
     //   },

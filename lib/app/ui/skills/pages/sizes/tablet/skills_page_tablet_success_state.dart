@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../../domain/dto/entities/resume_skills_entity.dart';
 import '../../../../app/components/inverse_brightness_builder.dart';
 import '../../../../app/components/waka_time_grid_widget.dart';
+import '../../../../app/extensions/context_extensions.dart';
 import '../../../components/skill_card_widget.dart';
 
 class SkillsPageTabletSuccessState extends StatelessWidget {
@@ -40,14 +41,14 @@ class SkillsPageTabletSuccessState extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            'My Professional',
+                          SelectableText(
+                            context.l10n.skills,
                             style: textTheme.headlineSmall?.copyWith(),
                           ),
-                          Text(
-                            'Background Skills and\nAccomplishments',
-                            style: textTheme.titleMedium?.copyWith(),
-                          ),
+                          // SelectableText(
+                          //   'Background Skills and\nAccomplishments',
+                          //   style: textTheme.titleMedium?.copyWith(),
+                          // ),
                         ],
                       ),
                     ),

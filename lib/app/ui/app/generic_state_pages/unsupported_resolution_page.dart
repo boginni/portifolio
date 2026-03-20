@@ -41,7 +41,7 @@ class UnsupportedResolutionPage extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 16),
-                Text(
+                SelectableText(
                   'Screen size too small',
                   style: theme.textTheme.headlineSmall?.copyWith(
                     fontWeight: FontWeight.bold,
@@ -50,7 +50,7 @@ class UnsupportedResolutionPage extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 4),
-                Text(
+                SelectableText(
                   'This project is designed for larger displays. Please try rotating your device or using a larger screen for the best experience.',
                   style: theme.textTheme.bodyMedium?.copyWith(
                     color: theme.colorScheme.onPrimaryContainer,
@@ -59,7 +59,7 @@ class UnsupportedResolutionPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 16),
                 // Optional: A little "back" button or "try anyway" if you want
-                Text(
+                SelectableText(
                   'MINIMUM WIDTH: 320px',
                   style: theme.textTheme.labelSmall?.copyWith(
                     letterSpacing: 2,

@@ -1,6 +1,8 @@
 
 {
   "overview" : "Specializing in building scalable, high-performance cross-platform applications. I bridge the gap between complex app architecture and pixel-perfect UI, with a deep focus on SOLID principles and automated testing to ensure long-term maintainability.",
+  "name" : "Brunno Marques",
+  "carrier_title" : "Senior Software Engineer",
   "kpis": [
     {
       "value": "7+",

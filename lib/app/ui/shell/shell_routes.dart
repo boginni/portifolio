@@ -74,6 +74,7 @@ class ShellRoute extends AppRoute {
     ),
     aboutSiteController: AboutSiteController(
       AppDependencies.get(),
+      AppDependencies.get(),
       store: aboutStore,
     ),
   );

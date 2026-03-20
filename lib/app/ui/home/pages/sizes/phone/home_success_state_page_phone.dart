@@ -13,7 +13,7 @@ class HomeSuccessStatePagePhone extends StatelessWidget {
     this.data, {
     super.key,
     required this.onRefresh,
-        required this.onTapUrl,
+    required this.onTapUrl,
   });
 
   final ResumeOverviewEntity data;
@@ -31,11 +31,11 @@ class HomeSuccessStatePagePhone extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
             child: Column(
               children: [
-                Text(
-                  'Welcome back!!!',
+                SelectableText(
+                  context.l10n.welcome_back,
                   style: context.textTheme.titleLarge,
                 ),
-                const Text('Feel Free to explore the app.'),
+                SelectableText(context.l10n.feel_free_to_explore_the_app),
               ],
             ),
           ),
@@ -53,11 +53,11 @@ class HomeSuccessStatePagePhone extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
+                SelectableText(
                   data.name,
                   style: context.textTheme.headlineMedium,
                 ),
-                Text(
+                SelectableText(
                   data.title,
                 ),
               ],
@@ -101,8 +101,8 @@ class HomeSuccessStatePagePhone extends StatelessWidget {
                 children: [
                   Semantics(
                     header: true,
-                    child: Text(
-                      'Overview',
+                    child: SelectableText(
+                      context.l10n.overview,
                       style: context.textTheme.titleLarge,
                     ),
                   ),

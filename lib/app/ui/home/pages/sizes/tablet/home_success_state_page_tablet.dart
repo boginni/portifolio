@@ -48,13 +48,13 @@ class HomeSuccessStatePageTablet extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 24),
-                    Text(
+                    SelectableText(
                       data.title,
                       style: context.textTheme.headlineSmall,
                       // Bigger for tablet
                       textAlign: TextAlign.center,
                     ),
-                    Text(
+                    SelectableText(
                       data.status,
                       style: context.textTheme.bodyLarge,
                     ),
@@ -71,11 +71,11 @@ class HomeSuccessStatePageTablet extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      'Welcome back!!!',
+                    SelectableText(
+                      context.l10n.welcome_back,
                       style: context.textTheme.displaySmall,
                     ),
-                    const Text('Feel Free to explore the app.'),
+                    SelectableText(context.l10n.feel_free_to_explore_the_app),
                     const SizedBox(height: 32),
 
                     // Social Actions (Grid-like Row)
@@ -112,8 +112,8 @@ class HomeSuccessStatePageTablet extends StatelessWidget {
                         children: [
                           Semantics(
                             header: true,
-                            child: Text(
-                              'Overview',
+                            child: SelectableText(
+                              data.prefix,
                               style: context.textTheme.titleLarge,
                             ),
                           ),

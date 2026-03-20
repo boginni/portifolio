@@ -26,12 +26,12 @@ class ShellPageErrorState extends StatelessWidget {
             // Column(
             //   spacing: 8,
             //   children: [
-            //     Text(
+            //     SelectableText(
             //       context.l10n.anUnexpectedErrorOccurred,
             //       style: context.dsTopology.h6,
             //       textAlign: TextAlign.center,
             //     ),
-            //     Text(
+            //     SelectableText(
             //       context.l10n.pleaseTryAgainLaterOrContactSupport,
             //       textAlign: TextAlign.center,
             //     ),
@@ -41,11 +41,11 @@ class ShellPageErrorState extends StatelessWidget {
             //   children: [
             //     FilledButton(
             //       onPressed: onRetry,
-            //       child: Text(context.l10n.tryAgain),
+            //       child: SelectableText(context.l10n.tryAgain),
             //     ),
             //     TextButton(
             //       onPressed: onLogout,
-            //       child: Text(context.l10n.logout),
+            //       child: SelectableText(context.l10n.logout),
             //     ),
             //   ],
             // ),

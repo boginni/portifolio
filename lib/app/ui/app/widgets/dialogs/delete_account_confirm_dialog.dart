@@ -32,18 +32,18 @@ class DeleteAccountConfirmDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: Text(context.l10n.delete_account_ask),
-      content: Text(
+      title: SelectableText(context.l10n.delete_account_ask),
+      content: SelectableText(
         context.l10n.are_you_sure_you_want_to_delete_your_account,
       ),
       actions: [
         TextButton(
           onPressed: onCancel,
-          child: Text(context.l10n.cancel),
+          child: SelectableText(context.l10n.cancel),
         ),
         TextButton(
           onPressed: onConfirm,
-          child: Text(context.l10n.leave),
+          child: SelectableText(context.l10n.leave),
         ),
       ],
     );

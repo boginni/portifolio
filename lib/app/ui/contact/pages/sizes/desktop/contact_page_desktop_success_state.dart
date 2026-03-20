@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../../domain/dto/entities/resume_contact_entity.dart';
 import '../../../../app/components/profile_avatar_widget.dart';
+import '../../../../app/extensions/context_extensions.dart';
 import '../../../components/contact_card_widget.dart';
 
 class ContactPageSuccessStateDesktop extends StatefulWidget {
@@ -39,8 +40,8 @@ class _ContactPageSuccessStateDesktopState
           children: [
             Row(
               children: [
-                Text(
-                  'Get in Touch',
+                SelectableText(
+                  context.l10n.get_in_touch,
                   style: theme.textTheme.headlineSmall,
                 ),
                 const Spacer(),

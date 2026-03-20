@@ -27,7 +27,7 @@ class AlthergoMainLoadingComponent extends StatelessWidget {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                const Text(
+                const SelectableText(
                   'Althergo',
                   style: TextStyle(
                     fontSize: 24,

@@ -1,5 +1,6 @@
 class ResumeOverviewEntity {
   final String name;
+  final String prefix;
   final String title;
   final String photoAsset;
   final String linkedinUrl;
@@ -10,6 +11,7 @@ class ResumeOverviewEntity {
 
   const ResumeOverviewEntity({
     required this.name,
+    required this.prefix,
     required this.title,
     required this.photoAsset,
     required this.linkedinUrl,
@@ -25,6 +27,7 @@ class ResumeOverviewEntity {
 
     return ResumeOverviewEntity(
       name: json['name'] ?? '',
+      prefix: json['prefix'] ?? '',
       title: json['title'] ?? '',
       photoAsset: json['photo_asset'] ?? '',
       linkedinUrl: social?['linkedin'] ?? '',
@@ -38,6 +41,7 @@ class ResumeOverviewEntity {
   Map<String, dynamic> toJson() {
     return {
       'name': name,
+      'prefix': prefix,
       'title': title,
       'photo_asset': photoAsset,
       'social_links': {

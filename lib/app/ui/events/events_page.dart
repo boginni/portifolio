@@ -1,5 +1,6 @@
 import 'package:ds_assets/ds_assets.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 import '../app/extensions/context_extensions.dart';
 import '../home/components/high_resolution_image.dart';
@@ -36,7 +37,7 @@ class EventsPage extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
+                    SelectableText(
                       'The Developers Conference - SP | 2025',
                       style: context.textTheme.displaySmall?.copyWith(
                         color: context.colorScheme.onInverseSurface,

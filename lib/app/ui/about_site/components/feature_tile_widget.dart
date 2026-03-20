@@ -42,14 +42,14 @@ class FeatureTileWidget extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
+                    SelectableText(
                       title,
                       style: context.textTheme.titleMedium?.copyWith(
                         fontWeight: FontWeight.bold,
                       ),
                       textAlign: TextAlign.center,
                     ),
-                    Text(
+                    SelectableText(
                       desc,
                       style: context.textTheme.bodyMedium?.copyWith(),
                       textAlign: TextAlign.center,
@@ -84,7 +84,7 @@ class FeatureTileWidget extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
+                      SelectableText(
                         title,
                         style: context.textTheme.titleSmall?.copyWith(
                           fontWeight: FontWeight.bold,
@@ -92,7 +92,7 @@ class FeatureTileWidget extends StatelessWidget {
                         textAlign: TextAlign.center,
                       ),
                       Flexible(
-                        child: Text(
+                        child: SelectableText(
                           desc,
                           style: context.textTheme.bodyMedium?.copyWith(),
                           textAlign: TextAlign.center,
@@ -129,7 +129,7 @@ class FeatureTileWidget extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
+                      SelectableText(
                         title,
                         style: context.textTheme.titleSmall?.copyWith(
                           fontWeight: FontWeight.bold,
@@ -137,7 +137,7 @@ class FeatureTileWidget extends StatelessWidget {
                         textAlign: TextAlign.center,
                       ),
                       Flexible(
-                        child: Text(
+                        child: SelectableText(
                           desc,
                           style: context.textTheme.labelSmall?.copyWith(),
                           textAlign: TextAlign.center,

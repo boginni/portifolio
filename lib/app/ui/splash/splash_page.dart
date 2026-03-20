@@ -73,7 +73,7 @@ class _SplashPageState extends State<SplashPage> {
                           const SizedBox(height: 8),
                           FilledButton(
                             onPressed: initialize,
-                            child: const Text('x'),
+                            child: const SelectableText('x'),
                           ),
                         ],
                       ),
@@ -94,7 +94,7 @@ class _SplashPageState extends State<SplashPage> {
                           const SizedBox(height: 8),
                           FilledButton(
                             onPressed: initialize,
-                            child: const Text('x'),
+                            child: const SelectableText('x'),
                           ),
                         ],
                       ),
@@ -112,18 +112,18 @@ class _SplashPageState extends State<SplashPage> {
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          Text(
+                          SelectableText(
                             'Permissão negada permanentemente.',
                             style: context.textTheme.titleMedium,
                           ),
                           const SizedBox(height: 8),
-                          const Text(
+                          const SelectableText(
                             'Por favor, habilite as permissões nas configurações',
                           ),
                           const SizedBox(height: 16),
                           FilledButton(
                             onPressed: initialize,
-                            child: const Text('x'),
+                            child: const SelectableText('x'),
                           ),
                         ],
                       ),

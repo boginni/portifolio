@@ -63,7 +63,7 @@ class ExperienceCompanyCardWidget extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
+                        SelectableText(
                           experience.title,
                           style: theme.textTheme.titleMedium?.copyWith(
                             color: colorScheme.onSurface,
@@ -77,7 +77,7 @@ class ExperienceCompanyCardWidget extends StatelessWidget {
                               color: colorScheme.onSurfaceVariant,
                             ),
                             const SizedBox(width: 4),
-                            Text(
+                            SelectableText(
                               experience.subtitle,
                               style: theme.textTheme.labelMedium?.copyWith(
                                 color: colorScheme.onSurfaceVariant,
@@ -86,7 +86,7 @@ class ExperienceCompanyCardWidget extends StatelessWidget {
                           ],
                         ),
                         const SizedBox(height: 8),
-                        Text(
+                        SelectableText(
                           '${experience.startDate} — ${experience.endDate}'
                               .toUpperCase(),
                           style: theme.textTheme.labelSmall?.copyWith(
@@ -103,7 +103,7 @@ class ExperienceCompanyCardWidget extends StatelessWidget {
               const Divider(
                 thickness: 1,
               ),
-              Text(
+              SelectableText(
                 experience.description,
                 style: theme.textTheme.bodyMedium?.copyWith(
                   color: colorScheme.onSurfaceVariant,

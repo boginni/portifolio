@@ -26,14 +26,14 @@ class AboutSitePagePhoneSuccessState extends StatelessWidget {
           ),
           child: Column(
             children: [
-              Text(
+              SelectableText(
                 entity.title,
                 style: theme.textTheme.headlineSmall?.copyWith(
                   fontWeight: FontWeight.bold,
                 ),
               ),
               const SizedBox(height: 16),
-              Text(
+              SelectableText(
                 entity.description,
                 style: theme.textTheme.bodyLarge?.copyWith(
                   color: colorScheme.onSurfaceVariant,

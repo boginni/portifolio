@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../extensions/context_extensions.dart';
+
 class GenericFailureStatePage extends StatelessWidget {
   const GenericFailureStatePage({
     super.key,
@@ -17,14 +19,14 @@ class GenericFailureStatePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            const Text(
-              'An error occurred. Please try again later.',
+            SelectableText(
+              context.l10n.an_error_occurred_please_try_again_later,
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 16),
             FilledButton(
               onPressed: onTryAgain,
-              child: const Text('Try Again'),
+              child: Text(context.l10n.try_again),
             ),
           ],
         ),

@@ -56,7 +56,7 @@ class ContactCardWidget extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
+                          SelectableText(
                             title,
                             style: Theme.of(
                               context,
@@ -64,7 +64,7 @@ class ContactCardWidget extends StatelessWidget {
                               color: colorScheme.onSurfaceVariant,
                             ),
                           ),
-                          Text(
+                          SelectableText(
                             value,
                             style: Theme.of(
                               context,
@@ -72,7 +72,6 @@ class ContactCardWidget extends StatelessWidget {
                               fontWeight: FontWeight.w600,
                               color: colorScheme.onSurface,
                             ),
-                            overflow: TextOverflow.ellipsis,
                           ),
                         ],
                       ),
@@ -116,19 +115,18 @@ class ContactCardWidget extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
+                          SelectableText(
                             title,
                             style: context.textTheme.labelSmall?.copyWith(
                               color: colorScheme.onSurfaceVariant,
                             ),
                           ),
-                          Text(
+                          SelectableText(
                             value,
                             style: context.textTheme.bodyMedium?.copyWith(
                               fontWeight: FontWeight.w600,
                               color: colorScheme.onSurface,
                             ),
-                            overflow: TextOverflow.ellipsis,
                           ),
                         ],
                       ),
@@ -174,7 +172,7 @@ class ContactCardWidget extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
+                          SelectableText(
                             title,
                             style: Theme.of(
                               context,
@@ -182,7 +180,7 @@ class ContactCardWidget extends StatelessWidget {
                               color: colorScheme.onSurfaceVariant,
                             ),
                           ),
-                          Text(
+                          SelectableText(
                             value,
                             style: Theme.of(
                               context,
@@ -190,7 +188,6 @@ class ContactCardWidget extends StatelessWidget {
                               fontWeight: FontWeight.w600,
                               color: colorScheme.onSurface,
                             ),
-                            overflow: TextOverflow.ellipsis,
                           ),
                         ],
                       ),

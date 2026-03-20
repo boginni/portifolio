@@ -36,7 +36,7 @@ class SocialCardWidget extends StatelessWidget {
                   size: 48,
                 ),
               ),
-              Text(
+              SelectableText(
                 title,
                 style: context.textTheme.titleSmall,
               ),

@@ -2,16 +2,19 @@ import 'package:flutter/material.dart';
 import '../../../../../domain/dto/entities/resume_about_site_entity.dart';
 import '../../../../app/components/inverse_brightness_builder.dart';
 import '../../../components/feature_tile_widget.dart';
+import '../../../components/footer_component.dart';
 
 class AboutSitePageUltraWideSuccessState extends StatelessWidget {
   const AboutSitePageUltraWideSuccessState(
     this.entity, {
     super.key,
     required this.onRefresh,
-  });
+        required this.onTapRepository,
+      });
 
   final ResumeAboutSiteEntity entity;
   final RefreshCallback onRefresh;
+  final VoidCallback onTapRepository;
 
   @override
   Widget build(BuildContext context) {
@@ -32,14 +35,14 @@ class AboutSitePageUltraWideSuccessState extends StatelessWidget {
                 constraints: const BoxConstraints(maxWidth: 1080),
                 child: Column(
                   children: [
-                    Text(
+                    SelectableText(
                       entity.title,
                       style: theme.textTheme.headlineSmall?.copyWith(
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                     const SizedBox(height: 16),
-                    Text(
+                    SelectableText(
                       entity.description,
                       style: theme.textTheme.bodyLarge?.copyWith(
                         color: colorScheme.onSurfaceVariant,
@@ -84,56 +87,9 @@ class AboutSitePageUltraWideSuccessState extends StatelessWidget {
             horizontal: 16 * 2,
             vertical: 16,
           ),
-          child: Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Brunno França',
-                        style: theme.textTheme.titleMedium?.copyWith(
-                          fontWeight: FontWeight.bold,
-                          letterSpacing: 0.5,
-                        ),
-                      ),
-                      Text(
-                        'Built with Flutter • Hosted on GitHub Pages',
-                        style: theme.textTheme.bodyMedium?.copyWith(
-                          color: colorScheme.onSurfaceVariant,
-                        ),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      InkWell(
-                        onTap: () {},
-                        borderRadius: BorderRadius.circular(8),
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Icon(
-                            Icons.code_rounded,
-                            size: 20,
-                            color: Theme.of(context).colorScheme.primary,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-              const SizedBox(height: 32),
-              Text(
-                '© 2026 — Vila Velha, Brazil',
-                style: theme.textTheme.labelSmall?.copyWith(
-                  color: colorScheme.outline,
-                  letterSpacing: 1.0,
-                ),
-              ),
-            ],
+          child: FooterComponent(
+            entity: entity,
+            onTapRepository: onTapRepository,
           ),
         ),
       ],

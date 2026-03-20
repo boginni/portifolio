@@ -9,7 +9,7 @@ class DevelopmentWarningDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: Text(
+      title: SelectableText(
         context.l10n.under_development,
         textAlign: TextAlign.center,
       ),
@@ -17,10 +17,10 @@ class DevelopmentWarningDialog extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text(
+          SelectableText(
             context.l10n.this_portfolio_is_currently_under_development,
           ),
-          Text(
+          SelectableText(
             context.l10n.please_check_back_later,
           ),
         ],
@@ -44,11 +44,11 @@ class DevelopmentWarningDialog extends StatelessWidget {
               },
             );
           },
-          child: const Text('Not ok'),
+          child: Text(context.l10n.not_ok),
         ),
         TextButton(
           onPressed: () => Navigator.of(context).pop(),
-          child: const Text('OK'),
+          child: Text(context.l10n.ok),
         ),
       ],
     );

@@ -32,16 +32,16 @@ class LogoutConfirmDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: Text(context.l10n.logout),
-      content: Text(context.l10n.are_you_sure_you_want_to_logout),
+      title: SelectableText(context.l10n.logout),
+      content: SelectableText(context.l10n.are_you_sure_you_want_to_logout),
       actions: [
         TextButton(
           onPressed: onCancel,
-          child: Text(context.l10n.cancel),
+          child: SelectableText(context.l10n.cancel),
         ),
         TextButton(
           onPressed: onConfirm,
-          child: Text(context.l10n.leave),
+          child: SelectableText(context.l10n.leave),
         ),
       ],
     );

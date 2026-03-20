@@ -27,6 +27,7 @@ class AboutSitePageDesktop extends StatelessWidget {
             GenericStoreSuccessState() => AboutSitePageDesktopSuccessState(
               value.dataObject,
               onRefresh: init,
+              onTapRepository: controller.launchRepository,
             ),
           },
     );

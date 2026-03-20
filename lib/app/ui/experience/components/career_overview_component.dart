@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../domain/dto/entities/resume_experience_entity.dart';
+import '../../app/extensions/context_extensions.dart';
 
 class CareerOverviewComponent extends StatelessWidget {
   const CareerOverviewComponent({
@@ -27,14 +28,14 @@ class CareerOverviewComponent extends StatelessWidget {
               size: 28,
             ),
             const SizedBox(width: 8),
-            Text(
-              'Overview',
+            SelectableText(
+              context.l10n.overview,
               style: theme.textTheme.titleLarge?.copyWith(),
             ),
           ],
         ),
         const SizedBox(height: 8),
-        Text(
+        SelectableText(
           experience.overview,
           style: theme.textTheme.bodyLarge?.copyWith(
             color: colorScheme.onSurfaceVariant,
@@ -79,7 +80,7 @@ class _StatItem extends StatelessWidget {
     final theme = Theme.of(context);
     return Column(
       children: [
-        Text(
+        SelectableText(
           value,
           style: theme.textTheme.headlineSmall?.copyWith(
             fontWeight: FontWeight.w900,
@@ -87,7 +88,7 @@ class _StatItem extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 4),
-        Text(
+        SelectableText(
           label,
           style: theme.textTheme.labelMedium?.copyWith(
             color: theme.colorScheme.secondary,

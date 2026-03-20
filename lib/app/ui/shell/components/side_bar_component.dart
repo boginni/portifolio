@@ -26,8 +26,9 @@ class SideBarComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: SizedBox(
+      child: Container(
         width: 16 * 22,
+        color: context.colorScheme.surfaceContainerHighest,
         child: Padding(
           padding: const EdgeInsets.symmetric(
             horizontal: 16 * 2,
@@ -51,7 +52,7 @@ class SideBarComponent extends StatelessWidget {
               const Divider(),
               Row(
                 children: [
-                  const Text('Brightness'),
+                  SelectableText(context.l10n.brightness),
                   const Spacer(),
                   IconButton(
                     isSelected: context.isDarkMode == true,
@@ -71,7 +72,7 @@ class SideBarComponent extends StatelessWidget {
               ),
               Row(
                 children: [
-                  const Text('Language'),
+                  SelectableText(context.l10n.language),
                   const Spacer(),
                   LocaleButtonWidget(
                     label: 'EN',
@@ -137,7 +138,7 @@ class _NavLink extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0),
-      child: Text(
+      child: SelectableText(
         label,
         style: context.textTheme.titleMedium?.copyWith(
           color: context.colorScheme.onSurfaceVariant,

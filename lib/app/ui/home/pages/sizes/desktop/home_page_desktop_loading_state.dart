@@ -47,7 +47,7 @@ class HomePageDesktopLoadingState extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
+                      SelectableText(
                         ' ',
                         style: textTheme.headlineSmall?.copyWith(
                           shadows:  [
@@ -60,7 +60,7 @@ class HomePageDesktopLoadingState extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(height: 16),
-                      Text(
+                      SelectableText(
                         ' ',
                         style: textTheme.displayLarge?.copyWith(
                           fontWeight: FontWeight.bold,
@@ -74,7 +74,7 @@ class HomePageDesktopLoadingState extends StatelessWidget {
                           ],
                         ),
                       ),
-                      Text(
+                      SelectableText(
                         ' ',
                         style: textTheme.titleMedium?.copyWith(
                           color: colorScheme.onSurfaceVariant,

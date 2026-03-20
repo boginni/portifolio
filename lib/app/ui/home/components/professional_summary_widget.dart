@@ -22,7 +22,7 @@ class ProfessionalSummaryWidget extends StatelessWidget {
               .map(
                 (e) => Padding(
                   padding: const EdgeInsets.only(bottom: 8),
-                  child: Text(
+                  child: SelectableText(
                     e,
                     style: textStyle,
                   ),

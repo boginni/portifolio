@@ -2,6 +2,7 @@ import 'package:ds_assets/ds_assets.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../domain/dto/entities/resume_contact_entity.dart';
+import '../../../../app/extensions/context_extensions.dart';
 import '../../../components/contact_card_widget.dart';
 
 class ContactPageSuccessStatePhone extends StatelessWidget {
@@ -52,13 +53,13 @@ class ContactPageSuccessStatePhone extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
+                      SelectableText(
                         entity.name,
                         style: theme.textTheme.displaySmall?.copyWith(
                           color: colorScheme.surfaceContainerHighest,
                         ),
                       ),
-                      Text(
+                      SelectableText(
                         entity.profession,
                         style: theme.textTheme.bodyLarge?.copyWith(
                           color: colorScheme.surfaceContainerHighest,
@@ -77,12 +78,12 @@ class ContactPageSuccessStatePhone extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        'Get in Touch',
+                      SelectableText(
+                        context.l10n.get_in_touch,
                         style: theme.textTheme.headlineSmall,
                       ),
-                      Text(
-                        'Direct channels',
+                      SelectableText(
+                        context.l10n.direct_channels,
                         style: theme.textTheme.bodyMedium?.copyWith(
                           color: colorScheme.onSurfaceVariant,
                         ),
@@ -94,19 +95,19 @@ class ContactPageSuccessStatePhone extends StatelessWidget {
                     children: [
                       ContactCardWidget(
                         icon: Icons.email_outlined,
-                        title: 'Email',
+                        title: context.l10n.email,
                         value: entity.email,
                         onTap: () {},
                       ),
                       ContactCardWidget(
                         icon: Icons.phone_android_outlined,
-                        title: 'WhatsApp',
+                        title: context.l10n.whatsapp,
                         value: entity.whatsapp,
                         onTap: () {},
                       ),
                       ContactCardWidget(
                         icon: Icons.location_on_outlined,
-                        title: 'Location',
+                        title: context.l10n.location,
                         value: entity.location,
                         onTap: () {},
                       ),

@@ -40,13 +40,13 @@ class HeadingBarComponent extends StatelessWidget {
             color: context.colorScheme.primary,
           ),
           const Spacer(),
-          const _NavItemWidget(
-            'About me',
+           _NavItemWidget(
+            context.l10n.about_me,
           ),
-          const _NavItemWidget(
-            'Skills',
+           _NavItemWidget(
+            context.l10n.skills,
           ),
-          const _NavItemWidget('Portfolio'),
+          _NavItemWidget(context.l10n.portfolio),
           const SizedBox(width: 16),
           ElevatedButton(
             onPressed: onContactMe,
@@ -55,7 +55,7 @@ class HeadingBarComponent extends StatelessWidget {
               foregroundColor: context.colorScheme.onSurface,
               shape: const StadiumBorder(),
             ),
-            child: const Text('CONTACT ME'),
+            child: Text(context.l10n.contact_me),
           ),
           const SizedBox(width: 8),
           PdfDownloadComponent(
@@ -112,7 +112,7 @@ class _NavItemWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15),
-      child: Text(
+      child: SelectableText(
         label,
         style: context.textTheme.labelLarge,
       ),
