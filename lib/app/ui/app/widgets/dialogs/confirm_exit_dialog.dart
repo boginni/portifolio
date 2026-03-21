@@ -37,11 +37,11 @@ class ConfirmExitDialog extends StatelessWidget {
       actions: [
         TextButton(
           onPressed: onCancel,
-          child: SelectableText(context.l10n.cancel),
+          child: Text(context.l10n.cancel),
         ),
         TextButton(
           onPressed: onConfirm,
-          child: SelectableText(context.l10n.leave),
+          child: Text(context.l10n.leave),
         ),
       ],
     );
