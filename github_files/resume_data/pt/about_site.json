@@ -27,11 +27,6 @@
       "description": "Suporte completo a i18n e traduções."
     },
     {
-      "icon": "0xf561",
-      "title": "Monitoramento",
-      "description": "Firebase Crashlytics e rastreamento de eventos."
-    },
-    {
       "icon": "0xf016b",
       "title": "Segurança",
       "description": "Proteção de borda via Cloudflare."

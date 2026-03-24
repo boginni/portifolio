@@ -28,7 +28,7 @@ class _ShellPageState extends State<ShellPage> {
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback(
-      (timeStamp) {
+          (timeStamp) {
         init();
       },
     );
@@ -38,12 +38,12 @@ class _ShellPageState extends State<ShellPage> {
     await Future.delayed(const Duration(seconds: 1));
     widget.controller.store.state = const ShellSuccessState();
 
-    if (mounted) {
-      await showDialog(
-        context: context,
-        builder: (context) => const DevelopmentWarningDialog(),
-      );
-    }
+    // if (mounted) {
+    //   await showDialog(
+    //     context: context,
+    //     builder: (context) => const DevelopmentWarningDialog(),
+    //   );
+    // }
   }
 
   @override

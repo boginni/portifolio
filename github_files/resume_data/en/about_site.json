@@ -27,11 +27,6 @@
       "description": "Full i18n support & translations."
     },
     {
-      "icon": "0xf561",
-      "title": "Monitoring",
-      "description": "Firebase Crashlytics & Event tracking."
-    },
-    {
       "icon": "0xf016b",
       "title": "Security",
       "description": "Cloudflare edge protection."
