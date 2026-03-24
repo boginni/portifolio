@@ -1,5 +1,3 @@
-
-
 import 'package:ds_assets/ds_assets.dart';
 import 'package:flutter/material.dart';
 
@@ -20,6 +18,8 @@ class ExperiencePageUltraWideSuccessState extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final breathSpace = (2700.0 - context.width).clamp(0, 16 * 18).toDouble();
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       spacing: 32,
@@ -29,6 +29,9 @@ class ExperiencePageUltraWideSuccessState extends StatelessWidget {
         ),
         ExperienceListComponent(
           state: state,
+        ),
+        SizedBox(
+          height: breathSpace,
         ),
         Column(
           children: [
@@ -41,7 +44,7 @@ class ExperiencePageUltraWideSuccessState extends StatelessWidget {
                         ? DsAssetsPhotos.professionalFullSuitSeriousPng
                         : DsAssetsPhotos.workingMacPng,
                 fit: BoxFit.fitWidth,
-                alignment: Alignment.topCenter,
+                alignment: Alignment.bottomRight,
                 ratio: 3330 / 5000,
               ),
             ),

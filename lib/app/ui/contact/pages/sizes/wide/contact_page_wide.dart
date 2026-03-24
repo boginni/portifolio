@@ -24,7 +24,7 @@ class ContactPageWide extends StatelessWidget {
           (context, value, child) => switch (value) {
             GenericStoreInitialState() => const GenericLoadingStatePage(),
             GenericStoreSuccessState(dataObject: final contact) =>
-              ContactPageDesktopSuccessState(
+              ContactPageWideSuccessState(
                 entity: contact,
               ),
             GenericStoreLoadingState() => const GenericLoadingStatePage(),

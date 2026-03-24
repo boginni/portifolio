@@ -34,56 +34,62 @@ class _ContactPageSuccessStateDesktopState
           vertical: 16 * 2,
           horizontal: 16 * 2,
         ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Row(
-              children: [
-                SelectableText(
-                  context.l10n.get_in_touch,
-                  style: theme.textTheme.headlineSmall,
-                ),
-                const Spacer(),
-                const CloseButton(),
-              ],
-            ),
-            const SizedBox(height: 16 * 2),
-            Flexible(
-              child: Row(
-                spacing: 16 * 3,
+        child: SizedBox(
+          height: 16 * 10 * 3,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Row(
                 children: [
-                  const Expanded(
-                    child: ProfileAvatarWidget(),
+                  SelectableText(
+                    context.l10n.get_in_touch,
+                    style: theme.textTheme.headlineSmall,
                   ),
-                  Flexible(
-                    child: Column(
-                      children: [
-                        ContactCardWidget(
-                          icon: Icons.email_outlined,
-                          title: 'Email',
-                          value: widget.entity.email,
-                          onTap: () {},
-                        ),
-                        ContactCardWidget(
-                          icon: Icons.phone_android_outlined,
-                          title: 'WhatsApp',
-                          value: widget.entity.whatsapp,
-                          onTap: () {},
-                        ),
-                        ContactCardWidget(
-                          icon: Icons.location_on_outlined,
-                          title: 'Location',
-                          value: widget.entity.location,
-                          onTap: () {},
-                        ),
-                      ],
-                    ),
-                  ),
+                  const Spacer(),
+                  const CloseButton(),
                 ],
               ),
-            ),
-          ],
+              const SizedBox(height: 16 * 2),
+              Flexible(
+                child: Row(
+                  spacing: 16 * 3,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    const Expanded(
+                      child: ProfileAvatarWidget(),
+                    ),
+                    Flexible(
+                      flex: 2,
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          ContactCardWidget(
+                            icon: Icons.email_outlined,
+                            title: 'Email',
+                            value: widget.entity.email,
+                            onTap: () {},
+                          ),
+                          ContactCardWidget(
+                            icon: Icons.phone_android_outlined,
+                            title: 'WhatsApp',
+                            value: widget.entity.whatsapp,
+                            onTap: () {},
+                          ),
+                          ContactCardWidget(
+                            icon: Icons.location_on_outlined,
+                            title: 'Location',
+                            value: widget.entity.location,
+                            onTap: () {},
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

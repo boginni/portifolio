@@ -27,10 +27,10 @@ class SideBarComponent extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: SizedBox(
-        width: 16 * 22,
+        width: 16 * 23,
         child: Padding(
           padding: const EdgeInsets.symmetric(
-            horizontal: 16 * 2,
+            horizontal: 16 * 1,
           ),
           child: Column(
             spacing: 16,
@@ -38,7 +38,21 @@ class SideBarComponent extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
             children: [
-              const ProfileAvatarWidget(),
+              Stack(
+                children: [
+                  Positioned(
+                    top: 16,
+                    child: Image.asset(
+                      DsAssetsIcons.bfPng,
+                      color: context.colorScheme.primary,
+                      cacheHeight: 16 * 4,
+                      height: 16 * 4,
+                      width: 16 * 4,
+                    ),
+                  ),
+                  const ProfileAvatarWidget(),
+                ],
+              ),
               _NavLink(
                 context.l10n.about_me,
               ),
@@ -117,14 +131,6 @@ class SideBarComponent extends StatelessWidget {
               ),
               const SizedBox(
                 height: 16 * 2,
-              ),
-              Center(
-                child: Image.asset(
-                  DsAssetsIcons.bfPng,
-                  color: context.colorScheme.primary,
-                  height: 16 * 4,
-                  width: 16 * 4,
-                ),
               ),
             ],
           ),

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../app/components/responsive_builder.dart';
 import '../app/generic_state_pages/unsupported_resolution_page.dart';
-import 'components/development_warning_dialog.dart';
 import 'controller/shell_controller.dart';
 import 'controller/shell_store.dart';
 import 'pages/sizes/desktop/shell_page_desktop.dart';

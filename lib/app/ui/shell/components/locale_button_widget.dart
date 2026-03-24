@@ -17,7 +17,7 @@ class LocaleButtonWidget extends StatelessWidget {
     if (isSelected) {
       return OutlinedButton(
         onPressed: onTap,
-        child: SelectableText(
+        child: Text(
           label,
         ),
       );
@@ -25,7 +25,7 @@ class LocaleButtonWidget extends StatelessWidget {
 
     return TextButton(
       onPressed: onTap,
-      child: SelectableText(
+      child: Text(
         label,
       ),
     );

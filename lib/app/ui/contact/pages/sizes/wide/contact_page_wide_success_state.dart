@@ -4,8 +4,8 @@ import '../../../../../domain/dto/entities/resume_contact_entity.dart';
 import '../../../../app/extensions/context_extensions.dart';
 import '../../../components/contact_card_widget.dart';
 
-class ContactPageDesktopSuccessState extends StatelessWidget {
-  const ContactPageDesktopSuccessState({
+class ContactPageWideSuccessState extends StatelessWidget {
+  const ContactPageWideSuccessState({
     super.key,
     required this.entity,
   });

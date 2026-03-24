@@ -1,3 +1,4 @@
+import 'package:ds_assets/ds_assets.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../about_site/pages/about_site_page.dart';
@@ -5,7 +6,6 @@ import '../../../../app/extensions/context_extensions.dart';
 import '../../../../contact/contact_page.dart';
 import '../../../../experience/experience_page.dart';
 import '../../../../home/pages/home_page.dart';
-import '../../../../pdf/components/pdf_download_component.dart';
 import '../../../../skills/pages/skills_page.dart';
 import '../../../components/locale_button_widget.dart';
 import '../../../controller/shell_controller.dart';
@@ -27,7 +27,13 @@ class ShellPagePhoneSuccessState extends StatelessWidget {
       extendBody: true,
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       appBar: AppBar(
-        title: PdfDownloadComponent(controller.pdfController),
+        title: Image.asset(
+          DsAssetsIcons.bfPng,
+          color: context.colorScheme.primary,
+          cacheHeight: 16 * 2,
+          height: 16 * 2,
+          width: 16 * 2,
+        ),
         actions: [
           IconButton(
             onPressed: () {

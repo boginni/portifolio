@@ -37,6 +37,7 @@ class HeadingBarComponent extends StatelessWidget {
           Image.asset(
             DsAssetsIcons.bfPng,
             height: 16 * 2,
+            cacheHeight: 16 * 2,
             color: context.colorScheme.primary,
           ),
           const Spacer(),
