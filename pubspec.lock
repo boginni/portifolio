@@ -352,10 +352,10 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: "083c937226643b30cf72460883dbd7a825bc9370"
+      resolved-ref: f1e0fd6b92caf1536010c06418abdc6fd8a150b8
       url: "https://github.com/boginni/flutter_purple_impl.git"
     source: git
-    version: "0.0.3"
+    version: "0.1.0"
   flutter_svg:
     dependency: "direct main"
     description:

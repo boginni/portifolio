@@ -1,7 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter_purple_domains/flutter_purple_domains.dart';
-import 'package:flutter_purple_impl/flutter_purple_impl.dart';
+import 'package:flutter_purple_impl/flutter_purple_dependency.dart';
 import 'package:get_it/get_it.dart';
 
 import '../../domain/repositories/resume_information_repository.dart';
@@ -14,69 +13,36 @@ class AppDependencies {
   static final GetIt _app = GetIt.asNewInstance();
 
   static void init() {
-    _app.registerSingleton(Dio());
-    _app.registerSingleton(AppStore());
-    _app.registerFactory<StorageDatasource>(
-      StorageDatasourceImpl.new,
-    );
+    _init(_app);
+  }
 
+  static void _init(GetIt i) {
+    PurpleDependency.init(i);
+
+    i.registerSingleton(Dio());
+    i.registerSingleton(AppStore());
     // --
 
-    _app.registerFactory<ResumeInformationDatasourceImpl>(
+    i.registerFactory<ResumeInformationDatasourceImpl>(
       () => ResumeInformationDatasourceImpl(
-        _app.get(),
-        _app.get(),
+        i.get(),
+        i.get(),
       ),
     );
-    _app.registerFactory<ResumeInformationDatasourceDebug>(
+    i.registerFactory<ResumeInformationDatasourceDebug>(
       () => ResumeInformationDatasourceDebug(
-        _app.get<ResumeInformationDatasourceImpl>(),
+        i.get<ResumeInformationDatasourceImpl>(),
       ),
     );
-    _app.registerFactory<ResumeInformationDatasource>(
+    i.registerFactory<ResumeInformationDatasource>(
       () =>
           kDebugMode
-              ? _app.get<ResumeInformationDatasourceDebug>()
-              : _app.get<ResumeInformationDatasourceImpl>(),
+              ? i.get<ResumeInformationDatasourceDebug>()
+              : i.get<ResumeInformationDatasourceImpl>(),
     );
-    _app.registerFactory<ResumeInformationRepository>(
+    i.registerFactory<ResumeInformationRepository>(
       () => ResumeInformationRepositoryImpl(
-        _app.get(),
-      ),
-    );
-
-    // --
-
-    _app.registerFactory<LauncherDatasource>(
-      LauncherDatasource.new,
-    );
-    _app.registerFactory<LauncherRepository>(
-      () => LauncherRepositoryImpl(
-        _app.get(),
-      ),
-    );
-
-    // --
-
-    _app.registerFactory<PreferencesDatasource>(
-      () => PreferencesDatasource(
-        _app.get(),
-      ),
-    );
-    _app.registerFactory<PreferencesRepository>(
-      () => PreferencesRepositoryImpl(
-        _app.get(),
-      ),
-    );
-
-    // --
-
-    _app.registerFactory<DeviceDatasource>(
-      DeviceDatasource.new,
-    );
-    _app.registerFactory<DeviceRepository>(
-      () => DeviceRepositoryImpl(
-        _app.get(),
+        i.get(),
       ),
     );
   }
