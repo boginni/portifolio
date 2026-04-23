@@ -33,22 +33,18 @@ class ExperiencePageUltraWideSuccessState extends StatelessWidget {
         SizedBox(
           height: breathSpace,
         ),
-        Column(
-          children: [
-            SizedBox(
-              height: 16 * 10 * 10,
-              width: double.infinity,
-              child: HighResolutionImage(
-                assetPath:
-                    context.isDarkMode
-                        ? DsAssetsPhotos.professionalFullSuitSeriousPng
-                        : DsAssetsPhotos.workingMacPng,
-                fit: BoxFit.fitWidth,
-                alignment: Alignment.bottomRight,
-                ratio: 3330 / 5000,
-              ),
-            ),
-          ],
+        SizedBox(
+          height: 16 * 10 * 12,
+          width: double.infinity,
+          child: HighResolutionImage(
+            assetPath:
+            context.isDarkMode
+                ? DsAssetsPhotos.professionalFullSuitSeriousPng
+                : DsAssetsPhotos.workingMacPng,
+            fit: BoxFit.fitWidth,
+            alignment: Alignment.bottomRight,
+            ratio: 3330 / 5000,
+          ),
         ),
       ],
     );
